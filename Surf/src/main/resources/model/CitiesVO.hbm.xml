@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.surf.information.cities.model.CitiesVO" table="cities">
+        <id name="CityNo" type="integer">
+            <column name="CityNo" />
+        </id>
+        <property name="CityName" type="string">
+            <column name="CityName" />
+        </property>
+    </class>
+</hibernate-mapping>

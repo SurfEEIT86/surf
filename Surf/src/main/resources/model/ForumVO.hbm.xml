@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.surf.forums.model.ForumVO" table="forums">
+        <id name="forumno" column="forumno">
+            <generator class="native" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" />
+        </property>
+        <property name="pic1" type="string">
+            <column name="pic1" />
+        </property>
+        
+        <set name="articles" table="articles" lazy="true" cascade="all"  inverse="true"  order-by="articleno asc">			
+			<key>
+				<column name="forumno" />
+			</key>
+			<one-to-many class="com.surf.forums.model.ArticleVO" />
+		</set>
+    </class>
+</hibernate-mapping>

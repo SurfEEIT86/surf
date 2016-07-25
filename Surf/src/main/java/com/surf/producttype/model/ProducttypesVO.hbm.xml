@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/7/18 ?U?? 04:59:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.producttype.model.ProducttypesVO" table="PRODUCTTYPESVO">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="typeno" type="java.lang.Integer">
+            <column name="TYPENO" />
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="STATUS" />
+        </property>
+        <set name="brands" table="BRANDSVO" inverse="false" lazy="true">
+            <key>
+                <column name="SERIALVERSIONUID" />
+            </key>
+            <one-to-many class="com.surf.brands.model.BrandsVO" />
+        </set>
+    </class>
+</hibernate-mapping>

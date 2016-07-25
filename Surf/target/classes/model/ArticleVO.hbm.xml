@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.surf.forums.model.ArticleVO" table="articles">
+        <id name="articleno" column="articleno">
+            <generator class="native" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="datetime" type="timestamp">
+            <column name="datetime" />
+        </property>
+        <property name="context" type="string">
+            <column name="context" />
+        </property>
+        
+        <many-to-one name="forumVO" class="com.surf.forums.model.ForumVO" lazy="false">
+            <column name="forumno" />
+        </many-to-one>
+        <many-to-one name="memberVO" class="com.surf.members.model.MemberVO" lazy="false">
+            <column name="memberno" />
+        </many-to-one>
+        <set name="replys" table="replys" lazy="true" cascade="all" inverse="true" order-by="date asc">			
+			<key>
+				<column name="articleno"></column>
+			</key>
+			<one-to-many class="com.surf.forums.model.ReplyVO" />
+		</set>
+		<set name="tracks" table="tracks" lazy="true" cascade="all" inverse="true" order-by="datetime asc">			
+			<key>
+				<column name="articleno"></column>
+			</key>
+			<one-to-many class="com.surf.forums.model.TrackVO" />
+		</set>
+		<set name="reports" table="reports" lazy="true" cascade="all" inverse="true" order-by="datetime asc">			
+			<key>
+				<column name="articleno"></column>
+			</key>
+			<one-to-many class="com.surf.forums.model.ReportVO" />
+		</set>
+    </class>
+</hibernate-mapping>

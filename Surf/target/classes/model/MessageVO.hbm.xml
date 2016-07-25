@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+	<class name="com.surf.members.model.MessageVO" table="messages">
+       <composite-id>
+           	<key-many-to-one name="sender" class="com.surf.members.model.MemberVO" lazy="false">
+           		<column name="sender"></column>
+           	</key-many-to-one> 
+            <key-many-to-one name="receiver" class="com.surf.members.model.MemberVO" lazy="false">
+           		<column name="receiver"></column>
+           	</key-many-to-one>
+           	 <key-property name="datetime" type="timestamp" column="datetime"/>           
+        </composite-id>
+		<property name="context" type="string">
+			<column name="context" />
+		</property>
+		<property name="pic" type="string">
+			<column name="pic" />
+		</property>
+		<property name="status" type="boolean">
+			<column name="status" />
+		</property>
+	</class>
+</hibernate-mapping>

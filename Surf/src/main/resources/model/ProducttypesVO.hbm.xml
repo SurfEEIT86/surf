@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/6/29 ?U?? 07:01:54 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.producttype.model.ProducttypesVO" table="producttypes">
+        <id name="typeno" type="java.lang.Integer">
+            <column name="TYPENO" />
+        </id>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+			<column name="status" />        
+        </property>
+        <set name="brands" table="BRANDS" inverse="true" lazy="false" order-by="brandno asc" cascade="all">
+            <key>
+                <column name="TYPENO" />
+            </key>
+            <one-to-many class="com.surf.brands.model.BrandsVO" />
+        </set>
+    </class>
+</hibernate-mapping>

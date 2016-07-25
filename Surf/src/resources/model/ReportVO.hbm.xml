@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.surf.forums.model.ReportVO" table="reports">
+       <composite-id>
+            <key-property name="memberno" type="integer" column="articleno"/>
+            <key-property name="articleno" type="integer" column="memberno"/>  
+            <key-property name="datetime" type="date" column="datetime"/>           
+        </composite-id>
+        <property name="reason" type="string" column="reason"/>
+    </class>
+</hibernate-mapping>

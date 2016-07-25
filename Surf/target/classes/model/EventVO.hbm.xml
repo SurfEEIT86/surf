@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+	<class name="com.surf.events.model.EventVO" table="events">
+		<id name="eventno" column="eventno">
+			<generator class="native" />
+		</id>
+		<property name="type" type="integer">
+			<column name="type" />
+		</property>
+		<property name="title" type="string">
+			<column name="title" />
+		</property>
+		<property name="datetime" type="timestamp">
+			<column name="datetime" />
+		</property>
+		<property name="context" type="string">
+			<column name="context" />
+		</property>
+		<property name="pic" type="string">
+			<column name="pic" />
+		</property>
+		<many-to-one name="eventTypeVO" class="com.surf.events.model.EventTypeVO" lazy="false">
+            <column name="typeno" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

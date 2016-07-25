@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd 
+		http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+        
+        
+        
+        
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/xxx"></property>
+	</bean>
+
+	<bean id="sessionFactory" destroy-method="destroy"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="pointcutService"
+			expression="execution(* com.surf.*.model.*Service.*(..))||execution(* com.surf.products.model.dao.*.*(..))||execution(* com.surf.brands.model.dao.*.*(..))||execution(* com.surf.producttype.model.dao.*.*(..))||execution(* com.surf.orders.model.dao.*.*(..))||execution(* com.surf.models.model.dao.*.*(..))||execution(* com.surf.information.model.InformationService.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcutService" />
+	</aop:config>
+
+	<!-- <aop:config> -->
+	<!-- <aop:pointcut id="pointcutDAO" expression="execution(* com.surf.forums.model.dao.*.*(..))" 
+		/> -->
+	<!-- <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcutDAO" /> -->
+	<!-- </aop:config> -->
+
+<!-- forums 區塊 -->
+	<bean id="articleDAO" class="com.surf.forums.model.dao.ArticleDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="forumDAO" class="com.surf.forums.model.dao.ForumDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="replyDAO" class="com.surf.forums.model.dao.ReplyDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="reportDAO" class="com.surf.forums.model.dao.ReportDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="memberDAO" class="com.surf.members.model.dao.MemberDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	
+	<bean id="trackDAO" class="com.surf.forums.model.dao.TrackDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="forumService" class="com.surf.forums.model.ForumService">
+		<property name="ArticleDAO" ref="articleDAO"></property>
+		<property name="ReplyDAO" ref="replyDAO"></property>
+		<property name="ReportDAO" ref="reportDAO"></property>
+		<property name="ForumDAO" ref="forumDAO"></property>
+		<property name="MemberDAO" ref="memberDAO"></property>
+		<property name="TrackDAO" ref="trackDAO"></property>
+	</bean>
+	
+	
+	
+	
+<!-- 商品-->
+	<bean id="memberService" class="com.surf.members.model.MemberService">
+		<property name="memberDAO" ref="memberDAO"></property>
+	</bean>
+	
+	<bean id="productsDAO" class="com.surf.products.model.dao.ProductsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	
+	<bean id="brandsDAO" class="com.surf.brands.model.dao.BrandsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	
+	<bean id="producttypesDAO" class="com.surf.producttype.model.dao.ProducttypesDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="ordersDAO" class="com.surf.orders.model.dao.OrdersDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="orderdetailsDAO" class="com.surf.orderdetails.model.dao.OrderDetailsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="modelsDAO" class="com.surf.models.model.dao.ModelsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+<!-- 最新消息 -->
+	
+	<bean id="eventDAO" class="com.surf.events.model.dao.EventDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="eventTypeDAO" class="com.surf.events.model.dao.EventTypeDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	
+<!--資訊 -->
+<bean id="shopsDAO" class="com.surf.information.shops.model.dao.ShopsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="citiesDAO"
+		class="com.surf.information.cities.model.dao.CitiesDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="shopkindsDAO"
+		class="com.surf.information.shopkinds.model.dao.ShopKindsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="sitesDAO" class="com.surf.information.sites.model.dao.SitesDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+
+	<bean id="informationService" class="com.surf.information.model.InformationService">
+		<property name="ShopsDAO" ref="shopsDAO"></property>
+		<property name="CitiesDAO" ref="citiesDAO"></property>
+		<property name="ShopKindsDAO" ref="shopkindsDAO"></property>
+		<property name="SitesDAO" ref="sitesDAO"></property>
+	</bean>
+
+
+</beans>
