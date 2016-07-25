@@ -99,7 +99,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>   
-			    <a class="navbar-brand" href="index.html" style="font-weight: bold">聚浪</a>
+
+			    <a class="navbar-brand" href="/Surf/members/index.jsp" style="font-weight: bold">聚浪</a>
 			</div>
 			 <!-- /.navbar-header -->	 
             <ul class="nav navbar-top-links navbar-right">

@@ -96,7 +96,6 @@
 		<property name="memberDAO" ref="memberDAO"></property>
 		<property name="ordersDAO" ref="ordersDAO"></property>
 		<property name="orderDetailsDAO" ref="orderdetailsDAO"></property>
-		
 	</bean>
 	
 	<bean id="productsDAO" class="com.surf.products.model.dao.ProductsDAOHibernate">

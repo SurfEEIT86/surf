@@ -31,4 +31,5 @@ public interface ShopsDAO {
 	/*特定種類店家*/
 	public List<ShopsVO> findShopsByKind(Integer shopKind);
 
+
 }

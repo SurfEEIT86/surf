@@ -30,8 +30,8 @@
 	<link rel="stylesheet" href="slider/css/jquery-ui.min.css">
 	
 	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->	
-	<style type="text/css">	
-		
+	<style type="text/css">					
+			
 		#whatis{
 			background-image:url("/Surf/img/wave.jpg");								
 		}
@@ -51,18 +51,26 @@
 			position:absolute;
 			bottom:50px;
 			left:75px;
+			z-index:1;			
 		}
 		
 		.future {
 			position:absolute;
 			bottom:50px;
 			left:70px;
+			z-index:1;		
 		}
 		
 		.s1{
 			max-width:50px;
 		}
-			
+		
+		.stripe{
+			position:absolute;
+			bottom:28px;
+			left:110px;			
+		}
+		
 	</style>
 </head>
 
@@ -93,36 +101,42 @@
 	</nav>
 	
 	<!-- 頁面內容 --> 
+
 	<div id ="useit" class="content-section-a">
         <div class="container">			
-            <div class="row">         							
-				<div class="col-sm-3 pull-right wow fadeInRightBig">                                  
+            <div class="row"> 
+              
+            <!-- 板子背面 -->      							
+				<div id="bb" class="col-sm-3 pull-right wow fadeInRightBig">                                  
                 	 <img id="back" class="img-responsive" style="opacity:0.7" src="img/board/poly-back.png" alt="">
                 	 <img id="FCS3" class="img-responsive fcs" style="opacity:1; display:none" src="img/fins/FCS3.png">  
                 	 <img id="FCS4" class="img-responsive fcs" style="opacity:1; display:none" src="img/fins/FCS4.png">  
                 	 <img id="FCS5" class="img-responsive fcs" style="opacity:1; display:none" src="img/fins/FCS5.png">  
                 	 <img id="Future3" class="img-responsive future" style="opacity:1; display:none" src="img/fins/future3.png">  
                 	 <img id="Future4" class="img-responsive future" style="opacity:1; display:none" src="img/fins/future4.png">  
-                	 <img id="Future5" class="img-responsive future" style="opacity:1; display:none" src="img/fins/future5.png">               	 
+                	 <img id="Future5" class="img-responsive future" style="opacity:1; display:none" src="img/fins/future5.png">               	                	                	 
+                	 <img class="img-responsive stripe" src="img/board/stripe.png" style="display:none">
                 	 <div><span style="font-style: oblique">Bottom</span></div>             	 
                 </div>  
-                              
-                <div class="col-sm-3 pull-right wow fadeInRightBig">
+                
+            <!-- 板子正面 -->                  
+                <div id="ff" class="col-sm-3 pull-right wow fadeInRightBig">
                      <img id="front" class="img-responsive" style="opacity:0.7" src="img/board/poly-front.png" alt="">
                      <img id="brand" class="img-responsive s1" src="/Surf${brandbean.pic}" style="display:none">
                 	 <img id="model" class="img-responsive s1" src="/Surf${model.pic}" style="display:none">
-                     <div><span style="font-style: oblique">Deck</span></div>                                                    	  
-                </div>	
-                								
+                	 <img id="stripe" class="img-responsive stripe" src="img/board/stripe.png" style="display:none">
+                     <div><span style="font-style: oblique">Deck</span></div>                                                                	  
+                </div>              	
+               
+            <!-- 客製選單 -->                                  								
                 <div class="col-sm-5 wow fadeInLeftBig" data-animation-delay="200">
+                  <form action="CustomCheckOutServlet.do" method="post" Enctype="Multipart/Form-Data">
                 	<img src="/Surf/${model.pic}">   
                     <h3 class="section-heading">${model.name}</h3>
-					<div class="sub-title lead3"></div>
-                  	       
+					<div class="sub-title lead3"></div>                 	       
                   	    <div class="panel-group" id="accordion"> 
-                  	    
-                  	    <!-- 材質 -->
-                  	    
+                  	               	    
+                  	    <!-- 材質 -->                 	    
                   	       <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h2 class="panel-title">
@@ -144,7 +158,7 @@
 		                                            	<span style="font-style: oblique">EPS</span>	                                            	
 	                                            	</a>	                                          	
                                             	</div>
-                                            	<input id="materials" type="hidden"/>
+                                            	<input name="material" id="materials" type="hidden" value="Polyester"/>
                                             </div>
                                         </div>
                                     </div>
@@ -161,19 +175,19 @@
                                         <div class="panel-body">
                                              <p>
 											   <label for="width" style="font-style: oblique">寬度:</label>
-									   		   <input type="text" id="width" readonly style="border:0; font-weight:bold; max-width:100px;">
+									   		   <input name="width" type="text" id="width" readonly style="border:0; font-weight:bold; max-width:100px;">
 										   	 </p>
 										    <div id="slider-width"></div>
 						
 											<p>
 											   <label for="length" style="font-style: oblique">長度:</label>
-											   <input type="text" id="length" readonly style="border:0; font-weight:bold; max-width:100px;">
+											   <input name="length" type="text" id="length" readonly style="border:0; font-weight:bold; max-width:100px;">
 											</p>
 									 		<div id="slider-length"></div>				
 										
 											<p>
 											   <label for="thick" style="font-style: oblique">厚度:</label>
-											   <input type="text" id="thick" readonly style="border:0; font-weight:bold; max-width:100px;">
+											   <input name="thick" type="text" id="thick" readonly style="border:0; font-weight:bold; max-width:100px;">
 											</p>
 											<div id="slider-thick"></div>
                                         </div>
@@ -202,7 +216,7 @@
 		                                            	<br><span style="font-style: oblique">FCSII</span>                                            	
 	                                            	</a>	                                          	
                                             	</div>
-                                            	<input id="finsys" type="hidden"/>
+                                            	<input name="finsys" id="finsys" type="hidden"/>
                                             </div>
                                             <br>
                                             <div class="row">
@@ -210,11 +224,11 @@
 	                                            		<h4 style="font-style: oblique">設定</h4>
 														  <fieldset>												   
 														    <label for="tri">3 Fins</label> <small></small>
-														    <input type="radio" name="radio-1" id="tri" value="3"> <br>
+														    <input type="radio" name="fincount" id="tri" value="3"> <br>
 														    <label for="quad">4 Fins</label>
-														    <input type="radio" name="radio-1" id="quad" value="4"> <br>
+														    <input type="radio" name="fincount" id="quad" value="4"> <br>
 														    <label for="five">5 Fins</label>
-														    <input type="radio" name="radio-1" id="five" value="5"> <br>
+														    <input type="radio" name="fincount" id="five" value="5"> <br>
 														    <small>(+NT$1000)</small>
 														  </fieldset>
 	                                            	</div>
@@ -236,10 +250,12 @@
                                         	<div class="row" style="margin:5px; text-align:center">
                                               <button id="s1" type="button" class="btn btn-default btn-circle" style="margin:10px;">1</button>
                                               <button id="s2" type="button" class="btn btn-default btn-circle" style="margin:10px;">2</button>                           
+                                              <button id="s3" type="button" class="btn btn-default btn-circle" style="margin:10px;">x</button>                           
                            					</div>                                  
                                         </div>
                                     </div>
-                           </div>	
+                           </div>
+                           	
                          <!-- 顏色 -->	                                                  
                            <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -249,29 +265,88 @@
                                     </div>
                                     <div id="collapseFive" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                        	<div class="row" style="margin:5px; text-align:center">
-                                             	<fieldset>
-												    <label for="speed">選擇顏色</label>
-												    <select name="color" id="color">
-												      <option value="0, 0, 255">藍</option>
-												      <option value="255, 0, 0">紅</option>
-												      <option value="0, 255, 128">綠</option>
-												      <option value="255, 255, 0">黃</option>
-												    </select>
-												</fieldset>
-                           					</div>                                  
+                                        	<div class="row" style="margin:5px;">                                        	
+                                             	<button type="button" id="orginal" class="img-circle" style="background-color:#FFFFF0; width:30px; height:30px" value="original"></button>
+                                             	<button id="blue" type="button" class="img-circle" style="background-color:#5CACEE; width:30px; height:30px" value="#5CACEE"></button>
+                                             	<button id="red" type="button" class="img-circle" style="background-color:#B22222; width:30px; height:30px" value="#B22222"></button>
+                                             	<button id="yellow" type="button" class="img-circle" style="background-color:#FFC125; width:30px; height:30px" value="#FFC125"></button>
+                                             	<button id="green" type="button" class="img-circle" style="background-color:#3CB371; width:30px; height:30px" value="#3CB371"></button>
+                                             	<button id="Steel" type="button" class="img-circle" style="background-color:#BCD2EE; width:30px; height:30px" value="#BCD2EE"></button>
+                                             	<button id="gold" type="button" class="img-circle" style="background-color:#FFEC8B; width:30px; height:30px" value="#FFEC8B"></button>                                            	            	                                         	                                          	                             	                                           	            	
+                           					</div> 
+                           					<hr>
+                           					<div class="row" style="margin:5px; white-space: nowrap;">
+                           						
+		                                        <div style="float:left; margin-left:30px; padding:5px;">
+		                                        	<input id="change" type="color">		                                        
+		                                        	<input id="color" name="boardcolor" type="hidden" value="original">
+		                                        </div>		                                                                          
+                                       		</div>                                 
                                         </div>
+                                        
+                                    </div>
+                           </div> 
+                           
+                           <!-- 上傳圖片 -->                       		                                                  
+                           <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">上傳圖片 - Custom logos</a>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseSix" class="panel-collapse collapse">
+                                   		 <div class="panel-body">                                	
+		                                    	<div style="padding:10px;">
+		                                        	<span style="font-style: oblique;">圖片1:</span><input id="p1" name="p1" type="file" onchange="readURL1(this);" accept="image/gif, image/jpeg, image/png"/>
+		                                        	<a id="can1" href="#" onclick="return false" style="float:right; display:none"><span style="text-decoration:underline;">取消</span></a>	                                 	 
+		                                        </div>		                                        
+	                                                                    	
+		                                    	<div style="padding:10px;">
+		                                        	<span style="font-style: oblique">圖片2:</span><input id="p2" name="p2" type="file" onchange="readURL2(this);" accept="image/gif, image/jpeg, image/png"/>
+		                                        	<a id="can2" href="#" onclick="return false" style="float:right; display:none "><span style="text-decoration:underline;">取消</span></a>	
+		                                        </div>
+		                                        
+		                                        <p><a id="print" class="btn btn-embossed btn-info" href="#" role="button" onclick="return false;">儲存</a></p>
+	                                      </div>	                                                                                                                    
+                                    </div>
+                           </div>                                                                                                   
+                           
+                           	<!-- 備註 -->
+                           <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">備註 - Remark</a>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseSeven" class="panel-collapse collapse">
+                                    	
+                                    	<div style="margin-left:20px;padding:10px;">
+                                    		<textarea name="memo" cols="30" rows="5" id="memo" style="resize:none;"></textarea>	  
+                                    	</div>                                  	                                                                                                     
                                     </div>
                            </div>
-                           		                                                  
-                  	  	</div>				
-					 				              					   													  						                   							
-					 <p><a class="btn btn-embossed btn-info" href="#" role="button">結帳</a></p>
-					 					 
-				</div>   
+                                                   
+                           <a id="auto" style="display:none;"></a> 
+                           <input type="hidden" name="print1" id="prnt1">
+                           <input type="hidden" name="print2" id="prnt2">
+	                       	                                                                                                                           		                                                  
+                  	  	</div><!-- Panel Group -->  
+                  	  	<input type="submit" class="btn btn-embossed btn-success" style="margin-left:400px;" value="結帳"/>
+       				</form>                   	    	                 	  	                  	  	                  	  	                  	  									 				              					   													  						                   											 					 					 
+				</div>  <!-- 客製選單 --> 
+				
+					<div id="showimg" class="col-sm-1" style="position:absolute; height:400px; left:550px; top:400px">
+						<div style="position: absolute; top:100px">					
+	                		<img id="pic3" class="dragpic" src="" draggable="true">
+	                	</div>	 <br><br>               	                		                			                	
+	                	<div style="position: absolute; top:150px">				                		             	                	
+	                		<img id="pic4" class="dragpic" src="" draggable="true">	
+	                	</div>	                	
+	                </div>       
             </div>
         </div>
         <!-- /.container -->
+             	
     </div>			
 
     <!-- JavaScript -->
@@ -283,68 +358,181 @@
 	<script src="js/script.js"></script>
 	<!-- StikyMenu -->
 	<script src="js/stickUp.min.js"></script>
+	<script src="js/html2canvas.js"></script>
     <script src="slider/js/jquery-ui.min.js"></script>
 	<script type="text/javascript">
 	
 	  jQuery(function($) {
-		$(document).ready( function() {
+		$(document).ready(function() {
 		  $('.navbar-default').stickUp();	  
 		});			
+	  });		  	  
+	  
+	  //上傳圖片
+	
+	 $('#print').click(function(){ 
+		 html2canvas($("#ff"), {
+             onrendered: function(canvas) {           	 
+            	 $('#prnt1').val(canvas.toDataURL("image/png"));                   	 	
+             }
+         }); 
+		 html2canvas($("#bb"), {
+             onrendered: function(canvas) {           	 
+            	 $('#prnt2').val(canvas.toDataURL("image/png"));             	 
+             }
+         }); 	
+	 });  	 	  	  
+	  
+	 $('.dragpic').draggable({		  
+		  revert: "invalid", // when not dropped, the item will revert back to its initial position
+ 	      containment: "document",
+	      helper: "original",
+	      cursor: "move", 
+	 });
+	  
+ 	 $('#showimg').droppable();	 
+	 $('#front').droppable({
+	      accept: "*",
+	      tolerance: "fit",
+	      classes:{
+	    	  "ui-droppable-active": "ui-state-highlight"
+     	  },drop: function(event, ui){
+      	  }
+	 });
+	 
+	 $('#back').droppable({
+	      accept: "*", 
+	      tolerance: "fit",
+	      classes:{
+	    	  "ui-droppable-active": "ui-state-highlight"
+     	  }
+	 });
+	  
+	  $('#can1').click(function(){	  
+		  $('#p1').val(null);
+		  $('#pic3').attr('src','').width('').height('').css({
+			  'top':'0px',
+		  	  'left':'0px'
+		  });
+		  $(this).hide();
 	  });
 	  
+	  $('#can2').click(function(){	  
+		  $('#p2').val(null);
+		  $('#pic4').attr('src','').width('').height('').css({
+			  'top':'0px',
+		  	  'left':'0px'
+		  });
+		  $(this).hide();
+	  });
+	  
+	  function readURL1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#pic3')
+                    .attr('src', e.target.result)                   
+                    .width(50)
+                    .height(50).css('z-index','99');
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#can1').show();
+        }
+      }
+	  
+	  function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#pic4')
+                    .attr('src', e.target.result)
+                    .width(50)
+                    .height(50).css('z-index','99');
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#can2').show();
+        }
+      }
+		  
 	  //顏色
-	        
-      $('#color').change(function(){
-    	  var canvas = document.createElement("canvas");
-    	  var canvas2 = document.createElement("canvas");
-          ctx = canvas.getContext("2d");
-          ctx2 = canvas2.getContext("2d");
-          
-          image = document.getElementById("back");
-    	  image2 = document.getElementById("front");
-
-          ctx.drawImage(image,0,0);
-          ctx2.drawImage(image2,0,0);
-
-          var imgd = ctx.getImageData(0, 0, 128, 128);
-          var imgd2 = ctx.getImageData(0, 0, 128, 128);
-          pix = imgd.data;
-          pix2 = imgd2.data;
-    	  var uniqueColor= [];    	    
-    	  
-    	  for (var i = 0, n = pix.length; i <n; i += 4) {
-    	      pix[i] = uniqueColor[0];   // Red component
-    	      pix[i+1] = uniqueColor[1]; // Blue component
-    	      pix[i+2] = uniqueColor[2]; // Green component
-    	      //pix[i+3] is the transparency.
-          }
-    	  
-    	  for (var j = 0, n = pix2.length; j <n; j += 4) {
-    	      pix2[j] = uniqueColor[0];   // Red component
-    	      pix2[j+1] = uniqueColor[1]; // Blue component
-    	      pix2[j+2] = uniqueColor[2]; // Green component
-    	      //pix[i+3] is the transparency.
-          }
-
-    	  ctx.putImageData(imgd, 0, 0);
-    	  ctx2.putImageData(imgd2, 0, 0);	  
-    	  image.src = canvas.toDataURL("image/png");  
-      });
+	  var inputcolor = $('#color');	  
+ 	  $('#change').change(changeColor);  
+      $('.img-circle').click(changeColor);
+      var canvas = document.createElement("canvas"); 	  
+	  var canvas2 = document.createElement("canvas");  	    	  	 
+	  
+	  function changeColor(){
+		  
+		  if($(this).val()=="original"){			  
+			  if($('#materials').val()=="Polyester"){
+				  image.src = 'img/board/poly-back.png';   
+		    	  image2.src = 'img/board/poly-front.png';
+		    	  
+			  }else{
+				  image.src = 'img/board/back.png';   
+		    	  image2.src = 'img/board/front.png';			  
+			  }
+			  $('.stripe').hide();
+			  inputcolor.val("original");
+			  
+		  }else {				  			  
+	    	  image = document.getElementById("back");
+	     	  image2 = document.getElementById("front");
+	     	  canvas.width = image.width;
+	     	  canvas.height = image.height;
+	     	  canvas2.width = image2.width;
+	     	  canvas2.height = image2.height;	  
+	          ctx = canvas.getContext("2d");
+	          ctx2 = canvas2.getContext("2d");                 
+	          ctx.drawImage(image,0,0);
+	          ctx2.drawImage(image2,0,0);
+	          var imgd = ctx.getImageData(0, 0, image.width, image.height);
+	          var imgd2 = ctx.getImageData(0, 0, image2.width, image2.height);         
+	          pix = imgd.data;
+	          pix2 = imgd2.data;	                  	  
+	          var hex= $(this).val().substr(1);  
+	 		  var bigint = parseInt(hex, 16);
+	 		  var r = (bigint >> 16) & 255;
+	 		  var g = (bigint >> 8) & 255;
+	 		  var b = bigint & 255;	 
+	 		  var uniqueColor= [r, g, b];		     	 		    	        	  
+	 		  inputcolor.val(uniqueColor);	 		  
+	    	  for (var i = 0, n = pix.length; i <n; i += 4) {
+	    	      pix[i] = uniqueColor[0];   // Red component
+	    	      pix[i+1] = uniqueColor[1]; // Blue component
+	    	      pix[i+2] = uniqueColor[2]; // Green component
+	          }	    	  
+	    	  for (var j = 0, n = pix2.length; j <n; j += 4) {
+	    	      pix2[j] = uniqueColor[0];   // Red component
+	    	      pix2[j+1] = uniqueColor[1]; // Blue component
+	    	      pix2[j+2] = uniqueColor[2]; // Green component  	      
+	          }
+	    	  ctx.putImageData(imgd, 0, 0);
+	    	  ctx2.putImageData(imgd2, 0, 0);	  
+	    	  image.src = canvas.toDataURL("image/png");  
+	    	  image2.src = canvas2.toDataURL("image/png");
+	    	  if($('#materials').val()=="Polyester"){
+	    	 	 $('.stripe').show();
+	    	  }	    	  
+		  }
+      }
                			  	  
 	  //logo
 	  var model = $('#model');
 	  var brand =$('#brand');
 	  
-	  $('#s1').click(function(){
+	  $('#s1').click(function(){	 
 		  model.css({
 			  'position':'absolute',
 			  'bottom':'150px',
 			  'left':'70px',
+			  'z-index':'2'
 		  });
 		  brand.css({
 			  'position':'absolute',
 			  'top':'150px',
-			  'left':'140px',			  
+			  'left':'140px',
+			  'z-index':'2'
 		  });
 		  model.fadeIn();
 		  brand.fadeIn();	  
@@ -355,18 +543,26 @@
 			  'position':'absolute',
 			  'bottom':'150px',
 			  'left':'70px',
+			  'z-index':'2'
 		  });
 		  brand.css({
 			  'position':'absolute',
 			  'top':'590px',
-			  'left':'110px',			  
+			  'left':'110px',
+			  'z-index':'2'
 		  });
 		  model.fadeIn();
 		  brand.fadeIn();	  
 	  });
 	  
+	  $('#s3').click(function(){
+		  model.hide();
+		  brand.hide()
+	  });
+	  
 	  //材質
 	  $('#eps').click(function(){
+		  $('.stripe').hide();
 		  $(this).css({			  
 			  'border': '3px inset gray' 
 		  });
@@ -379,6 +575,7 @@
 	  });
 	  
 	  $('#poly').click(function(){
+		  $('.stripe').hide();
 		  $(this).css({			  
 			  'border': '3px inset gray' 
 		  });
@@ -510,8 +707,7 @@
 	            $( "#width" ).val(toFeet(ui.value));
 	        }
 	    });
-  	  $( "#width" ).val(toFeet($( "#slider-width" ).slider("value")));
-  	  
+  	  $( "#width" ).val(toFeet($( "#slider-width" ).slider("value"))); 	   	  	  
 	  $( "#slider-length" ).slider({
 	        min: 18,
 	        max: 20,

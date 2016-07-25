@@ -1,5 +1,4 @@
 package com.surf.members.model;
-
 import java.util.List;
 
 import com.surf.orderdetails.model.OrderDetailsDAO;

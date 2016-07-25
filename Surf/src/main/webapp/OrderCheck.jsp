@@ -131,7 +131,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>   
-			    <a class="navbar-brand" href="index.html" style="font-weight: bold">聚浪</a>
+
+			    <a class="navbar-brand" href="Surf/members/index.jsp" style="font-weight: bold">聚浪</a>
 			</div>
 			 <!-- /.navbar-header -->	 
             <ul class="nav navbar-top-links navbar-right">
@@ -379,13 +380,13 @@
 							           <div class="col-md-6">					           	  
 									           	  <div class="form-group has-warning">
 							                              <label class="control-label" for="inputWarning">收件人:</label>
-							                              <input id="receiver" type="text" class="form-control" style="width:100px" value="黃耀中" />
+							                              <input id="receiver" type="text" class="form-control" style="width:100px" value="${user.name}" />
 						                          		  <span id="name"></span>
 						                          </div>
 						                          
 						                          <div class="form-group has-warning">
 							                              <label class="control-label" for="inputWarning">連絡電話:</label>
-							                              <input type="text" class="form-control" style="width:150px" value="0912716738" />
+							                              <input type="text" class="form-control" style="width:150px" value="${user.tel}" />
 						                          </div>
 						                          	                     						                          						                          	                    
 									           	  <div class="row">
@@ -401,7 +402,7 @@
 							                          <div class="col-md-12">                                         
 							                              <div class="form-group has-warning">
 								                              <label class="control-label" for="inputWarning">地址:</label>
-								                              <input id="address" name="address" type="text" class="form-control" style="max-width:250px" value="新北市瑞芳區台二線號道78號"/>
+								                              <input id="address" name="address" type="text" class="form-control" style="max-width:250px" value="${user.address }"/>
 							                              	  <span id="add"></span>
 							                              </div>
 							                          </div>    		                                                       		                              	                          

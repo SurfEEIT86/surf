@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-
+import com.surf.members.model.MemberVO;
 import com.surf.products.model.ProductsDAO;
 import com.surf.products.model.ProductsVO;
 
@@ -34,43 +34,52 @@ public class AddIntoCartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("UTF-8");
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession();	
+		MemberVO vo = (MemberVO) session.getAttribute("user");  //LoginServlet放的
 		PrintWriter out = response.getWriter();
 		Integer productno = Integer.parseInt(request.getParameter("product"));
-		Integer quantity  = Integer.parseInt(request.getParameter("quantity"));
-		ProductsVO pbean = pDao.select(productno);
-		purchase = (List<Map<String, Object>>)session.getAttribute("purchaselist");
-		if(purchase!=null && purchase.size()!=0){
-			Iterator<Map<String, Object>> check = purchase.iterator();	
-				while(check.hasNext()){
-					Map<String, Object> m2= check.next();
-					ProductsVO bean1 = (ProductsVO) m2.get("bean");
-					if(bean1.getProductno().equals(productno)){
-						m2.replace("quantity", quantity);
-						out.print("modified");
-						break;
-					}else{
-						if(check.hasNext()){
-							continue;
-						}else{
-							Map<String, Object> m1 = new HashMap<String, Object>();
-							m1.put("bean", pbean);
-							m1.put("quantity", quantity);
-							purchase.add(m1);		
-							session.setAttribute("purchaselist", purchase);		
-							out.print("success");
+		
+		if(vo!=null) {									
+			Integer quantity  = Integer.parseInt(request.getParameter("quantity"));
+			ProductsVO pbean = pDao.select(productno);
+			purchase = (List<Map<String, Object>>)session.getAttribute("purchaselist");
+			if(purchase!=null && purchase.size()!=0){
+				Iterator<Map<String, Object>> check = purchase.iterator();	
+					while(check.hasNext()){
+						Map<String, Object> m2= check.next();
+						ProductsVO bean1 = (ProductsVO) m2.get("bean");
+						if(bean1.getProductno().equals(productno)){
+							m2.replace("quantity", quantity);
+							out.print("modified");
 							break;
-						}
-					}					
-				}
-		}else{
-			Map<String, Object> m1 = new HashMap<String, Object>();
-			purchase = new ArrayList<Map<String, Object>>();
-			m1.put("bean", pbean);
-			m1.put("quantity", quantity);
-			purchase.add(m1);		
-			session.setAttribute("purchaselist", purchase);		
-			out.print("success");
+						}else{
+							if(check.hasNext()){
+								continue;
+							}else{
+								Map<String, Object> m1 = new HashMap<String, Object>();
+								m1.put("bean", pbean);
+								m1.put("quantity", quantity);
+								purchase.add(m1);		
+								session.setAttribute("purchaselist", purchase);		
+								out.print("success");
+								break;
+							}
+						}					
+					}
+			}else{
+				Map<String, Object> m1 = new HashMap<String, Object>();
+				purchase = new ArrayList<Map<String, Object>>();
+				m1.put("bean", pbean);
+				m1.put("quantity", quantity);
+				purchase.add(m1);		
+				session.setAttribute("purchaselist", purchase);		
+				out.print("success");
+			}
+		
+		}else {
+			String uri = "/Surf/ProductDetailServlet.do?productno="+productno;
+			session.setAttribute("dest", uri);					
+			out.print("nologin");
 		}
 	}
 

@@ -142,3 +142,4 @@ public class CreateForum extends HttpServlet {
 		this.doPost(request, response);
 	}
 }
+

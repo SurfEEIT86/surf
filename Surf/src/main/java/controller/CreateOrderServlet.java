@@ -27,11 +27,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-
+import com.surf.members.model.MemberVO;
 import com.surf.orderdetails.model.OrderDetailsDAO;
 import com.surf.orderdetails.model.OrderDetailsVO;
 import com.surf.orders.model.OrdersDAO;
 import com.surf.orders.model.OrdersVO;
+import com.surf.products.model.ProductsDAO;
 import com.surf.products.model.ProductsVO;
 
 
@@ -39,9 +40,8 @@ import com.surf.products.model.ProductsVO;
 public class CreateOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private OrdersVO order;
-    private OrdersDAO oDao;
-    private OrderDetailsVO orderdetail;
-    private OrderDetailsDAO odDao;
+    private OrdersDAO oDao;  
+    private ProductsDAO pDao;
     
     public CreateOrderServlet() {
         super();
@@ -53,8 +53,8 @@ public class CreateOrderServlet extends HttpServlet {
 	public void init() throws ServletException {
 		ServletContext application = this.getServletContext();
 		ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(application);
-		oDao = (OrdersDAO) context.getBean("ordersDAO");
-		odDao = (OrderDetailsDAO) context.getBean("orderdetailsDAO");
+		oDao = (OrdersDAO) context.getBean("ordersDAO");	
+		pDao = (ProductsDAO) context.getBean("productsDAO");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -64,17 +64,18 @@ public class CreateOrderServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");		
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		String add = request.getParameter("address");		
 		String zip = request.getParameter("zip");
 		String address = (zip+add);
 		String creditcard = request.getParameter("creditcard");		
-		Double totalprice = (Double) session.getAttribute("finalprice");		
+		Double totalprice = (Double) session.getAttribute("finalprice");
+		MemberVO mVo = (MemberVO) session.getAttribute("user");
 		
 		order = new OrdersVO();
-		order.setMemberno(1);
+		order.setMemberno(mVo.getMemberno());
 		long time = new Date().getTime();
 		order.setDatetime(new Timestamp(time));
 		order.setCreditcard(creditcard);
@@ -95,14 +96,20 @@ public class CreateOrderServlet extends HttpServlet {
 			detail.setQuantity(quantity);
 			detail.setOrdersvo(order);
 			orderdetails.add(detail);
-		}	
+			
+			ProductsVO pvo = pDao.select(productno);
+			Integer stock = pvo.getStock()- quantity;
+			pvo.setStock(stock);
+			pDao.update(pvo);			
+		}
+		String clientname = mVo.getName();
+		String to = mVo.getEmail();
 		order.setOrderdetails(orderdetails);
 		oDao.insert(order);
 		session.removeAttribute("purchaselist");
 		
 		SendConfirmation send = new SendConfirmation();
-		send.sendMail();
-		
+		send.sendMail(to, clientname);		
 		out.print("success");					
 	}
 

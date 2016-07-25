@@ -116,7 +116,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>   
-			    <a class="navbar-brand" href="index.html" style="font-weight: bold">聚浪</a>
+
+			    <a class="navbar-brand" href="/Surf/members/index.jsp" style="font-weight: bold">聚浪</a>
 			</div>
 			 <!-- /.navbar-header -->	 
             <ul class="nav navbar-top-links navbar-right">
@@ -294,7 +295,7 @@
 			    <section id="intro" class="intro-section">
 			    	<div class="row">  	
 			        	<div class="col-lg-12">
-			                <h1 class="page-header"><a href="<c:url value="/BrandServlet.do?brand=${brandno}"/>">${brandname}</a>
+			                <h1 class="page-header"><a href="<c:url value="/BrandServlet.do?brand=${brandno}"/>" style="text-decoration:underline">${brandname}</a>
 			                <small><a href="${productdetail.link}">${productdetail.name}</a></small></h1>
 	          			</div>
 	          		</div>		
@@ -417,6 +418,9 @@
 							else if(datas=="modified"){
 								alertify.success("已修改購買數量");
 								$("#card-4").flip(true);
+							}
+							else if(datas=="nologin"){
+								window.location.assign("/Surf/members/index.jsp");					
 							}
 						}
 					});						

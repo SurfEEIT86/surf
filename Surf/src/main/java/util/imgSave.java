@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URL;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.Part;
@@ -15,8 +14,6 @@ public class imgSave {
 	public boolean imgSave(byte[] bytes,Part part,String url) {
 		boolean result = false;
 		if (bytes != null) {
-			LocalDateTime dateTime = LocalDateTime.now();
-			Timestamp stamp = Timestamp.valueOf(dateTime);
 			String fileName = getFileName(part);
 			System.out.println(url);
 			File files = new File(url+fileName);

@@ -83,7 +83,9 @@
 				<h1 class="section-heading">熱門目的地</h1>
 			</div>
 		</div>
+
 		<div>
+
 
 			<c:forEach var="siteVO" items="${sitesList}">
 				<div class="col-md-4">
