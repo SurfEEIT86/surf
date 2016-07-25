@@ -17,7 +17,7 @@ import com.surf.members.model.MemberVO;
 
 
 @WebFilter(
-		urlPatterns={"/forums/*","/ShoppingCart.jsp"}
+		urlPatterns={"/forums/*"}
 )
 public class LoginFilter implements Filter {
 	public void destroy() {
@@ -25,7 +25,6 @@ public class LoginFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
-			
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) resp;
 		HttpSession session = request.getSession();

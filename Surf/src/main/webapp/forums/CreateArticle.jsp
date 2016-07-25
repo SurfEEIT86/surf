@@ -12,7 +12,7 @@
 			<h1 class="big-title">${UpdateArticleTitle}</h1>
 		</c:if>
 		<div class="path">
-			<a href="#">首頁</a> / <a href="forums.jsp">討論區</a>/
+			<a href="../members/index.jsp">首頁</a> / <a href="forums.jsp">討論區</a>/
 
 			<c:if test="${empty ArticlesMng}">
 				<c:if test="${empty article}">

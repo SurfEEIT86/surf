@@ -707,8 +707,7 @@
 	            $( "#width" ).val(toFeet(ui.value));
 	        }
 	    });
-  	  $( "#width" ).val(toFeet($( "#slider-width" ).slider("value"))); 	   	  
-  	  
+  	  $( "#width" ).val(toFeet($( "#slider-width" ).slider("value"))); 	   	  	  
 	  $( "#slider-length" ).slider({
 	        min: 18,
 	        max: 20,

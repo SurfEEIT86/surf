@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.surf.forums.model.ArticleVO;
 import com.surf.orderdetails.model.OrderDetailsDAO;
 import com.surf.orderdetails.model.OrderDetailsVO;
+import com.surf.orders.model.OrdersVO;
 import com.surf.products.model.ProductsVO;
 
 public class OrderDetailsDAOHibernate implements Serializable, OrderDetailsDAO{
@@ -28,8 +31,13 @@ public class OrderDetailsDAOHibernate implements Serializable, OrderDetailsDAO{
 	}
 
 	@Override
-	public OrderDetailsVO select(Integer orderno){
-		return this.getSession().get(OrderDetailsVO.class, orderno);
+	public List<OrderDetailsVO> select(Integer no){
+		String sql="select * from orderdetails where orderno=?";
+		SQLQuery<OrderDetailsVO> query = null;
+		query = this.getSession().createSQLQuery(sql);
+		query.setParameter(0, no);
+		query.addEntity("orderDetailsVO", OrderDetailsVO.class);
+		return query.list();
 	}
 	
 	@Override

@@ -7,7 +7,7 @@
 	    <div class="container">
 			<h1 class="big-title">文章追蹤</h1>
 	        <div class="path">
-	            <a href="#">首頁</a> /
+	            <a href="../members/index.jsp">首頁</a> /
 	            <a href="forums.jsp">討論區</a> /
 	          	  文章追蹤
 	        </div>
@@ -24,19 +24,20 @@
                 var forums = $('#forums');
                 var forumsOpt = $(document.createDocumentFragment());
                 $.each(datas, function(idx, forums) {
-                    var forumopt = $("<a></a>").attr('id',forums.ForumNo).text(forums.Title)
+                    var forumopt = $("<a></a>").attr('id',forums.ForumNo).attr('class','btn').text(forums.Title)
                             .attr("value", forums.ForumNo).attr('href','javascript:;');
-                    var br=$("<br/>")
-                    forumsOpt.append(forumopt).append(br);
+                    
+                    forumsOpt.append(forumopt);
                    
 
                 })
                 forums.append(forumsOpt);
             }
         })
-
         $('#forums').on('click', 'a', function(event) {
-        	
+        	var a=$(event.target);
+        	a.siblings().removeClass('active');
+        	a.addClass('active');
         	var id=event.target.id;
             $("#showArticles").children().remove();
             $.ajax({
@@ -99,11 +100,14 @@
 	})
 </script>
 	
-	<div class="container member-article">
-	<div id="forums">
-	<a href="javascript:;" id="allTrackArticles">全部追蹤的文章</a><br/>
-	</div>
-	<table class="article-ls-table" id="showArticles">
-     </table>
+	<!-- main -->
+    <div id="main">
+		<div class="container follow-wrap">
+		<div id="forums" class="follow-ca">
+		<a href="javascript:;" class="btn" id="allTrackArticles">全部追蹤的文章</a>
+		</div>
+		<table class="article-ls-table" id="showArticles">
+	     </table>
+		</div>
 	</div>
 <jsp:include page="footer.jsp" />

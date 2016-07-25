@@ -59,19 +59,26 @@ public class MemberDAOHibernate implements MemberDAO {
 	/* 新增一筆會員 */
 	@Override
 	public MemberVO insert(MemberVO bean) {
-		MemberVO result = (MemberVO) this.getSession().get(MemberVO.class,
-				bean.getMemberno());
-		if (result == null) {
+			System.out.println(bean.getUsername());
+			System.out.println(bean.getPassword());
+			System.out.println(bean.getName());
+			System.out.println(bean.getGender());
+			System.out.println(bean.getEmail());
+			System.out.println(bean.getBirthday());
+			System.out.println(bean.getAddress());
+			System.out.println(bean.getTel());
+			System.out.println(bean.getStatus());
+			System.out.println(bean.getPic1());
+			
+
 			this.getSession().save(bean);
 			return bean;
-		}
-		return null;
 	}
 
 	/* 修改一筆會員資料 */
 	@Override
-	public ForumVO update(ForumVO vo) {
-		this.getSession().saveOrUpdate(vo);
+	public MemberVO update(MemberVO vo) {
+		this.getSession().update(vo);
 		return vo;
 	}
 

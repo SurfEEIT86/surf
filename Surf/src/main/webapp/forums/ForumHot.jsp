@@ -6,7 +6,8 @@
 	<div class="container">
 		<h1 class="big-title">${forum.title}</h1>
 		<div class="path">
-			<a href="#">首頁</a> / <a href="forums.jsp">討論區</a> / <span>${forum.title}</span>
+
+			<a href="../members/index.jsp">首頁</a> / <a href="forums.jsp">討論區</a> / <span>${forum.title}</span>
 		</div>
 	</div>
 </div>
@@ -32,7 +33,7 @@
 			</div>
 			</form>
 			<div class="sort pull-left">
-				<a href="DisplayPageArticles?pageNo=1" class="btn">時間</a> <a href="#" class="btn active">熱門</a>
+				<a href="DisplayPageArticles?pageNo=1" class="btn">最新</a> <a href="#" class="btn active">熱門</a>
 				<p>${showSearchMsg}</p>
 			</div>
 

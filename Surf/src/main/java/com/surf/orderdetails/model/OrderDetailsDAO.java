@@ -4,11 +4,15 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import com.surf.orders.model.OrdersVO;
+
+
+
 public interface OrderDetailsDAO {
 
 	Session getSession();
 
-	OrderDetailsVO select(Integer orderno);
+	public List<OrderDetailsVO> select(Integer no);
 
 	List<OrderDetailsVO> selectAll();
 

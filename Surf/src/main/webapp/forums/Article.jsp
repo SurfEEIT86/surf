@@ -11,7 +11,7 @@
         	<c:if test="${empty TrackMng}">
 				<h1 class="big-title"> ${forum.title} </h1>
 	        	<div class="path">
-	            	<a href="#">首頁</a> /
+	            	<a href="../members/index.jsp">首頁</a> /
 	            	<a href="forums.jsp">討論區</a> /
 	            	<c:if test="${empty article}">
 	            		<a href="DisplayPageArticles?pageNo=1">${forum.title}</a> /

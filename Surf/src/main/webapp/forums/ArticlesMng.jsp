@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="big-title"> 文章管理 </h1>
         <div class="path">
-            <a href="#">首頁</a> /
+            <a href="../members/index.jsp">首頁</a> /
             <a href="forums.jsp">討論區</a> /
             <span>文章管理</span>
         </div>

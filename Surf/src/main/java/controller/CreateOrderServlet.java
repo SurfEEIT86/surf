@@ -27,7 +27,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-
 import com.surf.members.model.MemberVO;
 import com.surf.orderdetails.model.OrderDetailsDAO;
 import com.surf.orderdetails.model.OrderDetailsVO;
@@ -110,8 +109,7 @@ public class CreateOrderServlet extends HttpServlet {
 		session.removeAttribute("purchaselist");
 		
 		SendConfirmation send = new SendConfirmation();
-		send.sendMail(to, clientname);
-		
+		send.sendMail(to, clientname);		
 		out.print("success");					
 	}
 

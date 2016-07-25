@@ -18,7 +18,9 @@ public interface MemberDAO {
 	public abstract MemberVO insert(MemberVO bean);
 
 	/*修改一筆會員資料*/
-	public abstract ForumVO update(ForumVO vo);
+
+	public abstract MemberVO update(MemberVO vo);
+
 
 	/*刪除一筆會員資料*/
 	public abstract boolean delete(Integer forumno);

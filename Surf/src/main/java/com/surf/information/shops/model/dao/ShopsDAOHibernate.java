@@ -141,22 +141,20 @@ public class ShopsDAOHibernate implements ShopsDAO {
 	
 	
 	/*特定城市特定種類店家*/
-	/* (non-Javadoc)
-	 * @see com.surf.shops.model.dao.ShopsDAO#selectByCityNoAndKindNo(java.lang.Integer, java.lang.Integer)
-	 */
+	@Override
 	public List<ShopsVO> selectByCityNoAndKindNo(Integer cityNo,Integer kind){
 		Query query = this.getSession().createQuery("from ShopsVO where cityNo=? and kind=?");
 		query.setParameter(0,cityNo);
 		query.setParameter(2,kind);
 		return query.getResultList();
 	}
-	
-	public List<ShopsVO> findShopByCityNoAndKindNo(Integer cityNo,Integer shopKind){
-		String sql = "select * from shops where cityNo=? and kind=?";
+	/*特定種類店家*/
+	@Override
+	public List<ShopsVO> findShopsByKind(Integer shopKind){
+		String sql = "select * from shops where and kind=?";
 		SQLQuery <ShopsVO> query= null;
 		this.getSession().createSQLQuery(sql);
-		query.setParameter(0, cityNo);
-		query.setParameter(1, shopKind);
+		query.setParameter(0, shopKind);
 		query.addEntity("shopsVO", ShopsVO.class);
 		return query.list();
 	}

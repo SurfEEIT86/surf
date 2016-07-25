@@ -46,7 +46,7 @@ public class OrdersDAOHibernate implements OrdersDAO{
 	
 	@Override
 	public List<OrdersVO> findOrdersByMemberNo(Integer memberno) {
-		Query<OrdersVO> query = this.getSession().createQuery("from OrdersVO where memberno=?");
+		Query<OrdersVO> query = this.getSession().createQuery("from OrdersVO where memberno=? order by date desc");
 		query.setParameter(0, memberno);
 		return query.getResultList();
 	}

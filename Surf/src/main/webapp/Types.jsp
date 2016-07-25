@@ -99,6 +99,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>   
+
 			    <a class="navbar-brand" href="/Surf/members/index.jsp" style="font-weight: bold">聚浪</a>
 			</div>
 			 <!-- /.navbar-header -->	 

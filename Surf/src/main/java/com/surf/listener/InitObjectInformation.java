@@ -1,5 +1,7 @@
 package com.surf.listener;
 
+
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -51,6 +53,12 @@ public class InitObjectInformation implements ServletContextListener {
     
 		List<ShopsVO> shopsList = informationService.selectShopsByAll();
 		application.setAttribute("shopList", shopsList);
+		Iterator<ShopsVO> a = shopsList.iterator();
+		System.out.println(shopsList.size());
+		while(a.hasNext()){
+			ShopsVO vo = a.next();
+			System.out.println(vo.getName());
+		}
     }
 	
 }

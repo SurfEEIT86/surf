@@ -80,12 +80,12 @@
 	</bean>
 
 	<bean id="forumService" class="com.surf.forums.model.ForumService">
-		<property name="ArticleDAO" ref="articleDAO"></property>
-		<property name="ReplyDAO" ref="replyDAO"></property>
-		<property name="ReportDAO" ref="reportDAO"></property>
-		<property name="ForumDAO" ref="forumDAO"></property>
-		<property name="MemberDAO" ref="memberDAO"></property>
-		<property name="TrackDAO" ref="trackDAO"></property>
+		<property name="articleDAO" ref="articleDAO"></property>
+		<property name="replyDAO" ref="replyDAO"></property>
+		<property name="reportDAO" ref="reportDAO"></property>
+		<property name="forumDAO" ref="forumDAO"></property>
+		<property name="memberDAO" ref="memberDAO"></property>
+		<property name="trackDAO" ref="trackDAO"></property>
 	</bean>
 	
 	
@@ -94,6 +94,8 @@
 <!-- 商品-->
 	<bean id="memberService" class="com.surf.members.model.MemberService">
 		<property name="memberDAO" ref="memberDAO"></property>
+		<property name="ordersDAO" ref="ordersDAO"></property>
+		<property name="orderDetailsDAO" ref="orderdetailsDAO"></property>
 	</bean>
 	
 	<bean id="productsDAO" class="com.surf.products.model.dao.ProductsDAOHibernate">

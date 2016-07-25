@@ -28,5 +28,8 @@ public interface ShopsDAO {
 	/*特定城市特定種類店家*/
 	public abstract List<ShopsVO> selectByCityNoAndKindNo(Integer cityNo,
 			Integer kind);
+	/*特定種類店家*/
+	public List<ShopsVO> findShopsByKind(Integer shopKind);
+
 
 }

@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+
+<title>Onassis - Bootstrap 3 Theme</title>
+
+<!-- Bootstrap core CSS -->
+<link href="Theme/assets/css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="Theme/assets/css/main.css" rel="stylesheet">
+<link rel="stylesheet" href="Theme/assets/css/font-awesome.min.css">
+
+<script src="Theme/assets/js/jquery.min.js"></script>
+<script src="Theme/assets/js/Chart.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<section id="header">
+		<div class="container">
+			<a href="index.html" class="logo">
+				<img src="Theme/assets/img/logo.svg" alt="聚浪">
+				<h1>聚浪</h1>
+			</a>
+		</div>
+	</section>
+
+	<!-- ========== 個人資料========== -->
+	<section id="services" name="services" class="register-wrap">
+		<div class="container">
+			<div class="base-box">
+				<h3 class="section-title">會員註冊</h3>
+				<div id="updateMember" class="row">
+					<form enctype="multipart/form-data" method="POST" action="<c:url value='MemberUpdate' />">
+						<div class="col-sm-3">
+							<div class="img-upload-wrap">
+								<img src="Theme/assets/img/team01.jpg" width="100%" />
+								<label class="file" title="">
+	                                <input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" id="fileUpload">
+	                            </label>	
+							</div>
+						</div>
+						<div class="col-sm-9">
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="A">姓：</label></dt>
+								<dd>
+									<input name="lastName" id="A" type="text" /> 
+									<span class="error">23</span>
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="B">名：</label></dt>
+								<dd>
+									<input name="firstName" id="B" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="C">使用者名稱：</label></dt>
+								<dd>
+									<input name="id" id="C" type="text" placeholder="此為登入帳號"/> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="D">密碼：</label></dt>
+								<dd>
+									<input name="password" id="D" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="E">確認密碼：</label></dt>
+								<dd>
+									<input name="password2" id="E" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt>性別：</dt>
+								<dd>
+									<input id="sex1" name="gender" type="radio" value="" >
+									<label for="sex1"><span><div></div></span>男</label>
+
+									<input id="sex2" name="gender" type="radio" value="" >
+									<label for="sex2"><span><div></div></span>女</label>
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="F">E-mail：</label></dt>
+								<dd>
+									<input name="email" id="F" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="G">出生日期：</label></dt>
+								<dd>
+									<input name="birthday" id="G" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="H">地址：</label></dt>
+								<dd>
+									<input name="address" id="H" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="I">電話：</label></dt>
+								<dd>
+									<input name="tel" id="I" type="text" /> 
+								</dd>
+							</dl>
+							<dl class="text-item dl-horizontal" >
+								<dt><label for="J">描述：</label></dt>
+								<dd>
+									<textarea type="text" name="intro" id="J"></textarea>
+								</dd>
+							</dl>
+							<input id="submit" type="submit" class="btn" value="確定送出">
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- footer -->
+	<section id="footer">
+		<div class="container">
+			<p class="text-center">© G-surf Group</p>
+		</div>
+	</section>
+
+
+
+					<!-- Bootstrap core JavaScript
+    ================================================== -->
+					<!-- Placed at the end of the document so the pages load faster -->
+					<script src="Theme/assets/js/classie.js"></script>
+					<script src="Theme/assets/js/bootstrap.min.js"></script>
+					<script src="Theme/assets/js/smoothscroll.js"></script>
+					<script src="Theme/assets/js/main.js"></script>
+</body>
+</html>

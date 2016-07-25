@@ -8,7 +8,7 @@
 	    <div class="container">
 	        <h1 class="big-title"> 討論區 </h1>
 	        <div class="path">
-	            <a href="#">首頁</a> /
+	            <a href="../members/index.jsp">首頁</a> /
 	            <span>討論區</span>
 	        </div>
 	    </div>

@@ -99,7 +99,7 @@
 <!--                     <a href="#"><img src="" width="100%" alt=""></a> -->
                 </div>
                 <div class="top-r">
-                    <a href="CreateArticle.jsp"><i class="fa fa-pencil"></i> 發佈</a>
+                    <a href="CreateArticle.jsp" class="creat"><i class="fa fa-pencil"></i> 發佈</a>
                     <div class="username">
                         <div class="dropdown">
                           <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
@@ -109,7 +109,7 @@
                           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li><a href="TrackArticlesMng.jsp">文章追蹤</a></li>
                             <li><a href="ArticlesMng.jsp">文章管理</a></li>
-                            <li><a href="login.do">登出</a></li>
+                            <li><a href="../secure/login.do">登出</a></li>
                           </ul>
                         </div>
                         <img src="/Surf/Service/forums/getMemberPhoto/${user.memberno}" class="img-circle">
