@@ -433,7 +433,7 @@
                 $('#pic3')
                     .attr('src', e.target.result)                   
                     .width(50)
-                    .height(50).css('z-index','99');
+                    .height(50).css('z-index','99');              
             };
             reader.readAsDataURL(input.files[0]);
             $('#can1').show();
