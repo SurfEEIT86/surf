@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+	<class name="com.surf.information.sites.model.SitesVO" table="sites">
+		<id name="siteno" type="integer">
+			<column name="siteno" />
+		</id>
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<property name="longitude" type="double">
+			<column name="longitude" />
+		</property>
+		<property name="latitude" type="double">
+			<column name="latitude" />
+		</property>
+		<property name="cityNo" type="integer">
+			<column name="cityNo" />
+		</property>
+		<property name="status" type="boolean">
+			<column name="status" />
+		</property>
+		<property name="pic1" type="string">
+			<column name="pic1" />
+		</property>
+		<property name="pic2" type="string">
+			<column name="pic2" />
+		</property>
+		<property name="pic3" type="string">
+			<column name="pic3" />
+		</property>
+		<property name="description" type="string">
+			<column name="description" />
+		</property>
+
+	</class>
+</hibernate-mapping>

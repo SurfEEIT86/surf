@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/6/29 ?U?? 12:12:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.brands.model.BrandsVO" table="BRANDS">
+        <id name="brandno" type="java.lang.Integer">
+            <column name="BRANDNO" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+        	<column name="status" />
+        </property>
+        <many-to-one name="prodtypesVO" class="com.surf.producttype.model.ProducttypesVO" access="field" lazy="false" >
+            <column name="typeno" />
+        </many-to-one>
+        <property name="pic" type="java.lang.String">
+            <column name="PIC" />
+        </property>
+        <set name="prods" table="products" lazy="false" cascade="all" inverse="true" order-by="productno desc">
+        	<key><column name="brandno"/></key>
+        	<one-to-many class="com.surf.products.model.ProductsVO"/>
+        </set>
+        <set name="models" table="models" lazy="true" cascade="all" inverse="true" order-by="modelno desc">
+        	<key><column name="brandno"/></key>
+        	<one-to-many class="com.surf.models.model.ModelsVO"/>
+        </set>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+	<class name="com.surf.forums.model.TrackVO" table="tracks">
+		<composite-id>
+           	<key-many-to-one name="articleVO" class="com.surf.forums.model.ArticleVO" lazy="false">
+           		<column name="articleno"></column>
+           	</key-many-to-one>
+           	<key-many-to-one name="memberVO" class="com.surf.members.model.MemberVO" lazy="false">
+           		<column name="memberno"></column>
+           	</key-many-to-one>            
+        </composite-id>
+         <property name="datetime" type="timestamp" column="datetime"/>
+	</class>
+</hibernate-mapping>
