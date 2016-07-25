@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/7/25 ?U?? 04:24:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.customorders.model.CustomOrdersVO" table="CUSTOMORDERSVO">
+        <id name="orderno" type="java.lang.Integer">
+            <column name="ORDERNO" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="memberno" type="java.lang.Integer">
+            <column name="MEMBERNO" />
+        </property>
+        <property name="dimension" type="java.lang.String">
+            <column name="DIMENSION" />
+        </property>
+        <property name="boardcolor" type="java.lang.String">
+            <column name="BOARDCOLOR" />
+        </property>
+        <property name="finsys" type="java.lang.String">
+            <column name="FINSYS" />
+        </property>
+        <property name="material" type="java.lang.String">
+            <column name="MATERIAL" />
+        </property>
+        <property name="frontpic" type="java.lang.String">
+            <column name="FRONTPIC" />
+        </property>
+        <property name="backpic" type="java.lang.String">
+            <column name="BACKPIC" />
+        </property>
+        <property name="date" type="java.sql.Timestamp">
+            <column name="DATE" />
+        </property>
+        <property name="customlogo1" type="java.lang.String">
+        	<column name="customlogo1"/>
+        </property>
+        <property name="customlogo2" type="java.lang.String">
+        	<column name="customlogo2"/>
+        </property>
+        <property name="creditcard" type="java.lang.String">
+        	<column name="creditcard"/>
+        </property>
+        <property name="modelno" type="java.lang.Integer">
+        	<column name="modelno"/>
+        </property>
+    </class>
+</hibernate-mapping>

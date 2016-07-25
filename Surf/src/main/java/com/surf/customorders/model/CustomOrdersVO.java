@@ -1,6 +1,7 @@
 package com.surf.customorders.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class CustomOrdersVO implements Serializable{
 
@@ -13,8 +14,30 @@ public class CustomOrdersVO implements Serializable{
 	private String material;
 	private String frontpic;
 	private String backpic;
-	private byte[] custumlogo1;
-	private byte[] custumlogo2;
+	private Timestamp date;
+	private String customlogo1;
+	private String customlogo2;
+	private String creditcard;
+	private Integer modelno;
+	
+	public Integer getModelno() {
+		return modelno;
+	}
+	public void setModelno(Integer modelno) {
+		this.modelno = modelno;
+	}
+	public String getCreditcard() {
+		return creditcard;
+	}
+	public void setCreditcard(String creditcard) {
+		this.creditcard = creditcard;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
 	
 	public Integer getOrderno() {
 		return orderno;
@@ -64,17 +87,17 @@ public class CustomOrdersVO implements Serializable{
 	public void setBackpic(String backpic) {
 		this.backpic = backpic;
 	}
-	public byte[] getCustumlogo1() {
-		return custumlogo1;
+	public String getCustomlogo1() {
+		return customlogo1;
 	}
-	public void setCustumlogo1(byte[] custumlogo1) {
-		this.custumlogo1 = custumlogo1;
+	public void setCustomlogo1(String customlogo1) {
+		this.customlogo1 = customlogo1;
 	}
-	public byte[] getCustumlogo2() {
-		return custumlogo2;
+	public String getCustomlogo2() {
+		return customlogo2;
 	}
-	public void setCustumlogo2(byte[] custumlogo2) {
-		this.custumlogo2 = custumlogo2;
+	public void setCustomlogo2(String customlogo2) {
+		this.customlogo2 = customlogo2;
 	}
 	
 }

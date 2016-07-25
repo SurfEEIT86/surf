@@ -11,7 +11,14 @@ public class ModelsVO implements Serializable{
 	private Integer modelno;
 	private String name;
 	private String pic;
+	private double price;
 	
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	public BrandsVO getBrandvo() {
 		return brandvo;
 	}

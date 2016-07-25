@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,7 +38,7 @@
 		}
 		
 		#useit{
-			background-color: #D0D0D0;
+			background-color: #D0D0D0;			 
 		}		
 		
 		.panel-title{
@@ -67,8 +68,8 @@
 		
 		.stripe{
 			position:absolute;
-			bottom:28px;
-			left:110px;			
+			top:13px;
+			left:111px;			
 		}
 		
 	</style>
@@ -125,12 +126,12 @@
                      <img id="brand" class="img-responsive s1" src="/Surf${brandbean.pic}" style="display:none">
                 	 <img id="model" class="img-responsive s1" src="/Surf${model.pic}" style="display:none">
                 	 <img id="stripe" class="img-responsive stripe" src="img/board/stripe.png" style="display:none">
-                     <div><span style="font-style: oblique">Deck</span></div>                                                                	  
-                </div>              	
+                     <div><span style="font-style: oblique">Deck</span></div>                                                                                                               	  
+                </div>                            	
                
             <!-- 客製選單 -->                                  								
                 <div class="col-sm-5 wow fadeInLeftBig" data-animation-delay="200">
-                  <form action="CustomCheckOutServlet.do" method="post" Enctype="Multipart/Form-Data">
+                  <form action="CustomCheckOutServlet.do" method="post">
                 	<img src="/Surf/${model.pic}">   
                     <h3 class="section-heading">${model.name}</h3>
 					<div class="sub-title lead3"></div>                 	       
@@ -174,16 +175,16 @@
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
                                              <p>
-											   <label for="width" style="font-style: oblique">寬度:</label>
-									   		   <input name="width" type="text" id="width" readonly style="border:0; font-weight:bold; max-width:100px;">
+											   <label for="length" style="font-style: oblique">長度:</label>
+									   		   <input name="length" type="text" id="length" readonly style="border:0; font-weight:bold; max-width:100px;">
 										   	 </p>
-										    <div id="slider-width"></div>
+										    <div id="slider-length"></div>
 						
 											<p>
-											   <label for="length" style="font-style: oblique">長度:</label>
-											   <input name="length" type="text" id="length" readonly style="border:0; font-weight:bold; max-width:100px;">
+											   <label for="width" style="font-style: oblique">寬度:</label>
+											   <input name="width" type="text" id="width" readonly style="border:0; font-weight:bold; max-width:100px;">
 											</p>
-									 		<div id="slider-length"></div>				
+									 		<div id="slider-width"></div>				
 										
 											<p>
 											   <label for="thick" style="font-style: oblique">厚度:</label>
@@ -224,12 +225,12 @@
 	                                            		<h4 style="font-style: oblique">設定</h4>
 														  <fieldset>												   
 														    <label for="tri">3 Fins</label> <small></small>
-														    <input type="radio" name="fincount" id="tri" value="3"> <br>
+														    <input type="radio" name="fincount" id="tri" value="3 fins"> <br>
 														    <label for="quad">4 Fins</label>
-														    <input type="radio" name="fincount" id="quad" value="4"> <br>
+														    <input type="radio" name="fincount" id="quad" value="4 fins"> <br>
 														    <label for="five">5 Fins</label>
-														    <input type="radio" name="fincount" id="five" value="5"> <br>
-														    <small>(+NT$1000)</small>
+														    <input type="radio" name="fincount" id="five" value="5 fins"> <br>
+														    <small>(+NT$1,000)</small>
 														  </fieldset>
 	                                            	</div>
                                             </div>
@@ -275,8 +276,7 @@
                                              	<button id="gold" type="button" class="img-circle" style="background-color:#FFEC8B; width:30px; height:30px" value="#FFEC8B"></button>                                            	            	                                         	                                          	                             	                                           	            	
                            					</div> 
                            					<hr>
-                           					<div class="row" style="margin:5px; white-space: nowrap;">
-                           						
+                           					<div class="row" style="margin:5px; white-space: nowrap;">                         						
 		                                        <div style="float:left; margin-left:30px; padding:5px;">
 		                                        	<input id="change" type="color">		                                        
 		                                        	<input id="color" name="boardcolor" type="hidden" value="original">
@@ -297,17 +297,19 @@
                                     <div id="collapseSix" class="panel-collapse collapse">
                                    		 <div class="panel-body">                                	
 		                                    	<div style="padding:10px;">
-		                                        	<span style="font-style: oblique;">圖片1:</span><input id="p1" name="p1" type="file" onchange="readURL1(this);" accept="image/gif, image/jpeg, image/png"/>
+		                                        	<span style="font-style: oblique;">圖片1:</span><input id="p1" type="file" onchange="readURL1(this);" accept="image/gif, image/jpeg, image/png"/>
 		                                        	<a id="can1" href="#" onclick="return false" style="float:right; display:none"><span style="text-decoration:underline;">取消</span></a>	                                 	 
 		                                        </div>		                                        
 	                                                                    	
 		                                    	<div style="padding:10px;">
-		                                        	<span style="font-style: oblique">圖片2:</span><input id="p2" name="p2" type="file" onchange="readURL2(this);" accept="image/gif, image/jpeg, image/png"/>
+		                                        	<span style="font-style: oblique">圖片2:</span><input id="p2" type="file" onchange="readURL2(this);" accept="image/gif, image/jpeg, image/png"/>
 		                                        	<a id="can2" href="#" onclick="return false" style="float:right; display:none "><span style="text-decoration:underline;">取消</span></a>	
 		                                        </div>
 		                                        
 		                                        <p><a id="print" class="btn btn-embossed btn-info" href="#" role="button" onclick="return false;">儲存</a></p>
-	                                      </div>	                                                                                                                    
+	                                      </div>
+	                                      <input id="logo1" name="logo1" type="hidden">                                                                                                                    
+	                                      <input id="logo2" name="logo2" type="hidden">                                                                                                                    
                                     </div>
                            </div>                                                                                                   
                            
@@ -321,7 +323,7 @@
                                     <div id="collapseSeven" class="panel-collapse collapse">
                                     	
                                     	<div style="margin-left:20px;padding:10px;">
-                                    		<textarea name="memo" cols="30" rows="5" id="memo" style="resize:none;"></textarea>	  
+                                    		<textarea name="remark" cols="30" rows="5" id="memo" style="resize:none;"></textarea>	  
                                     	</div>                                  	                                                                                                     
                                     </div>
                            </div>
@@ -330,7 +332,9 @@
                            <input type="hidden" name="print1" id="prnt1">
                            <input type="hidden" name="print2" id="prnt2">
 	                       	                                                                                                                           		                                                  
-                  	  	</div><!-- Panel Group -->  
+                  	  	</div><!-- Panel Group -->
+                  	  	<div><span style="font-weight:bold">總金額:NT$</span><span id="price" style="font-weight:bold; text-decoration:underline; font-size:large"><fmt:formatNumber value="${model.price}" pattern="#,###,###"/></span></div>  
+                  	  	<input id="total" name="price" type="hidden" value="${model.price}">  
                   	  	<input type="submit" class="btn btn-embossed btn-success" style="margin-left:400px;" value="結帳"/>
        				</form>                   	    	                 	  	                  	  	                  	  	                  	  									 				              					   													  						                   											 					 					 
 				</div>  <!-- 客製選單 --> 
@@ -433,7 +437,8 @@
                 $('#pic3')
                     .attr('src', e.target.result)                   
                     .width(50)
-                    .height(50).css('z-index','99');              
+                    .height(50).css('z-index','99');
+                $('#logo1').val(e.target.result);
             };
             reader.readAsDataURL(input.files[0]);
             $('#can1').show();
@@ -448,6 +453,7 @@
                     .attr('src', e.target.result)
                     .width(50)
                     .height(50).css('z-index','99');
+                $('#logo2').val(e.target.result);
             };
             reader.readAsDataURL(input.files[0]);
             $('#can2').show();
@@ -640,6 +646,13 @@
 				$('#FCS5').fadeIn();
 				$('#FCS4').hide();
 				$('#FCS3').hide();
+				
+				var x = ${model.price + 1000};
+				var y = String(x).substring(0,2)+',';
+				var z = String(x).substr(2);
+				x = y+z;			
+				$('#price').empty().text(x);
+				$('#total').val(x);			
 			}	
 		  }else{
 			 if($(':checked').val()==3){
@@ -654,10 +667,16 @@
 				$('#Future5').fadeIn();
 				$('#Future4').hide();
 				$('#Future3').hide();
+				
+				var x = ${model.price + 1000};
+				var y = String(x).substring(0,2)+',';
+				var z = String(x).substr(2);
+				x = y+z;			
+				$('#price').empty().text(x);
+				$('#total').val(x);
 			}	  		  
 		  }
-		}
-	  
+		}  
 	    	  
 	  //尺寸	  
 	  function toFeet(n) {
@@ -698,27 +717,28 @@
 		  }	  	  
 	  }
   
-	  $( "#slider-width" ).slider({
+	  $( "#slider-length" ).slider({
 	        min: 60,
 	        max: 76,
 	        value: 65,
 	        range: "max",
 	        slide: function(event, ui) {				
-	            $( "#width" ).val(toFeet(ui.value));
+	            $( "#length" ).val(toFeet(ui.value));
 	        }
 	    });
-  	  $( "#width" ).val(toFeet($( "#slider-width" ).slider("value"))); 	   	  	  
-	  $( "#slider-length" ).slider({
+  	  $( "#length" ).val(toFeet($( "#slider-length" ).slider("value")));
+  	  
+	  $( "#slider-width" ).slider({
 	        min: 18,
 	        max: 20,
 	        value: 19,
 	        step: 1/8,
 	        range: "max",
 	        slide: function(event, ui) {		        	
- 	            $( "#length" ).val(toInch(ui.value));                                    
+ 	            $( "#width" ).val(toInch(ui.value));                                    
 	        }
 	    });
-   	 $( "#length" ).val(toInch($( "#slider-length" ).slider("value")));
+   	 $( "#width" ).val(toInch($( "#slider-width" ).slider("value")));
 	  
   	 $( "#slider-thick" ).slider({
 	        min: 1,
