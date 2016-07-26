@@ -29,6 +29,8 @@
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="css/magnific-popup.css"> 
 	<link rel="stylesheet" href="slider/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/alertify.core.css" />
+	<link rel="stylesheet" href="css/alertify.default.css" /> 
 	
 	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->	
 	<style type="text/css">					
@@ -107,8 +109,9 @@
         <div class="container">			
             <div class="row"> 
               
-            <!-- 板子背面 -->      							
-				<div id="bb" class="col-sm-3 pull-right wow fadeInRightBig">                                  
+            <!-- 板子背面 --> 
+            <div id="boards" class="col-sm-6 pull-right wow fadeInRightBig">     							
+				<div id="bb" class="col-sm-6 pull-right wow fadeInRightBig">                                  
                 	 <img id="back" class="img-responsive" style="opacity:0.7" src="img/board/poly-back.png" alt="">
                 	 <img id="FCS3" class="img-responsive fcs" style="opacity:1; display:none" src="img/fins/FCS3.png">  
                 	 <img id="FCS4" class="img-responsive fcs" style="opacity:1; display:none" src="img/fins/FCS4.png">  
@@ -121,17 +124,21 @@
                 </div>  
                 
             <!-- 板子正面 -->                  
-                <div id="ff" class="col-sm-3 pull-right wow fadeInRightBig">
+                <div id="ff" class="col-sm-6 pull-right wow fadeInRightBig">
                      <img id="front" class="img-responsive" style="opacity:0.7" src="img/board/poly-front.png" alt="">
                      <img id="brand" class="img-responsive s1" src="/Surf${brandbean.pic}" style="display:none">
                 	 <img id="model" class="img-responsive s1" src="/Surf${model.pic}" style="display:none">
                 	 <img id="stripe" class="img-responsive stripe" src="img/board/stripe.png" style="display:none">
                      <div><span style="font-style: oblique">Deck</span></div>                                                                                                               	  
-                </div>                            	
+                </div>
+                
+                 <img id="pic3" class="dragpic" src="" />
+                 <img id="pic4" class="dragpic" src="" />
+            </div>                            	
                
             <!-- 客製選單 -->                                  								
                 <div class="col-sm-5 wow fadeInLeftBig" data-animation-delay="200">
-                  <form action="CustomCheckOutServlet.do" method="post">
+                  <form action="CustomCheckOutServlet.do" method="post" onsubmit="return check();">
                 	<img src="/Surf/${model.pic}">   
                     <h3 class="section-heading">${model.name}</h3>
 					<div class="sub-title lead3"></div>                 	       
@@ -225,11 +232,11 @@
 	                                            		<h4 style="font-style: oblique">設定</h4>
 														  <fieldset>												   
 														    <label for="tri">3 Fins</label> <small></small>
-														    <input type="radio" name="fincount" id="tri" value="3 fins"> <br>
+														    <input type="radio" name="fincount" id="tri" value="3"> <br>
 														    <label for="quad">4 Fins</label>
-														    <input type="radio" name="fincount" id="quad" value="4 fins"> <br>
+														    <input type="radio" name="fincount" id="quad" value="4"> <br>
 														    <label for="five">5 Fins</label>
-														    <input type="radio" name="fincount" id="five" value="5 fins"> <br>
+														    <input type="radio" name="fincount" id="five" value="5"> <br>
 														    <small>(+NT$1,000)</small>
 														  </fieldset>
 	                                            	</div>
@@ -267,7 +274,7 @@
                                     <div id="collapseFive" class="panel-collapse collapse">
                                         <div class="panel-body">
                                         	<div class="row" style="margin:5px;">                                        	
-                                             	<button type="button" id="orginal" class="img-circle" style="background-color:#FFFFF0; width:30px; height:30px" value="original"></button>
+                                             	<button type="button" id="orginal" class="img-circle" style="background-color:#FFFFF0; width:30px; height:30px" value="Original"></button>
                                              	<button id="blue" type="button" class="img-circle" style="background-color:#5CACEE; width:30px; height:30px" value="#5CACEE"></button>
                                              	<button id="red" type="button" class="img-circle" style="background-color:#B22222; width:30px; height:30px" value="#B22222"></button>
                                              	<button id="yellow" type="button" class="img-circle" style="background-color:#FFC125; width:30px; height:30px" value="#FFC125"></button>
@@ -279,7 +286,7 @@
                            					<div class="row" style="margin:5px; white-space: nowrap;">                         						
 		                                        <div style="float:left; margin-left:30px; padding:5px;">
 		                                        	<input id="change" type="color">		                                        
-		                                        	<input id="color" name="boardcolor" type="hidden" value="original">
+		                                        	<input id="color" name="boardcolor" type="hidden" value="Original">
 		                                        </div>		                                                                          
                                        		</div>                                 
                                         </div>
@@ -306,7 +313,6 @@
 		                                        	<a id="can2" href="#" onclick="return false" style="float:right; display:none "><span style="text-decoration:underline;">取消</span></a>	
 		                                        </div>
 		                                        
-		                                        <p><a id="print" class="btn btn-embossed btn-info" href="#" role="button" onclick="return false;">儲存</a></p>
 	                                      </div>
 	                                      <input id="logo1" name="logo1" type="hidden">                                                                                                                    
 	                                      <input id="logo2" name="logo2" type="hidden">                                                                                                                    
@@ -329,29 +335,23 @@
                            </div>
                                                    
                            <a id="auto" style="display:none;"></a> 
-                           <input type="hidden" name="print1" id="prnt1">
-                           <input type="hidden" name="print2" id="prnt2">
+                           <input type="hidden" name="print" id="prnt">
 	                       	                                                                                                                           		                                                  
                   	  	</div><!-- Panel Group -->
                   	  	<div><span style="font-weight:bold">總金額:NT$</span><span id="price" style="font-weight:bold; text-decoration:underline; font-size:large"><fmt:formatNumber value="${model.price}" pattern="#,###,###"/></span></div>  
                   	  	<input id="total" name="price" type="hidden" value="${model.price}">  
-                  	  	<input type="submit" class="btn btn-embossed btn-success" style="margin-left:400px;" value="結帳"/>
+                  	  	
+                  	  	<div class="row">
+	                  	  	<a id="print" class="btn btn-embossed btn-info" href="#" role="button" onclick="return false;" style="margin-left:330px;">儲存</a>
+	                  	  	<input type="submit" class="btn btn-embossed btn-success" style="margin-left:10px;" value="結帳"/>
+       					</div>
        				</form>                   	    	                 	  	                  	  	                  	  	                  	  									 				              					   													  						                   											 					 					 
-				</div>  <!-- 客製選單 --> 
-				
-					<div id="showimg" class="col-sm-1" style="position:absolute; height:400px; left:550px; top:400px">
-						<div style="position: absolute; top:100px">					
-	                		<img id="pic3" class="dragpic" src="" draggable="true">
-	                	</div>	 <br><br>               	                		                			                	
-	                	<div style="position: absolute; top:150px">				                		             	                	
-	                		<img id="pic4" class="dragpic" src="" draggable="true">	
-	                	</div>	                	
-	                </div>       
+				</div>  <!-- 客製選單 -->                 			
+	          </div>       
             </div>
         </div>
         <!-- /.container -->
-             	
-    </div>			
+             			
 
     <!-- JavaScript -->
     <script src="js/jquery-2.2.4.min.js"></script>
@@ -364,27 +364,35 @@
 	<script src="js/stickUp.min.js"></script>
 	<script src="js/html2canvas.js"></script>
     <script src="slider/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/alertify.min.js"></script>
 	<script type="text/javascript">
 	
 	  jQuery(function($) {
 		$(document).ready(function() {
 		  $('.navbar-default').stickUp();	  
 		});			
-	  });		  	  
+	  });	
+	  
+	  function check(){		  
+		  if($('#finsys').val()==null || $('#finsys').val().trim()==""){
+			  alertify.error("請設定尾舵系統");
+			  return false;
+		  }else if($('#prnt').val()==null || $('#prnt').val().trim()==""){		  
+			  alertify.error("請先儲存設定");
+			  return false;
+		  }else{
+			  return true;
+		  }
+	  }
 	  
 	  //上傳圖片
 	
 	 $('#print').click(function(){ 
-		 html2canvas($("#ff"), {
+		 html2canvas($("#boards"), {
              onrendered: function(canvas) {           	 
-            	 $('#prnt1').val(canvas.toDataURL("image/png"));                   	 	
+            	 $('#prnt').val(canvas.toDataURL("image/png"));              	 
              }
          }); 
-		 html2canvas($("#bb"), {
-             onrendered: function(canvas) {           	 
-            	 $('#prnt2').val(canvas.toDataURL("image/png"));             	 
-             }
-         }); 	
 	 });  	 	  	  
 	  
 	 $('.dragpic').draggable({		  
@@ -394,13 +402,13 @@
 	      cursor: "move", 
 	 });
 	  
- 	 $('#showimg').droppable();	 
+ 	 $('#boards').droppable();	 
 	 $('#front').droppable({
 	      accept: "*",
 	      tolerance: "fit",
 	      classes:{
 	    	  "ui-droppable-active": "ui-state-highlight"
-     	  },drop: function(event, ui){
+     	  },drop: function(event, ui){   		  
       	  }
 	 });
 	 
@@ -469,7 +477,7 @@
 	  
 	  function changeColor(){
 		  
-		  if($(this).val()=="original"){			  
+		  if($(this).val()=="Original"){			  
 			  if($('#materials').val()=="Polyester"){
 				  image.src = 'img/board/poly-back.png';   
 		    	  image2.src = 'img/board/poly-front.png';
@@ -479,7 +487,7 @@
 		    	  image2.src = 'img/board/front.png';			  
 			  }
 			  $('.stripe').hide();
-			  inputcolor.val("original");
+			  inputcolor.val("Original");
 			  
 		  }else {				  			  
 	    	  image = document.getElementById("back");
@@ -631,17 +639,29 @@
 	  });
 	  
 	  $(':radio').click(showFins); 
-		  
+	
+	  var p=${model.price};
+	  p1 = String(p).substring(0,2)+',';
+	  p2 = String(p).substr(2);
+	  var price = p1+p2;	
+	  
 	  function showFins(){		  
 		  if(finsys.val()=='FCSII'){
 			if($(':checked').val()==3){
 				$('#FCS3').fadeIn();
 				$('#FCS4').hide();
 				$('#FCS5').hide();
+				
+				$('#total').val(${model.price});
+				$('#price').empty().text(price);
+				
 			}else if($(':checked').val()==4){
 				$('#FCS4').fadeIn();
 				$('#FCS3').hide();
 				$('#FCS5').hide();
+				$('#total').val(${model.price});
+				$('#price').empty().text(price);
+				
 			}else if($(':checked').val()==5){
 				$('#FCS5').fadeIn();
 				$('#FCS4').hide();
@@ -650,8 +670,8 @@
 				var x = ${model.price + 1000};
 				var y = String(x).substring(0,2)+',';
 				var z = String(x).substr(2);
-				x = y+z;			
-				$('#price').empty().text(x);
+				var w = y+z;			
+				$('#price').empty().text(w);
 				$('#total').val(x);			
 			}	
 		  }else{
@@ -659,10 +679,16 @@
 				$('#Future3').fadeIn();
 				$('#Future4').hide();
 				$('#Future5').hide();
+				$('#total').val(${model.price});
+				$('#price').empty().text(price);
+				
 			}else if($(':checked').val()==4){
 				$('#Future4').fadeIn();
 				$('#Future3').hide();
 				$('#Future5').hide();
+				$('#total').val(${model.price});
+				$('#price').empty().text(price);
+				
 			}else if($(':checked').val()==5){
 				$('#Future5').fadeIn();
 				$('#Future4').hide();
@@ -671,9 +697,9 @@
 				var x = ${model.price + 1000};
 				var y = String(x).substring(0,2)+',';
 				var z = String(x).substr(2);
-				x = y+z;			
-				$('#price').empty().text(x);
-				$('#total').val(x);
+				var w = y+z;			
+				$('#price').empty().text(w);
+				$('#total').val(x);	
 			}	  		  
 		  }
 		}  

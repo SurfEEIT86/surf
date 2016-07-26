@@ -12,14 +12,40 @@ public class CustomOrdersVO implements Serializable{
 	private String boardcolor;
 	private String finsys;
 	private String material;
-	private String frontpic;
-	private String backpic;
+	private String boardpic;
 	private Timestamp date;
 	private String customlogo1;
 	private String customlogo2;
 	private String creditcard;
 	private Integer modelno;
+	private String address;
+	private Double price;
+	private String remark;
 	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public String getBoardpic() {
+		return boardpic;
+	}
+	public void setBoardpic(String boardpic) {
+		this.boardpic = boardpic;
+	}
 	public Integer getModelno() {
 		return modelno;
 	}
@@ -74,18 +100,6 @@ public class CustomOrdersVO implements Serializable{
 	}
 	public void setMaterial(String material) {
 		this.material = material;
-	}
-	public String getFrontpic() {
-		return frontpic;
-	}
-	public void setFrontpic(String frontpic) {
-		this.frontpic = frontpic;
-	}
-	public String getBackpic() {
-		return backpic;
-	}
-	public void setBackpic(String backpic) {
-		this.backpic = backpic;
 	}
 	public String getCustomlogo1() {
 		return customlogo1;

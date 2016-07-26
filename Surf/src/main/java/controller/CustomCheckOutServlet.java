@@ -43,15 +43,12 @@ public class CustomCheckOutServlet extends HttpServlet {
 		String fincount = request.getParameter("fincount");
 		String finsys = request.getParameter("finsys");
 		String boardcolor = request.getParameter("boardcolor");
-		String frontpic = request.getParameter("print1");
-		String backpic = request.getParameter("print2");
+		String boardpic = request.getParameter("print");
 		String customlogo1 = request.getParameter("logo1");	
 		String remark = request.getParameter("remark");
 		Double price = Double.parseDouble(request.getParameter("price"));
-		
-		System.out.println(price);
-		
-		finsys = finsys+"," +fincount;
+				
+		finsys = finsys+"," +fincount+" Fins";
 		String dimension = length+","+width+","+thick;	
 		
 		session.setAttribute("dimension", dimension);
@@ -59,13 +56,21 @@ public class CustomCheckOutServlet extends HttpServlet {
 		session.setAttribute("boardcolor", boardcolor);
 		session.setAttribute("customlogo1", customlogo1);
 		session.setAttribute("customlogo2", customlogo2);
-		session.setAttribute("frontpic", frontpic);
-		session.setAttribute("backpic", backpic);
+		session.setAttribute("boardpic", boardpic);
 		session.setAttribute("finsys", finsys);
 		session.setAttribute("remark", remark);
 		session.setAttribute("price", price);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("CheckCustomOrder.jsp");
-		rd.forward(request, response);			
+		
+		MemberVO vo = (MemberVO) session.getAttribute("user");  //LoginServlet放的
+		if(vo!=null){
+			RequestDispatcher rd = request.getRequestDispatcher("CheckCustomOrder.jsp");
+			rd.forward(request, response);				
+		}else{		
+			String uri = "/Surf/CheckCustomOrder.jsp";
+			session.setAttribute("dest", uri);					
+			response.sendRedirect("/Surf/members/index.jsp");					
+		}
+			
 	}
 }

@@ -43,7 +43,7 @@
 
 	<aop:config>
 		<aop:pointcut id="pointcutService"
-			expression="execution(* com.surf.*.model.*Service.*(..))||execution(* com.surf.products.model.dao.*.*(..))||execution(* com.surf.brands.model.dao.*.*(..))||execution(* com.surf.producttype.model.dao.*.*(..))||execution(* com.surf.orders.model.dao.*.*(..))||execution(* com.surf.models.model.dao.*.*(..))||execution(* com.surf.information.model.InformationService.*(..))" />
+			expression="execution(* com.surf.*.model.*Service.*(..))||execution(* com.surf.customorders.model.dao.*.*(..))||execution(* com.surf.products.model.dao.*.*(..))||execution(* com.surf.brands.model.dao.*.*(..))||execution(* com.surf.producttype.model.dao.*.*(..))||execution(* com.surf.orders.model.dao.*.*(..))||execution(* com.surf.models.model.dao.*.*(..))||execution(* com.surf.information.model.InformationService.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcutService" />
 	</aop:config>
 
@@ -116,6 +116,9 @@
 		<constructor-arg ref="sessionFactory"></constructor-arg>
 	</bean>
 	<bean id="modelsDAO" class="com.surf.models.model.dao.ModelsDAOHibernate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+	<bean id="customordersDAO" class="com.surf.customorders.model.dao.CustomOrdersDAOHibernate">
 		<constructor-arg ref="sessionFactory"></constructor-arg>
 	</bean>
 
