@@ -3,6 +3,8 @@ package com.surf.customorders.model;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import com.surf.models.model.ModelsVO;
+
 public class CustomOrdersVO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -17,10 +19,11 @@ public class CustomOrdersVO implements Serializable{
 	private String customlogo1;
 	private String customlogo2;
 	private String creditcard;
-	private Integer modelno;
+	private ModelsVO modelsvo;
 	private String address;
 	private Double price;
 	private String remark;
+	private Integer status;
 	
 	public String getAddress() {
 		return address;
@@ -46,12 +49,12 @@ public class CustomOrdersVO implements Serializable{
 	public void setBoardpic(String boardpic) {
 		this.boardpic = boardpic;
 	}
-	public Integer getModelno() {
-		return modelno;
-	}
-	public void setModelno(Integer modelno) {
-		this.modelno = modelno;
-	}
+//	public Integer getModelno() {
+//		return modelno;
+//	}
+//	public void setModelno(Integer modelno) {
+//		this.modelno = modelno;
+//	}
 	public String getCreditcard() {
 		return creditcard;
 	}
@@ -112,6 +115,18 @@ public class CustomOrdersVO implements Serializable{
 	}
 	public void setCustomlogo2(String customlogo2) {
 		this.customlogo2 = customlogo2;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public ModelsVO getModelsvo() {
+		return modelsvo;
+	}
+	public void setModelsvo(ModelsVO modelsvo) {
+		this.modelsvo = modelsvo;
 	}
 	
 }

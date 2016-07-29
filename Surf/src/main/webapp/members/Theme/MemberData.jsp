@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 <meta charset="utf-8">
@@ -283,16 +284,64 @@
 					</tr>
 				<c:forEach var="order" items="${orderList}">
 					<tr class="toggle-dt">
-						<td>${order.orderno}</td>
-						<td>${order.datetime}</td>
-						<td>${order.status}</td>
-						<td>${order.totalprice}</td>
+						<td><fmt:formatDate value="${order.datetime}" pattern="yyyyMMdd"></fmt:formatDate>A00${order.orderno}</td>
+						<td><fmt:formatDate value="${order.datetime}" pattern="yyyy-MM-dd hh:mm"></fmt:formatDate></td>
+						<c:if test="${order.status==1}">
+							<td>已付款</td>
+						</c:if>
+						<c:if test="${order.status==2}">
+							<td>已出貨</td>
+						</c:if>
+						<c:if test="${order.status==3}">
+							<td>已到貨</td>
+						</c:if>
+						
+						<td>NT$<fmt:formatNumber value="${order.totalprice}" pattern="#,###,###"></fmt:formatNumber></td>
 						<td><a href="MemberOrderDetail?orderNo=${order.orderno}" class="btn more-btn">查看</a></td>
 					</tr>
 				</c:forEach>
 			</table>
 
-			<div />	
+			</div>	
+		</div>
+	</section>
+	
+<!-- 	客製化訂單 -->
+	<section id="contact" name="contact">
+		<div class="container">
+			<h3 class="section-title">客製化訂單紀錄</h3>
+
+			<div class="divcss5-right">
+
+				<table border="1" width="100%" class="order-ls-table">
+					<tr>
+						<th>訂單編號</th>
+						<th>訂單時間</th>
+						<th>商品狀態</th>
+						<th>總計金額</th>
+						<th>詳細內容</th>
+					</tr>
+				<c:forEach var="customorders" items="${customorders}">
+					<tr class="toggle-dt">
+						<td><fmt:formatDate value="${customorders.date}" pattern="yyyyMMdd"></fmt:formatDate>C00${customorders.orderno}</td>
+						<td><fmt:formatDate value="${customorders.date}" pattern="yyyy-MM-dd hh:mm"></fmt:formatDate></td>
+						<c:if test="${customorders.status==1}">
+							<td>已付款</td>
+						</c:if>
+						<c:if test="${customorders.status==2}">
+							<td>已出貨</td>
+						</c:if>
+						<c:if test="${customorders.status==3}">
+							<td>已到貨</td>
+						</c:if>
+						
+						<td>NT$<fmt:formatNumber value="${customorders.price}" pattern="#,###,###"></fmt:formatNumber></td>
+						<td><a href="MemberCustomOrderDetail.do?no=${customorders.orderno}" class="btn more-btn">查看</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+
+			</div>	
 		</div>
 	</section>
 

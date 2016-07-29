@@ -12,10 +12,10 @@
         <property name="memberno" type="java.lang.Integer">
             <column name="MEMBERNO" />
         </property>
-        
-         <property name="modelno" type="java.lang.Integer">
-        	<column name="modelno"/>
-        </property>
+             
+        <many-to-one name="modelsvo" class="com.surf.models.model.ModelsVO" access="field" lazy="false" >
+            <column name="modelno" />
+        </many-to-one>
         
         <property name="dimension" type="java.lang.String">
             <column name="DIMENSION" />
@@ -54,6 +54,9 @@
         </property>
         <property name="boardcolor" type="java.lang.String">
             <column name="BOARDCOLOR" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
         </property>
     </class>
 </hibernate-mapping>

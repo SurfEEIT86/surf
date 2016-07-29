@@ -342,7 +342,7 @@
                   	  	<input id="total" name="price" type="hidden" value="${model.price}">  
                   	  	
                   	  	<div class="row">
-	                  	  	<a id="print" class="btn btn-embossed btn-info" href="#" role="button" onclick="return false;" style="margin-left:330px;">儲存</a>
+	                  	  	<a id="print" class="btn btn-embossed btn-info" href="" role="button" onclick="return false;" style="margin-left:330px;">儲存</a>
 	                  	  	<input type="submit" class="btn btn-embossed btn-success" style="margin-left:10px;" value="結帳"/>
        					</div>
        				</form>                   	    	                 	  	                  	  	                  	  	                  	  									 				              					   													  						                   											 					 					 
@@ -390,7 +390,7 @@
 	 $('#print').click(function(){ 
 		 html2canvas($("#boards"), {
              onrendered: function(canvas) {           	 
-            	 $('#prnt').val(canvas.toDataURL("image/png"));              	 
+            	 $('#prnt').val(canvas.toDataURL("image/png"));             	 
              }
          }); 
 	 });  	 	  	  

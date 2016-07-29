@@ -35,7 +35,7 @@ public class ProductsDAOHibernate implements ProductsDAO{
 	@Override
 	public List<ProductsVO> selectAll(){
 		Session session = this.getSession();
-		Query query = session.createQuery("from ProductsVO order by productno desc");
+		Query query = session.createQuery("from ProductsVO order by NEWID()");
 		List<ProductsVO> prods = query.list();
 		return prods;
 	}

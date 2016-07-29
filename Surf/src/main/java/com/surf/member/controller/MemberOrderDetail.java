@@ -41,7 +41,7 @@ public class MemberOrderDetail extends HttpServlet {
 		
 	}
 	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+		HttpServletResponse response) throws ServletException, IOException {
 		String orderNO = request.getParameter("orderNo");
 		Integer no;
 		try {

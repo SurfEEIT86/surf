@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 <meta charset="utf-8">
@@ -82,17 +83,26 @@
 						<th>總計金額</th>
 					</tr>
 					<tr class="toggle-dt">
-						<td>${orderVO.orderno}</td>
-						<td>${orderVO.datetime}</td>
-						<td>${orderVO.status}</td>
-						<td>${orderVO.totalprice}</td>
+						<td><fmt:formatDate value="${orderVO.datetime}" pattern="yyyyMMdd"></fmt:formatDate>A00${orderVO.orderno}</td>
+						<td><fmt:formatDate value="${orderVO.datetime}" pattern="yyyy-MM-dd hh:mm"></fmt:formatDate></td>
+						<c:if test="${orderVO.status==1}">
+							<td>已付款</td>
+						</c:if>
+						<c:if test="${orderVO.status==2}">
+							<td>已出貨</td>
+						</c:if>
+						<c:if test="${orderVO.status==3}">
+							<td>已到貨</td>
+						</c:if>
+						<td>NT$<fmt:formatNumber value="${orderVO.totalprice}" pattern="#,###,###"></fmt:formatNumber></td>
 					</tr>
 					<tr class="dt">
 						<td colspan="4">
 							<table class="order-table" width="100%">
 								<tr>
-									<th class="pd-name">品項</th>
+									<th class="pd-name">品項</th>									
 									<th width="90px">產品編號</th>
+									<th width="200px">尺寸</th>
 									<th width="90px" class="price">單價</th>
 									<th width="60px">數量</th>
 									<th width="90px" class="price">小計</th>
@@ -102,16 +112,17 @@
 									<td class="pd-name">
 										<img src="<c:url value="../../${productsInfo[var.index].pic1}" />" alt="">
 										<span class="name">${productsInfo[var.index].name}</span>
-									</td>
+									</td>									
 									<td>${orderDetial.productno}</td>
-									<td class="price">${productsInfo[var.index].price}</td>
+									<td>${productsInfo[var.index].size}</td>
+									<td class="price">NT$<fmt:formatNumber value="${productsInfo[var.index].price}" pattern="#,###,###"></fmt:formatNumber></td>
 									<td>${orderDetial.quantity}</td>
-									<td>${orderDetial.quantity * productsInfo[var.index].price}</td>
+									<td>NT$<fmt:formatNumber value="${orderDetial.quantity * productsInfo[var.index].price}" pattern="#,###,###"></fmt:formatNumber></td>
 									</tr>
 								</c:forEach>
 								<tr class="total-price">
 									<td colspan="4" style="text-align:right">總計</td>
-									<td class="price">${orderVO.totalprice}</td>
+									<td class="price">NT$<fmt:formatNumber value="${orderVO.totalprice}" pattern="#,###,###"></fmt:formatNumber></td>
 								</tr>
 							</table>
 						</td>
@@ -121,7 +132,7 @@
 					<a href="MemberData.jsp#contact" class="btn">回訂單列表</a>
 				</div>
 
-			<div />	
+			</div>	
 		</div>
 	</section>
 

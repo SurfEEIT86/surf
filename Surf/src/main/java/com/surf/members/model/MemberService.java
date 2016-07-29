@@ -1,6 +1,7 @@
 package com.surf.members.model;
 import java.util.List;
 
+import com.surf.customorders.model.CustomOrdersDAO;
 import com.surf.orderdetails.model.OrderDetailsDAO;
 import com.surf.orderdetails.model.OrderDetailsVO;
 import com.surf.orders.model.OrdersDAO;
@@ -11,10 +12,10 @@ public class MemberService {
 	MemberDAO memberDAO=null;
 	OrdersDAO ordersDAO=null;
 	OrderDetailsDAO orderDetailsDAO=null;
+	
 	public void setMemberDAO(MemberDAO memberDAO) {
 		this.memberDAO = memberDAO;
-	}
-	
+	}		
 	
 	public void setOrderDetailsDAO(OrderDetailsDAO orderDetailsDAO) {
 		this.orderDetailsDAO = orderDetailsDAO;
@@ -59,4 +60,6 @@ public class MemberService {
 	public List<OrderDetailsVO> findOrderDetialsByOrderNo(Integer no){
 		return orderDetailsDAO.select(no);
 	}
+		
+	
 }

@@ -28,8 +28,14 @@ public class CustomOrdersDAOHibernate implements CustomOrdersDAO {
 	}
 	
 	@Override
+	public CustomOrdersVO select(Integer orderno){
+		return this.getSession().get(CustomOrdersVO.class, orderno);	
+	}
+	
+	@Override
 	public List<CustomOrdersVO> selectAll(Integer memberno){
-		Query query= this.getSession().createQuery("select from CustomOrdersVO where memberno=? orderby date desc");
+		Query query= this.getSession().createQuery("from CustomOrdersVO where memberno=? order by date desc");
+		query.setParameter(0, memberno);
 		return query.list();
 	}
 }

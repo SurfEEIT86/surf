@@ -77,6 +77,7 @@
 		vertical-align: middle;
 	}
 	
+	
 </style>
 </head>
 <script src="js/jquery-2.2.4.min.js"></script>
@@ -120,121 +121,7 @@
 			    <a class="navbar-brand" href="/Surf/members/index.jsp" style="font-weight: bold">聚浪</a>
 			</div>
 			 <!-- /.navbar-header -->	 
-            <ul class="nav navbar-top-links navbar-right">
-			<!--信箱 -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                
-                <!-- 鬧鐘 -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
+            <ul class="nav navbar-top-links navbar-right">			
                 
                 <!-- 購物車 -->
                 <li class="dropdown">
@@ -249,13 +136,24 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                   
+                    <c:if test="${not empty user}">
+                        <li><a href="/Surf/members/ShowMemberData"><i class="fa fa-user fa-fw"></i> 會員專區</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="/Surf/members/ShowMemberData#contact"><i class="fa fa-gear fa-fw"></i> 訂單查詢 </a>
                         </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                    </c:if>
+                        <li class="divider"></li> 
+                         <c:if test="${empty user}">
+                       		<li><a href="/Surf/members/index.jsp"><i class="fa fa-sign-in fa-fw"></i> 登入</a>
+	                        </li>
+                       		<li><a href="/Surf/members/register.jsp"><i class="fa fa-pencil-square-o fa-fw"></i> 註冊</a>
+	                        </li>
+                   		 </c:if>                       
+                        <c:if test="${not empty user}">
+	                        <li><a href="/Surf/secure/login.do"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
+	                        </li>
+                        </c:if>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -279,9 +177,7 @@
 			            <li>			        	
                         	<a href="/Surf/CustomOrderType.jsp"><i class="fa fa-delicious fa-fw"></i>客製化浪板</a>
                         </li>                            
-			            <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i>會員專區</a>  
-                        </li>                 
+			                        
 			         </ul>		         
 		         </div>
 		                <!-- /.sidebar-collapse -->
@@ -295,98 +191,104 @@
 			    <section id="intro" class="intro-section">
 			    	<div class="row">  	
 			        	<div class="col-lg-12">
-			                <h1 class="page-header"><a href="<c:url value="/BrandServlet.do?brand=${brandno}"/>" style="text-decoration:underline">${brandname}</a>
+<%-- 			        	<c:if test="${brandbean!=null}"> --%>
+<%-- 			        		<a href="<c:url value="/BrandServlet.do?brand=${brandno}"/>"> --%>
+<%-- 			        			<img class="img-portfolio img-responsive" src="/Surf${brandbean.pic}" style="max-width:200px; height:auto; border:5px outset gray"> --%>
+<!-- 			                </a> -->
+<%-- 			            </c:if>	 --%>
+			            	<a href="<c:url value="/BrandServlet.do?brand=${productdetail.brandvo.brandno}"/>">
+			        			<img class="img-portfolio img-responsive" src="/Surf${productdetail.brandvo.pic}" style="max-width:200px; height:auto; border:5px outset gray">
+			                </a>	                
+			                <h1 class="page-header"><a href="<c:url value="/BrandServlet.do?brand=${productdetail.brandvo.brandno}"/>" style="text-decoration:underline">${productdetail.brandvo.name}</a>
 			                <small><a href="${productdetail.link}">${productdetail.name}</a></small></h1>
 	          			</div>
 	          		</div>		
-			            <div class="row" style="">
-			                <div class="col-lg-4">
+			        <div class="row" style="background-color: #888888">
+			                <div class="col-lg-4" >
 			                   <img class="img-portfolio img-responsive" src="<c:url value="${productdetail.pic1}"/>"/>
 			                </div>
-			            </div>        
+			                <div class="col-lg-4" >
+			                   <img class="img-portfolio img-responsive" src="<c:url value="${productdetail.pic2}"/>"/>
+			                </div>
+			                <div class="col-lg-4" >
+			                   <img class="img-portfolio img-responsive" src="<c:url value="${productdetail.pic3}"/>"/>
+			                </div>
+			        </div>        
 			    </section>
 			     <!-- About Section -->
 			    <section id="about" class="about-section">
-			            <div class="row">
+			            <div class="row" style="background-color: #888888">
 			                <div class="col-lg-12">
-			                    <h2>商品描述</h2>
+			                    <h2 style="font-weight:bold; color: white">商品描述</h2>
 			                </div>
 			            </div>
-			            <div class="row">
-			                <div class="col-lg-12">
-			                    <h2 style="text-align:justify"><small>${productdetail.description}</small></h2>
-			                </div>
-			            </div>
-			                            
-			    </section>
-			      <!-- Services Section -->
-			    <section id="services" class="services-section">    
-			        <div class="row">
-				        <div class="col-lg-4">
-		                    <div class="panel panel-danger">
-				            	<div class="panel-heading">
-				                	<h4>尺寸</h4>
-				                </div>
-				                <div class="panel-body">
-				                	<h2><small>${productdetail.size}</small></h2>
-				                </div>
-				                <div class="panel-footer" style="background-color:#f2dede">                            
-			                    </div>
-		                    </div>
-	                    <!-- /.panel -->
-	                    </div>
-	                    <div class="col-lg-4">
-	                       <div class="panel panel-success">
-	                        	<div class="panel-heading">
-	                            	<h4>庫存</h4>
-	                        	</div>
-	                        	<div class="panel-body">
-	                            	<h2><small>${productdetail.stock}</small></h2>
-	                        	</div>
-	                        	<div class="panel-footer" style="background-color:#dff0d8">                           	
-	                        	</div>
-	                       </div>                  
-                	    </div>
-                	    <div class="col-lg-4">
-	                       	<div class="panel panel-warning">
-	                        	<div class="panel-heading">
-		                            <h4>價錢</h4>
-		                        </div>
-		                        <div class="panel-body">			                        
-									<h2><small>NT$<fmt:formatNumber value="${productdetail.price}" pattern="#,###,###"/></small></h2> 		                          
-		                        </div>
-		                        <div class="panel-footer" style="background-color:#fcf8e3">         
-		                        </div>
-	                    	</div>
-                		</div>
-			       </div>	        
-			    </section>
+			            <div class="row" style="background-color: #888888;">
+			            	
+				             <div class="col-lg-12" style="margin-bottom:15px;">
+				                <h2 style="text-align:justify; color: white"><small style="color: white">${productdetail.description}</small></h2>
+				             </div>
+			               	
+				             <div class="col-lg-12">
+					              <div class="col-md-4">
+					                    <div class="panel panel-yellow">
+							            	<div class="panel-heading">
+							                	<h5>尺寸</h5>
+							                </div>
+							                <div class="panel-body">
+							                	<h2><small>${productdetail.size}</small></h2>
+							                </div>							               
+					                    </div>
+				                    <!-- /.panel -->
+			                   	  </div>
+			                   	  <div class="col-md-4">
+				                       <div class="panel panel-yellow">
+				                        	<div class="panel-heading">
+				                            	<h5>庫存</h5>
+				                        	</div>
+				                        	<div class="panel-body">
+				                            	<h2><small>${productdetail.stock}</small></h2>
+				                        	</div>				                        	
+				                       </div>                  
+			                	  </div>			                   		                   		                	   
+			                	  <div class="col-md-4">
+				                       	<div class="panel panel-yellow">
+				                        	<div class="panel-heading">
+					                            <h5>價錢</h5>
+					                        </div>
+					                        <div class="panel-body">			                        
+												<h2><small>NT$<fmt:formatNumber value="${productdetail.price}" pattern="#,###,###"/></small></h2> 		                          
+					                        </div>				                       
+				                    	</div>
+			                	 </div>		                			
+			               </div> 
+			            </div>		                            
+			    </section>	
 			    
 			    <!-- Contact Section -->
 			    <section id="contact" class="contact-section">   			           
-					<div class="row" style="height:182px">						
-						<div class="col-md-12" style="height:182px">							
-							<div id="card-4" style="height:150px"> 
-								<div class="front"> 
-								    <button id="flip-btn" type="button" class="btn btn-info btn-circle btn-xl" title="加入購物車"><i class="glyphicon glyphicon-shopping-cart"></i>
-						 	        </button>
-							    </div> 
-							    <div class="back">
-							    	<button id="unflip-btn" type="button" class="btn btn-success btn-circle btn-xl" title="自購物車移除"><i class="fa fa-check"></i>
-	 					 	        </button>
-							    </div>						    
+					<div class="row" style="height:182px; background-color:#888888">						
+						 <div class="col-md-12" style="height:182px">							
+								<div id="card-4" style="height:150px"> 
+									<div class="front"> 
+									    <button id="flip-btn" type="button" class="btn btn-warning btn-circle btn-xl" title="加入購物車"><i class="glyphicon glyphicon-shopping-cart"></i>
+							 	        </button>
+								    </div> 
+								    <div class="back">
+								    	<button id="unflip-btn" type="button" class="btn btn-success btn-circle btn-xl" title="自購物車移除"><i class="fa fa-check"></i>
+		 					 	        </button>
+								    </div>						    
+								</div>
+								<div class="col-md-12">	
+									<label for="number">請選擇/修改數量</label>
+									<select name="number" id="number">						      
+									   <option selected="selected">1</option>
+									   <c:forEach var="i" begin="2" end="${productdetail.stock}">
+										   	<option>${i}</option>						      
+									   </c:forEach>     
+									</select>
+								</div> 						
 							</div>
-						<div class="col-md-12">	
-							<label for="number">請選擇數量</label>
-							<select name="number" id="number">						      
-							   <option selected="selected">1</option>
-							   <c:forEach var="i" begin="2" end="${productdetail.stock}">
-								   	<option>${i}</option>>						      
-							   </c:forEach>     
-							</select>
-						</div> 						
-						</div>
-					</div><!-- /.row --> 
+					</div> 
 			    </section>
 	    	</div>
 	     </div>

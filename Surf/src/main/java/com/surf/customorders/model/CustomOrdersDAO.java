@@ -11,5 +11,6 @@ public interface CustomOrdersDAO {
 	CustomOrdersVO insert(CustomOrdersVO bean);
 
 	List<CustomOrdersVO> selectAll(Integer memberno);
-
+	
+	CustomOrdersVO select(Integer orderno);
 }

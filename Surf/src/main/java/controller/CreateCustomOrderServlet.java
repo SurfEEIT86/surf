@@ -62,11 +62,10 @@ public class CreateCustomOrderServlet extends HttpServlet {
 		String add= request.getParameter("address");
 		String address = zip+add;
 		String creditcard=request.getParameter("creditcard");
-		
+				
 		MemberVO mvo = (MemberVO) session.getAttribute("user");
 		Integer memberno = mvo.getMemberno();
-		ModelsVO mdvo = (ModelsVO)session.getAttribute("model");
-		Integer modelno = mdvo.getModelno();
+		ModelsVO mdvo = (ModelsVO)session.getAttribute("model");	
 		String to = mvo.getEmail();
 		String clientname = mvo.getName();
 		long time = new Date().getTime();	
@@ -84,9 +83,11 @@ public class CreateCustomOrderServlet extends HttpServlet {
 		vo.setCreditcard(creditcard);
 		vo.setDate(new Timestamp(time));
 		vo.setMemberno(memberno);
-		vo.setModelno(modelno);
+		vo.setModelsvo(mdvo);
+		vo.setStatus(1);
 		
-		cDao.insert(vo);					
+		cDao.insert(vo);	
+		
 		SendConfirmation send = new SendConfirmation();
 		String ordertype="客製化訂單";
 		send.sendMail(to, clientname, ordertype);		
