@@ -197,7 +197,7 @@
 <!-- 			                </a> -->
 <%-- 			            </c:if>	 --%>
 			            	<a href="<c:url value="/BrandServlet.do?brand=${productdetail.brandvo.brandno}"/>">
-			        			<img class="img-portfolio img-responsive" src="/Surf${productdetail.brandvo.pic}" style="max-width:200px; height:auto; border:5px outset gray">
+			        			<img class="img-portfolio img-responsive" src="/Surf${productdetail.brandvo.pic}" style="max-width:200px; height:auto;">
 			                </a>	                
 			                <h1 class="page-header"><a href="<c:url value="/BrandServlet.do?brand=${productdetail.brandvo.brandno}"/>" style="text-decoration:underline">${productdetail.brandvo.name}</a>
 			                <small><a href="${productdetail.link}">${productdetail.name}</a></small></h1>
