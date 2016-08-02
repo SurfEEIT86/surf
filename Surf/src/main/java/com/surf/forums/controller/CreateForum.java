@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -63,7 +64,6 @@ public class CreateForum extends HttpServlet {
 		String forumTitle = "";
 		String fileName = "";
 		InputStream is = null;
-
 		Part picp = null;
 		// 1. 接收資料
 

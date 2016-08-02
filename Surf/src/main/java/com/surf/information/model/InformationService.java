@@ -57,5 +57,17 @@ public class InformationService {
 	public ShopKindsVO findByShopKind(Integer ShopKindNo){
 		return shopKindsDAO.findByShopKind(ShopKindNo);
 	}
+	/*模糊查詢回傳浪點*/
+	public List<SitesVO> findSitesByName(String Sitename){
+		return sitesDAO.findSitesByName(Sitename);
+	}
+	/*隨機6個浪點*/
+	public List<SitesVO> selectSiteByRand(){
+		return sitesDAO.selectSiteByRand();
+	}
+	/*依城市pk回傳城市名稱*/
+	public CitiesVO findCityNameByPK(Integer cityNo){
+		return citiesDAO.findByCityNo(cityNo);
+	}
 }
 

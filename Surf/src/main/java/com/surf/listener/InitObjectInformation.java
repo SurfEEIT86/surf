@@ -42,23 +42,14 @@ public class InitObjectInformation implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent event)  { 
-         
-    	ServletContext application = event.getServletContext();
-		WebApplicationContext context = WebApplicationContextUtils
-				.getWebApplicationContext(application);
-		InformationService informationService = (InformationService) context.getBean("informationService");
-	
-		List<SitesVO> sitesList = informationService.selectSitesByAll();
-		application.setAttribute("sitesList", sitesList);
-    
-		List<ShopsVO> shopsList = informationService.selectShopsByAll();
-		application.setAttribute("shopList", shopsList);
-		Iterator<ShopsVO> a = shopsList.iterator();
-		System.out.println(shopsList.size());
-		while(a.hasNext()){
-			ShopsVO vo = a.next();
-			System.out.println(vo.getName());
-		}
+//         
+//    	ServletContext application = event.getServletContext();
+//		WebApplicationContext context = WebApplicationContextUtils
+//				.getWebApplicationContext(application);
+//		InformationService informationService = (InformationService) context.getBean("informationService");
+//	
+//		List<SitesVO> sitesList = informationService.selectSiteByRand();
+//		application.setAttribute("sitesList", sitesList);
     }
 	
 }

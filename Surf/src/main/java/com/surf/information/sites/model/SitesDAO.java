@@ -42,5 +42,7 @@ public interface SitesDAO {
 	public abstract boolean deleteBySitesVO(Integer Sites);
 
 	public SitesVO findBySites(Integer Sites) ;
+	public List<SitesVO> findSitesByName(String siteName);
+	public List<SitesVO> selectSiteByRand();
 
 }

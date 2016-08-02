@@ -34,6 +34,9 @@
 		<property name="description" type="string">
 			<column name="description" />
 		</property>
+		<property name="seaArea" type="string">
+			<column name="seaArea" />
+		</property>
 
 	</class>
 </hibernate-mapping>

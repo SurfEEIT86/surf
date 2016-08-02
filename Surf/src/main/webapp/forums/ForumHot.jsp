@@ -46,12 +46,24 @@
 						<a href="#" class="author"> <img
 							src="/Surf/Service/forums/getMemberPhoto/${article.memberVO.memberno}"
 							class="img-circle"> <span class="name">${article.memberVO.name}</span>
-					</a> <span class="date"><i class="fa fa-calendar"></i>
-							${article.datetime}</span> <span class="reply"><i
+					</a> <span class="date" id="date${var.index+1}"><i class="fa fa-calendar"></i>
+							</span> <span class="reply"><i
 							class="fa fa-commenting-o"></i> ${replyList[var.index]}</span>
 				</small></li>
 			</c:forEach>
 		</ul>
+		<script src="js/jquery.timeago.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function(){
+				var index=1;
+				<c:forEach items="${forumArticles}" var="article" varStatus="var">
+					var a=$('#date'+index)
+					index++;
+					$('#date${var.index+1}').append(jQuery.timeago('${article.datetime}'))
+				
+				</c:forEach>
+			})
+		</script>
 		<div class="pagi clearfix">
 			<c:if test="${totalPages<=1}">
 				<a href="${controller}?pageNo=${pageNo}&queryString=${queryString}" class="active">${pageNo}</a>
