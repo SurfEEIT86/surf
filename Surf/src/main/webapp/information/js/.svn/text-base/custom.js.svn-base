@@ -1,0 +1,145 @@
+$(document).ready(function() { 
+
+  //blog menu
+  $('.blog-menu li.mainlevel ul').hide();
+  $('.blog-menu li.mainlevel').hover(function(){
+    $(this).addClass('active');
+    $(this).find('li').parent().slideDown();
+  }, function(){
+    $(this).removeClass('active');
+    $(this).find('li').parent().hide();
+  });
+
+  //gotop
+  $("#goTop").click(function(){
+    $("html,body").animate({scrollTop:0},900);
+    return false;
+  });
+
+  //fixbox
+  var fixcontentWidthHide = '-'+$('.fix-content-wrap').width()+'px';
+  $('.fix-box').css('marginRight',fixcontentWidthHide);
+  $('.fix-btn, .fix-content-wrap').hover(function(){
+    $('.fix-box').css('marginRight','0');
+  },function(){
+    $('.fix-box').css('marginRight',fixcontentWidthHide);
+  })
+
+  // popup click mask don't close
+  $('#searchpopA').modal({
+    backdrop: 'static',
+    show: false
+  })
+
+
+  //07-way tabs  and  department-way tabs
+  // 預設顯示第一個 Tab
+    var _showTab = 0;
+    var $defaultLi = $('ul.tabs li').eq(_showTab).addClass('active');
+    $($defaultLi.find('a').attr('href')).siblings().hide();
+    
+    // 當 li 頁籤被點擊時...
+    // 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+    $('ul.tabs li:not(.out)').click(function() {
+      // 找出 li 中的超連結 href(#id)
+      var $this = $(this),
+        _clickTab = $this.find('a').attr('href');
+      // 把目前點擊到的 li 頁籤加上 .active
+      // 並把兄弟元素中有 .active 的都移除 class
+      $this.addClass('active').siblings('.active').removeClass('active');
+      // 淡入相對應的內容並隱藏兄弟元素
+      $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+      return false;
+    }).find('a').focus(function(){
+      this.blur();
+    });
+
+  // youtube iframe rwd
+  $('.fck').find('iframe').wrap(function() { 
+      return '<div class="video-container" />'; 
+    }); 
+
+  //slick
+  $('.banner-slide').slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          dots: true,
+          arrows: false
+      });
+
+  $('.album-slide').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      dots: true,
+      arrows: false
+  });
+
+  $(".video-slick").owlCarousel({
+      navigation:true,
+      paginationSpeed : 1000,
+      goToFirstSpeed : 2000,
+      singleItem : true,
+      autoHeight : true,
+      transitionStyle:"fade",
+      navigationText: ['<i class="fa  fa-arrow-left"></i>','<i class="fa  fa-arrow-right"></i>']
+    });
+  $('.slide-history').slick({
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: true,
+          vertical: true,
+          prevArrow: '<div class="history-arrP"><i class="fa  fa-arrow-up"></i> <span>New</span></div>',
+          nextArrow: '<div class="history-arrN"><i class="fa  fa-arrow-down"></i> <span>Old</span></div>'
+      });
+
+
+  //pav-blog-list
+  $('.pav-blog-wrap>li .list-sm .content-wrap li:nth-of-type(1)').hover(function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(1)').css('z-index','40');
+    $(this).siblings('li:nth-of-type(1)').removeClass('active');
+  }, function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(1)').css('z-index','10');
+    $(this).siblings('li:nth-of-type(1)').addClass('active');
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(1)').css('z-index','40');
+  });
+  $('.pav-blog-wrap>li .list-sm .content-wrap li:nth-of-type(2)').hover(function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(2)').css('z-index','40');
+    $(this).siblings('li:nth-of-type(1)').removeClass('active');
+  }, function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(2)').css('z-index','10');
+    $(this).siblings('li:nth-of-type(1)').addClass('active');
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(1)').css('z-index','40');
+  });
+  $('.pav-blog-wrap>li .list-sm .content-wrap li:nth-of-type(3)').hover(function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(3)').css('z-index','40');
+    $(this).siblings('li:nth-of-type(1)').removeClass('active');
+  }, function(){
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(3)').css('z-index','10');
+    $(this).siblings('li:nth-of-type(1)').addClass('active');
+    $(this).parent().siblings('.img-wrap').children('img:nth-of-type(1)').css('z-index','40');
+  });
+
+  //department (way-icon background-position)
+  var activeIcon = $('.p-department-wrap .tabs li.active .i-custom');
+  activeIcon.css('background-position','top right');
+  $('.p-department-wrap .tabs li').click(function(){
+    $(this).find('.i-custom').css('background-position','top right');
+    $(this).siblings().find('.i-custom').css('background-position','center right');
+  })
+
+  
+
+});
+
+
+
+

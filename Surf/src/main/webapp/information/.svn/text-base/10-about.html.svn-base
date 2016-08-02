@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+<meta name="autor" content="OZCHAMP | Nini" />
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>大學問｜大學入學管道全攻略</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/slick.css" >
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css" >
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" >
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/bootstrap/tab.js"></script><!-- tab -->
+<script type="text/javascript" src="js/bootstrap/modal.js"></script><!-- popup -->
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 logo-wrap"><a href="index.html"><img src="images/logo-big.png" alt="德屹大學問"></a></div>
+				<div class="col-xs-9 text-right banner-wrap">
+					<div class="banner-slide">
+						<div><img src="images/banner1.jpg" alt="德屹大學問"></div>
+						<div><img src="images/banner2.jpg" alt="德屹大學問"></div>
+						<div><img src="images/banner3.jpg" alt="德屹大學問"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center mt20"><img src="http://placehold.it/970x90" alt="google AD"></div>
+
+	<section class="main mt20">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 aside-l">
+
+					<!-- 快速查詢 -->
+					<div class="pav-fast-search pav-fast-search2 base-shadow mb20">
+
+						<!----------------------------------------------- popup area -------------------->
+						<div class="modal fade" id="searchpopA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="text-center mb10 mt10"><img src="http://placehold.it/468x60" alt="google AD"></div>
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">╳</span><span class="sr-only">Close</span></button>
+										<h4 class="modal-title" id="myModalLabel">所選項目</h4>
+									</div>
+
+									<div class="modal-body">
+
+										<!--  已選擇 -->
+										<div class="select-yes">
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>基隆市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺中市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>高雄市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>澎湖縣</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>基隆市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺中市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>高雄市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>澎湖縣</a>
+											<a href="#" class="clearbtn redbtn">全部清除</a>
+										</div>
+
+										<!--  學群學系選擇 -->
+										<div class="select-no pop-group-wrap">
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">大學學群</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">資訊學群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">工程學群</a>
+														<a href="#" class="selected-btn btn-border radius2">數理化學群</a>
+														<a href="#" class="selected-btn btn-border radius2">醫藥衛生學群</a>
+														<a href="#" class="selected-btn btn-border radius2">生命科學學群</a>
+														<a href="#" class="selected-btn btn-border radius2">生物資源學群</a>
+														<a href="#" class="selected-btn btn-border radius2">地球與環境學群</a>
+														<a href="#" class="selected-btn btn-border radius2">建築與設計學群</a>
+														<a href="#" class="selected-btn btn-border radius2">藝術學群</a>
+														<a href="#" class="selected-btn btn-border radius2">社會與心理學群</a>
+														<a href="#" class="selected-btn btn-border radius2">大眾傳播學群</a>
+														<a href="#" class="selected-btn btn-border radius2">外語學群</a>
+														<a href="#" class="selected-btn btn-border radius2">文史哲學群</a>
+														<a href="#" class="selected-btn btn-border radius2">教育學群</a>
+														<a href="#" class="selected-btn btn-border radius2">法政學群</a>
+														<a href="#" class="selected-btn btn-border radius2">管理學群</a>
+														<a href="#" class="selected-btn btn-border radius2">財經學群</a>
+														<a href="#" class="selected-btn btn-border radius2">遊憩與運動學群</a>
+														<a href="#" class="selected-btn btn-border radius2">軍事學群</a>
+														<a href="#" class="selected-btn btn-border radius2">警政學群</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">技職群類</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">機械群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">動力機械群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">電機與電子群電機類</a>
+														<a href="#" class="selected-btn btn-border radius2 active">電機與電子群資電類</a>
+														<a href="#" class="selected-btn btn-border radius2">化工群</a>
+														<a href="#" class="selected-btn btn-border radius2">土木與建築群</a>
+														<a href="#" class="selected-btn btn-border radius2">設計群</a>
+														<a href="#" class="selected-btn btn-border radius2">工程與管理類</a>
+														<a href="#" class="selected-btn btn-border radius2">商業與管理群</a>
+														<a href="#" class="selected-btn btn-border radius2">衛生與護理類</a>
+														<a href="#" class="selected-btn btn-border radius2">食品群</a>
+														<a href="#" class="selected-btn btn-border radius2">家政群幼保類</a>
+														<a href="#" class="selected-btn btn-border radius2">家政群生活應用類</a>
+														<a href="#" class="selected-btn btn-border radius2">農業群</a>
+														<a href="#" class="selected-btn btn-border radius2">外語群英語類</a>
+														<a href="#" class="selected-btn btn-border radius2">外語群日語類</a>
+														<a href="#" class="selected-btn btn-border radius2">餐旅群</a>
+														<a href="#" class="selected-btn btn-border radius2">海事群</a>
+														<a href="#" class="selected-btn btn-border radius2">水產群</a>
+														<a href="#" class="selected-btn btn-border radius2">藝術群影視類</a>
+													</td>
+												</tr>
+											</table>
+										</div>
+
+										<!--  地區選擇 -->
+										<div class="select-no pop-area-wrap">
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">全　　　臺</span></td>
+													<td><a href="#" class="selected-btn btn-border radius2">全　選</a></td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">北　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">基隆市</a>
+														<a href="#" class="selected-btn btn-border radius2 active">臺北市</a>
+														<a href="#" class="selected-btn btn-border radius2">新北市</a>
+														<a href="#" class="selected-btn btn-border radius2">桃園市</a>
+														<a href="#" class="selected-btn btn-border radius2">新竹市</a>
+														<a href="#" class="selected-btn btn-border radius2">新竹縣</a>
+														<a href="#" class="selected-btn btn-border radius2">宜蘭縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">中　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">苗栗縣</a>
+														<a href="#" class="selected-btn btn-border radius2 active">臺中市</a>
+														<a href="#" class="selected-btn btn-border radius2">彰化縣</a>
+														<a href="#" class="selected-btn btn-border radius2">雲林縣</a>
+														<a href="#" class="selected-btn btn-border radius2">南投縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">南　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">嘉義市</a>
+														<a href="#" class="selected-btn btn-border radius2">嘉義縣</a>
+														<a href="#" class="selected-btn btn-border radius2">臺南市</a>
+														<a href="#" class="selected-btn btn-border radius2 active">高雄市</a>
+														<a href="#" class="selected-btn btn-border radius2">屏東縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">東區及離島</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">花蓮縣</a>
+														<a href="#" class="selected-btn btn-border radius2">臺東縣</a>
+														<a href="#" class="selected-btn btn-border radius2 active">澎湖縣</a>
+														<a href="#" class="selected-btn btn-border radius2">金門縣</a>
+													</td>
+												</tr>
+											</table>
+										</div>
+
+									</div>
+									<!-- modal-body end -->
+
+									<div class="modal-footer">
+										<a href="#" class="btn-pn btn-p radius2"><i class="fa fa-arrow-left"></i> 選擇<span>學群&學類</span></a>
+										<button type="button" class="redbtn radius2">確認</button>
+										<a href="#" class="btn-pn btn-n radius2">選擇<span>註冊率</span> <i class="fa fa-arrow-right"></i></a>
+									</div>
+								</div>
+						    </div>
+						</div>
+						<!----------------------------------------------- popup area end -------------------->
+
+						<div class="fast-search-title"><div class="icon1"></div><h3>校系快速查詢</h3></div>
+						<div class="fast-search-content">
+							<div class="identity-wrap clearfix">
+								<a href="#" class="active">
+									<div class="i-custom" style="background: url(images/custom/way1-140x360A.png) bottom center; background-size: 70px auto;"></div>
+									高中生
+								</a>
+								<a href="#">
+									<div class="i-custom" style="background: url(images/custom/way1-140x360B.png) bottom center; background-size: 70px auto;"></div>
+									高職生
+								</a>
+							</div>
+
+							<div class="select-wrap select-wrapA">
+								<div class="title">學群 & 學類<a href="#" data-toggle="modal" data-target="#searchpopA" class="edit btn-border radius2"><i class="fa fa-pencil"></i>修改</a></div>
+								<div class="select-no">
+									<a href="#" data-toggle="modal" data-target="#searchpopA"><img src="images/icon/fastsearchA.png" width="60px" height="60px"><span>點擊挑選有興趣的學群吧！</span></a>
+								</div>
+								<!-- <div class="select-yes">
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>土木群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>大眾傳播群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>土木與建築群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>生物資源學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>地球與環境學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+								</div> -->
+							</div>
+
+							<div class="select-wrap select-wrapB">
+								<div class="title">地　區<a href="#" data-toggle="modal" data-target="#searchpopA" class="edit btn-border"><i class="fa fa-pencil"></i>修改</a></div>
+								<div class="select-no">
+									<a href="#" data-toggle="modal" data-target="#searchpopA"><img src="images/icon/fastsearchB.png" width="60px" height="60px"><span>點擊看看想讀哪裡的大學！</span></a>
+								</div>
+								<!-- <div class="select-yes">
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>新北市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>桃園市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>新竹縣</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>嘉義縣</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>苗栗縣</a>
+								</div> -->
+							</div>
+
+							<div class="select-wrap select-wrapC">
+								<div class="title">註冊率</div>
+								<div class="text-center mt10">
+								<div class="input-wrap">
+									<input id="percent-H" name="type" type="radio" value="" >
+									<label for="percent-H"><div class="inputpic inputpicA"></div><span></span>高</label>
+								</div>
+								<div class="input-wrap">
+									<input id="percent-M" name="type" type="radio" value="" >
+									<label for="percent-M"><div class="inputpic inputpicB"></div><span></span>中</label>
+								</div>
+								<div class="input-wrap">
+									<input id="percent-L" name="type" type="radio" value="" >
+									<label for="percent-L"><div class="inputpic inputpicC"></div><span></span>低</label>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="fast-search-button">
+							<button type="button" class="redbtn pav-searchbtn radius2"><i class="fa  fa-search"></i>  開始查詢</button>
+						</div>
+					</div>
+
+					<!-- 尋找大學 -->
+					<div class="base-box base-shadow pav-area-search">
+						<div class="box-head"><div class="icon1"></div><span>尋找大學</span></div>
+						<div class="box-content">
+							<ul>
+								<li><a href="03-search-keyword.html">基隆市</a></li>
+								<li><a href="03-search-keyword.html">臺北市</a></li>
+								<li><a href="03-search-keyword.html">新北市</a></li>
+								<li><a href="03-search-keyword.html">桃園市</a></li>
+								<li><a href="03-search-keyword.html">新竹縣</a></li>
+								<li><a href="03-search-keyword.html">新竹市</a></li>
+								<li><a href="03-search-keyword.html">宜蘭縣</a></li>
+								<li><a href="03-search-keyword.html">苗栗縣</a></li>
+								<li><a href="03-search-keyword.html">臺中市</a></li>
+								<li><a href="03-search-keyword.html">彰化縣</a></li>
+								<li><a href="03-search-keyword.html">雲林縣</a></li>
+								<li><a href="03-search-keyword.html">南投縣</a></li>
+								<li><a href="03-search-keyword.html">嘉義市</a></li>
+								<li><a href="03-search-keyword.html">嘉義縣</a></li>
+								<li><a href="03-search-keyword.html">台南市</a></li>
+								<li><a href="03-search-keyword.html">高雄市</a></li>
+								<li><a href="03-search-keyword.html">屏東縣</a></li>
+								<li><a href="03-search-keyword.html">花蓮縣</a></li>
+								<li><a href="03-search-keyword.html">臺東縣</a></li>
+								<li><a href="03-search-keyword.html">澎湖縣</a></li>
+								<li><a href="03-search-keyword.html">金門縣</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="text-center mt20"><img src="http://placehold.it/250x250" alt="google AD"></div>
+
+				</div><!------ aside-l end ------>
+				<div class="col-xs-9 center-content p-common-wrap">
+
+					<div class="base-shadow page-wrap mb20">
+						<div class="page-head">
+							<table class="title">
+								<tr>
+									<td width="80px" class="i-title-wrap">
+										<div class="i-title"></div>
+									</td>
+									<td><span class="big">關於我們</span>
+									</td>
+								</tr>
+							</table>
+
+							<!-- keyword search -->
+							<div class="page-kw-search">
+								<div class="base-shadow mb20 pav-kw-search">
+									<input id="percent-M" name="type" type="input" value="" placeholder="搜尋學校、學系、文章">
+									<button type="button"><i class="fa  fa-search"></i></button>
+								</div>
+							</div>
+
+							<div class="clearfix"></div>
+
+							<div class="path mt20"><a href="index.html">首頁</a> / 關於我們</div>
+						</div>
+						<div class="page-content">
+							<div class="model-box-wrap">
+
+								<div class="this-model this-modelD">
+									<h2 class="clearfix title"><span>大學問 -「升學資訊新媒體、資料解讀彙整服務平台」</span></h2>
+									<p class="text-wrap">
+										<br>
+										【緣起】<br>
+										<br>
+										臺灣教改已20年，在多元入學方案與廣設大學、放寬技專升格等政策推動下，目前，大學的入學管道已達21種，而大學也有159所，超過4,450個校系。以往的大學窄門變得無限寬廣，多元入學管道讓考生在選填志願時更有彈性，能依其興趣、現況與未來發展等來選擇理想的大學與科系。<br>
+										<br>
+										但是，如此多元且龐大的入學管道資訊，亦造成考生在選填志願時的困擾，過多的資訊，讓人無法有效篩選，必須花費更多的時間進行資料的查詢與比較。如何以最適合自己的升學管道進入心目中的理想校系，升學資訊的判讀和統整能力反成為決定性的關鍵。<br>
+										<br>
+										此外，少子化浪潮來勢洶洶，許多大學將因招生不足面臨退場命運。要如何在資訊雜亂的情況下避開即將倒閉之校系，對學生與家長而言也是一大難題。<br>
+										<br>
+										校系眾多，人人有大學可念，但要念哪一所？面對浩瀚資訊大海，該如何做出最佳選擇？<br>
+										這些困擾，我們看到了。「大學問」，為此而誕生！<br>
+										<br>
+										【服務】<br>
+										<br>
+										「大學問」，是大學升學資訊的入口平臺，是整合升學資訊服務的專業媒體！<br>
+										我們利用政府開放資訊，彙整入學管道、升學資訊，提供大學技專校系介紹，以及未來職涯發展等報導內容，讓學生、家長與老師一手掌握相關訊息不遺漏，節省資料搜尋與解讀的時間成本，解決多元入學的升學徬徨，享受多元入學的好處，以及真正達到適性學習的目標。學生可專注於準備學科及面試工作，至於升學資訊的統整就交給「大學問」。<br><br>
+
+
+									</p>
+								</div>
+								<div class="this-model this-modelC">
+									<div  class="pic-wrap">
+										<span>
+											<img src="http://placehold.it/530x320&text=不限尺寸" alt="德屹大學問">
+										</span>
+									</div>
+								</div>
+								<div class="this-model this-modelD">
+									<p class="text-wrap">
+										<br>
+										【展望】<br>
+										<br>
+										「大學問」，以便捷又直覺的檢索系統，可提供完整且正確的大學入學資訊與查詢服務，是學生、家長或老師輔導選填志願時的最佳參考工具。未來也將向下延伸整合十二年國教包括國中會考，並向上發展至研究所考試、國家考試等各項考情資訊，成為升學資訊一貫整合之入口專業媒體，讓學生在求學的路上享受真正的「減壓」、「快樂學習」與「適性發展」，掌握正確的人生方向。
+									</p>
+								</div>
+								<div class="this-model this-modelD">
+									<h2 class="clearfix title"><span>德屹科技創意 -「訊息整合、深度溝通、有效知識」</span></h2>
+									<p class="text-wrap">
+										<br>
+										【核心與專業】<br>
+										<br>
+										我們是「創意內容的化妝師」，協助客戶針對不同的行銷需求定位，量身製作包括「書籍編輯製作」、「期刊編輯製作」、「媒體策略規劃」、「影片拍攝製作」、「內容行銷創意」、「網路行銷應用」等服務。<br>
+										<br>
+										過去十年來，德屹科技創意協助政府機關、企業及大學，進行深度內容的製作，依據不同目的與需求，提供包括期刊製作、專書製作、網路內容製作、影片製作及各項整合行銷策略服務。<br>
+										<br>
+										我們從平面內容製作出發，歷年來多次獲得國家出版獎肯定，2015年與林務局合作出版《浸水營古道---一條走過五百年的路》，更是獲得金鼎獎政府出版品大獎的殊榮。<br>
+										<br>
+										我們深諳數位內容匯流時代，必須根據不同社群使用者的需求，應用整合不同媒介，提供最適切的內容服務。於是，2015年我們本著過去常年熟稔高等教育政策發展的專業資訊整合能力，推出新媒體資訊平台---「大學問」，為每年多達200萬的高中職生及其師長，提供第一手大學升學整合資訊，擴大且深化我們引以為傲的內容服務。<br>
+										<br>
+										【作品與榮耀】<br>
+										<br>
+										2007年<br>
+										—— 深耕「電子化政府整合應用推廣」領域，執行行政院研考會「電子化政府整合應用推廣專案」，從規劃到機關資源整合、民間資源整合及媒體資源整合等各方面，都有十足的專案績效表現。<br>
+										<br>
+										2008年<br>
+										—— 投入政府機關歷史文化議題的編輯製作工作，陸續完成《觀‧臺灣》季刊、《研考四十》、《勞保60》等專書。<br>
+										<br>
+										2009年 <br>
+										—— 將專業服務領域延伸至文化創意等相關領域，製作國立臺灣歷史博物館《觀‧臺灣》季刊，獲選2009年德國法蘭克福書展做為行銷臺灣之刊物展出。<br>
+										<br>
+										2010年<br>
+										—— 《觀‧臺灣》季刊獲得國家出版品獎肯定，且連續兩年獲選代表臺灣政府出版品至德國法蘭克福書展參展。<br>
+										<br>
+										2011年 <br>
+										—— 《觀‧臺灣》季刊獲得第三屆國家出版獎入選；連續製作出版超過10本政府出版品，成為最專業的政府出版品團隊。<br>
+										<br>
+										2012年<br>
+										—— 完成包括臺北市文化局圓山遺址、高雄市文化局文化小旅行，以及桃園市公所景福宮及忠烈祠等導覽專書製作，此外，還有中央大學招生影片「夢想的起點」的製作，同時也加入教育部《高教技職簡訊》月刊編製，深入大學及技職體系採訪領域。<br>
+										<br>
+										2015年<br>
+										—— 與林務局合作出版之專書《浸水營古道-一條走過五百年的路》獲頒文化部金鼎獎之政府出版品獎項肯定。<br>
+										—— 編輯團隊整合四技二專20大學群、1,667系之升學資訊，正式以專書方式出版《四技二專選填志願全攻略》等四全冊。<br>
+										—— 「大學問」網路媒體品牌上線，提供大學招生及學生升學管道的資訊彙整平台。<br>
+										<br>
+										——  成立出版品牌「一本文化」，以延續在地文化為使命，傳遞科普知識。<br>
+										<br>
+										【未來與展望】<br>
+										<br>
+										過去，取得訊息是媒體的強項；<br>
+										現在，資訊爆炸，如何過濾「有效的」的訊息，是媒體的挑戰；<br>
+										未來，訊息則是需要被理解的深度溝通管道。<br>
+										我們以訊息整合為使命，善用各種溝通工具，將訊息轉換為有效的知識與決策工具。結合多媒體傳播精神，展現高度創意，繼續傳承文化發展。<br>
+
+									</p>
+								</div>
+								<div class="this-model this-modelD">
+									<h2 class="clearfix title"><span>一本文化 -「延續本土文化，傳遞科普知識」</span></h2>
+									<p class="text-wrap">
+										<br>
+										【邁向品牌】<br>
+										<br>
+										德屹科技創意在政府出版品內容編製的領域已深耕10年，數度榮獲國家出版獎肯定，我們對於平面出版整合，包括後製美編、印刷、配送及通路銷售等服務，以及橫跨影像製作及網路多媒體內容編製的呈現，有著豐富且完整的專業經驗。對於政策、教育、電子化及文化等議題亦十分熟稔，我們累積了許多有價值的深度內容與應用素材，在延續本土文化，保存在地珍貴資源的使命下，於2015年成立「一本文化」出版品牌，將艱深的專業議題，藉由深入淺出的編輯方式，轉化為淺顯易懂的科普知識，使其深入普羅大眾，以傳承寶貴文化資產。<br>
+										<br>
+										【出版核心】<br>
+									</p>
+								</div>
+								<div class="this-model this-modelC">
+									<div  class="pic-wrap">
+										<span>
+											<img src="http://placehold.it/530x320&text=不限尺寸" alt="德屹大學問">
+										</span>
+									</div>
+								</div>
+								<div class="this-model this-modelD">
+									<p class="text-wrap">
+										<br>
+										【四大書系】<br>
+									</p>
+								</div>
+								<div class="this-model this-modelC">
+									<div  class="pic-wrap">
+										<span>
+											<img src="http://placehold.it/530x320&text=不限尺寸" alt="德屹大學問">
+										</span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div><!------ center-content end ------>
+
+			</div>
+		</div>
+	</section>
+
+	<div class="text-center mt20"><img src="http://placehold.it/970x90" alt="google AD"></div>
+
+	<div class="footer mt20">
+		<div class="ft-menu">
+			<div class="container">
+				<a href="10-about.html">關於我們</a>
+				<a href="11-law.html">服務條款</a>
+				<a href="12-ad.html">合作與廣告</a>
+				<a href="13-contact.html">聯絡我們</a>
+				<a href="14-sitemap.html">網站地圖</a>
+				<a href="#" class="fb"></a>
+			</div>
+		</div>
+		<div class="ft-bottom text-center">
+			<div class="container">
+				Copyright © 2015  大學問     All rights reserved.<br> <a href="http://www.ozchamp.net" target="_blank" class="oz">Designed by OZCHAMP</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

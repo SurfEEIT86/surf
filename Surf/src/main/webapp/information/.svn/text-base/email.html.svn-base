@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>通知信</title>
+</head>
+
+<body style="font-family: '微軟正黑體'; font-size: 12pt; background:#efefef;-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;">
+<table width="730" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#dcdcdc" style=" border-collapse: collapse; margin:40px auto">
+	<tr>
+		<td colspan="2" bgcolor="#fff" style="padding: 30px 0; text-align:center">
+			<a href="http://my.works.tw/15B0253/html" style="text-decoration: none; color:#368585; font-size:24px; font-weight:100;"><img src="images/logo-big.png" width="250px" style="vertical-align:middle;"><span style="  vertical-align:middle; padding-left:20px; ">大學入學管道全攻略</span></a>
+		</td>
+	</tr>
+	<tr style="border-top:#fff; border-bottom:#fff;">
+		<td bgcolor="#f8f8f8" style="padding:50px 0 50px 30px; border-right:0px; text-align:center;">
+			<img src="images/Email_03.png">
+		</td>
+		<td bgcolor="#f8f8f8" style="padding:50px 30px 50px 0; border-left:0px; text-align:center; line-height:35px; font-size:22px; color:#575757;">
+			感謝您的來信，我們已經收到囉！<br/>我們會儘速回覆您，謝謝<br/><br/><span style="border:1px solid #b6b6b6; padding:5px;">此為系統信件，請勿回覆</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"  bgcolor="#368585" style="padding: 15px; color:#fff; text-align:center;">
+		
+		Copyright © 2015  大學問     All rights reserved.
+
+		</td>
+	</tr>
+</table>
+</body>
+</html>
