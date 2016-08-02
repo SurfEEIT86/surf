@@ -109,7 +109,8 @@ public class CreateOrderServlet extends HttpServlet {
 		session.removeAttribute("purchaselist");
 		
 		SendConfirmation send = new SendConfirmation();
-		send.sendMail(to, clientname);		
+		String ordertype="商品訂單";
+		send.sendMail(to, clientname, ordertype);		
 		out.print("success");					
 	}
 

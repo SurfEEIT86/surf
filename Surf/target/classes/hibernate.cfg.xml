@@ -25,6 +25,7 @@
         <mapping resource="model/OrdersVO.hbm.xml"/>
         <mapping resource="model/OrderDetailsVO.hbm.xml"/>
         <mapping resource="model/ModelsVO.hbm.xml"/>
+        <mapping resource="model/CustomOrdersVO.hbm.xml"/>
         
         <mapping resource="model/EventTypeVO.hbm.xml"/>
         <mapping resource="model/EventVO.hbm.xml"/>

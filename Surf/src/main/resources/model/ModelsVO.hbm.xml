@@ -16,5 +16,8 @@
         <property name="pic" type="java.lang.String">
             <column name="PIC" />
         </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" />
+        </property>
     </class>
 </hibernate-mapping>

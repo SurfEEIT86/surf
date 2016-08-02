@@ -76,7 +76,9 @@ public class LoginServlet extends HttpServlet {
 				}
 			}
 		}else{
-			request.getSession().removeAttribute("user");
+			HttpSession session = request.getSession();
+			session.removeAttribute("user");
+			session.removeAttribute("purchaselist");
 			String path = request.getContextPath();
 			System.out.println(path + "/members/index.jsp");
 			response.sendRedirect(path + "/members/index.jsp");

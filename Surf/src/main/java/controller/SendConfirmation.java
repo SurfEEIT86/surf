@@ -16,7 +16,7 @@ public class SendConfirmation {
 	private String password="eeit8623";
 	private String message;
 	
-	public void sendMail(String to, String clientname){
+	public void sendMail(String to, String clientname, String ordertype){
 			
 	      try{      
 		      Properties properties = System.getProperties();		 		      
@@ -33,7 +33,7 @@ public class SendConfirmation {
 	    	  mailMessage.setFrom(new InternetAddress(from));        
 	    	  mailMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
 	    	  message = "敬愛的會員 <span style='text-decoration:underline'>" +clientname +
-	    			  	"</span>您好,<br>系統已收到您的訂單。您可至網站會員專區查看訂單資訊。<br>若有任何問題歡迎與我們聯繫，期待您下次光臨。<br><br>聚浪  敬上";
+	    			  	"</span>您好,<br>系統已收到您的"+ordertype+"。您可至網站會員專區查看訂單資訊。<br>若有任何問題歡迎與我們聯繫，期待您下次光臨。<br><br>聚浪  敬上";
 	    	  mailMessage.setContent(message,  "text/html; charset=utf-8");
 	    	  mailMessage.setSubject("聚浪商品網-訂單確認");	         	    	 
 	    	  

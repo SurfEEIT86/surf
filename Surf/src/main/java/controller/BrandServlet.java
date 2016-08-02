@@ -44,13 +44,15 @@ public class BrandServlet extends HttpServlet {
 			List<ProductsVO> productlist = pDao.selectAll();
 			request.setAttribute("allProducts", productlist);
 			RequestDispatcher rd = request.getRequestDispatcher("ViewAllProducts.jsp");
+			session.removeAttribute("brandbean");
 			rd.forward(request, response);		
 		}else{	
 			BrandsVO brandBean = dao.select(brandno);
 			Set<ProductsVO> productBeans = brandBean.getProds();
 			request.setAttribute("products", productBeans);
-			session.setAttribute("brandname", brandBean.getName());
-			session.setAttribute("brandno", brandBean.getBrandno());
+			request.setAttribute("brandname", brandBean.getName());
+			request.setAttribute("brandno", brandBean.getBrandno());
+			request.setAttribute("brandbean", brandBean);
 			RequestDispatcher rd = request.getRequestDispatcher("BrandSelected.jsp");
 			rd.forward(request, response);
 		}

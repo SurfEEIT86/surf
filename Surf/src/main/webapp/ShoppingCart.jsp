@@ -117,120 +117,7 @@
 			</div>
 			 <!-- /.navbar-header -->	 
             <ul class="nav navbar-top-links navbar-right">
-			<!--信箱 -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                
-                <!-- 鬧鐘 -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->       
+			
                 <!-- 購物車 -->
                 <li class="dropdown">
                 	<a href="/Surf/ShoppingCart.jsp">
@@ -244,13 +131,24 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                   
+                    <c:if test="${not empty user}">
+                        <li><a href="/Surf/members/ShowMemberData"><i class="fa fa-user fa-fw"></i> 會員專區</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="/Surf/members/ShowMemberData#contact"><i class="fa fa-gear fa-fw"></i> 訂單查詢 </a>
                         </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                    </c:if>
+                        <li class="divider"></li> 
+                         <c:if test="${empty user}">
+                       		<li><a href="/Surf/members/index.jsp"><i class="fa fa-sign-in fa-fw"></i> 登入</a>
+	                        </li>
+                       		<li><a href="/Surf/members/register.jsp"><i class="fa fa-pencil-square-o fa-fw"></i> 註冊</a>
+	                        </li>
+                   		 </c:if>                       
+                        <c:if test="${not empty user}">
+	                        <li><a href="/Surf/secure/login.do"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
+	                        </li>
+                        </c:if>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -276,9 +174,7 @@
 			            <li>			        	
                         	<a href="/Surf/CustomOrderType.jsp"><i class="fa fa-delicious fa-fw"></i>客製化浪板</a>
                         </li>     
-			            <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i>會員專區</a>  
-                        </li>                    
+			                          
 			         </ul>		         
 		         </div>
 		                <!-- /.sidebar-collapse -->
@@ -313,6 +209,7 @@
 	                                            <th>數量</th>
 	                                            <th>小計</th>
 	                                            <th></th>	                                            
+	                                            <th></th>	                                            
 	                                        </tr>
 	                                    </thead>
 	                                    <tbody>	                                                            
@@ -333,11 +230,19 @@
 	                                    		<td class="photo"><a href="<c:url value="/ProductDetailServlet.do?productno=${purchaselist.bean.productno}"/>"><img class="img-portfolio img-responsive" src="/Surf/${purchaselist.bean.pic1}"/></a></td>                                   	             			
 					                			<td>${purchaselist.bean.name} </td>
 					                			<td>${purchaselist.bean.size} </td>
-					                			<td>${purchaselist.quantity} </td>
+					                			<td class="tr${status.count}">${purchaselist.quantity} </td>
 					                			<c:set var="totalqty" scope="request" value="${totalqty + purchaselist.quantity}"/>					                			
-					                			<td>NT$<fmt:formatNumber value="${purchaselist.bean.price*purchaselist.quantity}" pattern="#,###,###"/></td>
+					                			<td class="tr${status.count}">NT$<fmt:formatNumber value="${purchaselist.bean.price*purchaselist.quantity}" pattern="#,###,###"/></td>
 					                			<c:set var="price" scope="request" value="${purchaselist.bean.price*purchaselist.quantity}"/>
 					                			<c:set var="totalprice" scope="request" value="${totalprice+price}"/>
+					                			<td>
+					                				<select class="tr${status.count}" name="${purchaselist.bean.productno}">						      
+													   <option selected="selected"></option>
+													   <c:forEach var="i" begin="1" end="${purchaselist.bean.stock}">
+														   	<option>${i}</option>>						      
+													   </c:forEach>     
+													</select>
+					                			</td>
 					                			<td><a href="#" onclick="return false"><i id="${purchaselist.bean.productno}" class="glyphicon glyphicon-trash" onclick="cancel(this.id)"></i></a>					  				                				
 				                			</tr>
 				                			
@@ -361,8 +266,8 @@
 		       		<div class="col-lg-3"></div>           
 		       		<div class="col-lg-3">
 		       		<form action="OrderCheck.do" method="post">
-		       			<input type="hidden" name="totalprice" value="${totalprice}"/>
-		       			<input type="hidden" name="totalqty" value="${totalqty}"/>	       			
+		       			<input type="hidden" id="totalprice" name="totalprice" value="${totalprice}"/>
+		       			<input type="hidden" id="totalqty" name="totalqty" value="${totalqty}"/>	       			
 		       			<c:if test="${totalqty!=null}">
 		       				<button type="submit" class="btn btn-success">&nbsp&nbsp&nbsp&nbsp結帳&nbsp&nbsp&nbsp&nbsp</button>
 		       			</c:if>
@@ -380,7 +285,50 @@
 	    </div> 
     </div>
     <script type="text/javascript" src="js/alertify.min.js"></script>
-    <script>     		
+    <script> 
+    
+    		$('select').change(function(){
+    						
+    			var rowclass = $(this).attr("class");
+    			var productno = $(this).attr("name");
+    			var qty = $(this).val();
+    			$.ajax({
+    				'type':'post',
+    				'url':'ModifyQuantityServlet.do',
+    				'data':{'productno':productno, 'quantity':qty},
+    				'datatype':'text',
+    				'success':function(datas){
+    					var oldqty = $('td.'+rowclass+':eq(0)').text();   					
+    	/*產生新數量*/		$('td.'+rowclass+':eq(0)').empty().append(qty);
+    					
+    					var z = $('td.'+rowclass+':eq(1)').text();
+    					var b = String(z).substr(3);
+    					var oldprice = String(b).split(',')[0] + String(b).split(',')[1];
+    					
+    					var y = String(datas).split('.')[0];
+    					var x = String(datas).split('.')[0].length -3;   					
+    					var newprice = String(y).substring(0,x)+','+ String(y).substr(x); 
+    	/*產生新小計*/  	$('td.'+rowclass+':eq(1)').empty().append("NT$"+newprice);
+    					 					   					
+    					var oldtotal = $('#total').text();
+    					oldtotal = String(oldtotal).split(',')[0]+String(oldtotal).split(',')[1]; 					
+	     				var newtotal = parseInt(oldtotal) - oldprice + parseInt(y); 
+	     					     					     				
+	     				var t = String(newtotal).length-3;
+	     				var formated = String(newtotal).substring(0,t)+','+ String(newtotal).substr(t);   						     					    					  						     					
+	     				$('#total').empty().append(formated);	
+	     				$('#totalprice').val(newtotal);	  
+	     				
+	     				var oldtotalqty = $('#totalqty').val();
+ 	     				var newtotalqty = oldtotalqty -oldqty + parseInt(qty)   
+	  	     			$('#totalqty').val(newtotalqty);  					
+    				}
+    			});
+    			
+    			
+    		});
+    
+    
     		function cancel(id){
 	  			alertify.set({ labels : { ok: "確定", cancel: "取消" } });
 	  			alertify.set({ buttonReverse: true });

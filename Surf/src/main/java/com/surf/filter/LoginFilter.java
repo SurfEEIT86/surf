@@ -17,7 +17,7 @@ import com.surf.members.model.MemberVO;
 
 
 @WebFilter(
-		urlPatterns={"/forums/*"}
+		urlPatterns={"/forums/*", "/ShoppingCart.jsp"}
 )
 public class LoginFilter implements Filter {
 	public void destroy() {

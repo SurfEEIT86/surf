@@ -1,6 +1,9 @@
 package com.surf.customorders.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+
+import com.surf.models.model.ModelsVO;
 
 public class CustomOrdersVO implements Serializable{
 
@@ -11,10 +14,59 @@ public class CustomOrdersVO implements Serializable{
 	private String boardcolor;
 	private String finsys;
 	private String material;
-	private String frontpic;
-	private String backpic;
-	private byte[] custumlogo1;
-	private byte[] custumlogo2;
+	private String boardpic;
+	private Timestamp date;
+	private String customlogo1;
+	private String customlogo2;
+	private String creditcard;
+	private ModelsVO modelsvo;
+	private String address;
+	private Double price;
+	private String remark;
+	private Integer status;
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public String getBoardpic() {
+		return boardpic;
+	}
+	public void setBoardpic(String boardpic) {
+		this.boardpic = boardpic;
+	}
+//	public Integer getModelno() {
+//		return modelno;
+//	}
+//	public void setModelno(Integer modelno) {
+//		this.modelno = modelno;
+//	}
+	public String getCreditcard() {
+		return creditcard;
+	}
+	public void setCreditcard(String creditcard) {
+		this.creditcard = creditcard;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
 	
 	public Integer getOrderno() {
 		return orderno;
@@ -52,29 +104,29 @@ public class CustomOrdersVO implements Serializable{
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-	public String getFrontpic() {
-		return frontpic;
+	public String getCustomlogo1() {
+		return customlogo1;
 	}
-	public void setFrontpic(String frontpic) {
-		this.frontpic = frontpic;
+	public void setCustomlogo1(String customlogo1) {
+		this.customlogo1 = customlogo1;
 	}
-	public String getBackpic() {
-		return backpic;
+	public String getCustomlogo2() {
+		return customlogo2;
 	}
-	public void setBackpic(String backpic) {
-		this.backpic = backpic;
+	public void setCustomlogo2(String customlogo2) {
+		this.customlogo2 = customlogo2;
 	}
-	public byte[] getCustumlogo1() {
-		return custumlogo1;
+	public Integer getStatus() {
+		return status;
 	}
-	public void setCustumlogo1(byte[] custumlogo1) {
-		this.custumlogo1 = custumlogo1;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
-	public byte[] getCustumlogo2() {
-		return custumlogo2;
+	public ModelsVO getModelsvo() {
+		return modelsvo;
 	}
-	public void setCustumlogo2(byte[] custumlogo2) {
-		this.custumlogo2 = custumlogo2;
+	public void setModelsvo(ModelsVO modelsvo) {
+		this.modelsvo = modelsvo;
 	}
 	
 }

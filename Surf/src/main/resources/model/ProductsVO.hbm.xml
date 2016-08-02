@@ -34,7 +34,7 @@
         <property name="link" type="java.lang.String">
         	<column name="link"/>
         </property>
-        <many-to-one name="brandvo" class="com.surf.brands.model.BrandsVO">
+        <many-to-one name="brandvo" class="com.surf.brands.model.BrandsVO" lazy="false">
             <column name="brandno" />
         </many-to-one>
     </class>
