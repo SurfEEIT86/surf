@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.WebApplicationContext;
@@ -28,9 +29,14 @@ public class ProductDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 		Integer productno = Integer.parseInt(request.getParameter("productno"));
 		ProductsVO bean = pDao.select(productno);
-		request.setAttribute("productdetail", bean);
+		String type= bean.getBrandvo().getProdtypesVO().getType();
+		Integer typeno = bean.getBrandvo().getProdtypesVO().getTypeno(); 
+		session.setAttribute("productdetail", bean);
+		session.setAttribute("typename", type);
+		session.setAttribute("typeno", typeno);
 		RequestDispatcher rd = request.getRequestDispatcher("ProductDetail.jsp");
 		rd.forward(request, response);	
 	}
