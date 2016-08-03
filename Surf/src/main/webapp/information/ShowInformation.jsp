@@ -23,7 +23,7 @@
 
 	<header>
 		<div class="container">
-			<a href="index.html" class="logo">
+			<a href="../members/index.jsp" class="logo">
 				<img src="images/logo.svg" alt="聚浪">
 				<h1>聚浪</h1>
 			</a>	
@@ -186,7 +186,7 @@
 					    var img=document.createElement("img");
 					    var p=document.createElement("p");
 					    li.className="more";
-					    a.href="showStoreList?type=food&la="+${SiteVO[0].latitude}+"&ln="+${SiteVO[0].longitude};
+					    a.href="showStoreList?site=${SiteVO[0].name}&type=food&la="+${SiteVO[0].latitude}+"&ln="+${SiteVO[0].longitude};
 					    img.src="images/info01.jpg";
 					    p.innerText="+ MORE";
 					    a.appendChild(img);

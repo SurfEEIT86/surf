@@ -23,7 +23,7 @@
 
 	<header>
 		<div class="container">
-			<a href="index.html" class="logo">
+			<a href="../members/index.jsp" class="logo">
 				<img src="images/logo.svg" alt="聚浪">
 				<h1>聚浪</h1>
 			</a>	
@@ -116,7 +116,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h3 class="text-center big-title">"${site}"附近${typeName}</h3>
+					<h3 class="text-center big-title"><a style="color:blue;ctext-decoration:underline;" href="SearchSitesOrCity?sitesearch=${site}">${site}</a> - 附近${typeName}</h3>
 					<ul class="info-list clearfix" id="list">
 <!-- 						<li> -->
 <!-- 							<a href="shop-dt.html" class="clearfix"> -->

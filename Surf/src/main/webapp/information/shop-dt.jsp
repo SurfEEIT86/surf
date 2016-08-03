@@ -22,7 +22,7 @@
 
 	<header>
 		<div class="container">
-			<a href="index.html" class="logo">
+			<a href="../members/index.jsp" class="logo">
 				<img src="images/logo.svg" alt="聚浪">
 				<h1>聚浪</h1>
 			</a>	

@@ -23,13 +23,15 @@
 
 	<header>
 		<div class="container">
-			<a href="index.html" class="logo pull-left">
+			<a href="../members/index.jsp" class="logo pull-left">
 				<img src="images/logo.svg" alt="聚浪">
 				<h1>聚浪</h1>
 			</a>	
 			<div class="search-wrap pull-right">
-				<input type="search">
-				<button tyle="submit"><i class="fa fa-search" ></i></button>
+				<form action="SearchSitesOrCity" method="get">
+				<input type="search" name="sitesearch">
+				<button type="submit"><i class="fa fa-search" ></i></button>
+				</form>
 			</div>
 		</div>
 	</header>
