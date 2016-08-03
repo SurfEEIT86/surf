@@ -1,8 +1,10 @@
 package com.surf.information.sites.model.dao;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -10,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.surf.forums.model.ArticleVO;
 import com.surf.information.sites.model.SitesDAO;
 import com.surf.information.sites.model.SitesVO;
 
@@ -56,10 +59,10 @@ public class SitesDAOHibernate implements SitesDAO {
 			// vo.setDescription("浪大，人多，風景美");
 			// dao.insert(vo);
 			/* 更新一個浪點 */
-//			SitesVO vo = dao.findBySites(1);
-//			vo.setName("花蓮港");
-//			dao.update(vo);
-			
+			// SitesVO vo = dao.findBySites(1);
+			// vo.setName("花蓮港");
+			// dao.update(vo);
+
 			/* 刪除一個浪點 */
 			dao.deleteBySitesVO(1);
 
@@ -111,4 +114,71 @@ public class SitesDAOHibernate implements SitesDAO {
 		return false;
 	}
 
+	/* 模糊查詢浪點 */
+	@Override
+	public List<SitesVO> findSitesByName(String siteName) {
+		String name = "%" + siteName + "%";
+		String sql = "select * from sites where name like ?";
+		SQLQuery<SitesVO> query = null;
+		query = this.getSession().createSQLQuery(sql);
+		query.setParameter(0, name);
+		query.addEntity("sitesVO", SitesVO.class);
+		List<SitesVO> list1 = query.list();
+
+		String sql2 = "select b.siteno,b.name,b.longitude,b.latitude,b.cityNo,b.status,"
+				+ "b.pic1,b.pic2,b.pic3,b.description,b.seaArea from (select * from cities where "
+				+ "CityName like ?) as a join (select * from sites) as b on a.CityNo"
+				+ "=b.CityNo";
+
+		SQLQuery<SitesVO> query2 = null;
+		query2 = this.getSession().createSQLQuery(sql2);
+		query2.setParameter(0, name);
+		query2.addEntity("sitesVO", SitesVO.class);
+		List<SitesVO> list2 = query2.list();
+		Iterator<SitesVO> iter1 = list1.iterator();
+
+		List<SitesVO> list3 = new ArrayList<SitesVO>();
+
+		while (iter1.hasNext()) {
+			SitesVO vo1 = iter1.next();
+			Iterator<SitesVO> iter2 = list2.iterator();
+			list3.add(vo1);
+			while (iter2.hasNext()) {
+				SitesVO vo2 = iter2.next();
+				Iterator<SitesVO> iter3 = list1.iterator();
+				int temp=0;
+				while(iter3.hasNext()){
+					SitesVO vo3 = iter3.next();
+					if(vo3.getSiteno()==vo2.getSiteno()){
+						temp++;
+					}
+				}
+				if(temp==0){
+					list3.add(vo2);
+				}
+			}
+		}
+		if(list1.size()!=0){
+			return list3;
+		}
+		if(list1.size()==0){
+			Iterator<SitesVO> iter2 = list2.iterator();
+			while (iter2.hasNext()) {
+				SitesVO vo2 = iter2.next();
+					list3.add(vo2);
+			}
+			return list3;
+		}		
+		return null;
+		
+	}
+	/*隨機六筆*/
+	@Override
+	public List<SitesVO> selectSiteByRand(){
+		String sql="SELECT TOP(6) * FROM sites ORDER BY NEWID()";
+		SQLQuery<SitesVO> query = this.getSession().createSQLQuery(sql);
+		query.addEntity("sitesVO", SitesVO.class);
+		List<SitesVO> list1 = query.list();
+		return list1;
+	}
 }

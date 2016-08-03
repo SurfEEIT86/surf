@@ -18,6 +18,13 @@ public class SitesVO implements Serializable {
 	private String pic2;
 	private String pic3;
 	private String description;
+	private String seaArea;
+	public String getSeaArea() {
+		return seaArea;
+	}
+	public void setSeaArea(String seaArea) {
+		this.seaArea = seaArea;
+	}
 	public Integer getSiteno() {
 		return siteno;
 	}
