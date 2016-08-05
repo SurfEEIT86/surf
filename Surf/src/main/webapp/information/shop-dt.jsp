@@ -58,17 +58,25 @@
 // 		      	var open=document.getElementById('open');
 // 		      	open.innerHTML="<i class='fa fa-clock-o'></i>"+" "+place.opening_hours.weekday_text[0];
 		      	var img=document.getElementById('pic');
-		      	var imgSrc=place.photos[0].getUrl({
+// 		      	var imgSrc=place.photos[0].getUrl({
 
-		      		maxWidth: 320,
-		      	});
-		      	img.src=imgSrc;
+// 		      		maxWidth: 320,
+// 		      	});
+// 		      	img.src=imgSrc;
 		      	for(var i=0;i<5;i++){
-		      		var img=document.getElementById("pic"+(i+1));
-		      		img.src=place.photos[i].getUrl({
+		      		if(i==0){
+			      		var imgSrc=place.photos[i].getUrl({
+	
+				      		maxWidth: 320,
+				      	});
+			      		img.src=imgSrc;
+		      		}
 
-			      		maxWidth: 320,
-			      	});
+			      var img2=document.getElementById("pic"+(i+1));
+			      img2.src=place.photos[i].getUrl({
+				      maxWidth: 320,
+				  });
+		      	
 		      	}
 		    }
 		  });
@@ -79,7 +87,18 @@
 	<div class="gmap">
 		<div id="map" style="width:100%;height:370px;"></div>
 	</div>
-
+	<script src="../forums/js/jquery-2.2.4.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#tumb>a>img').click(function(){
+				var imgLittle=$(this);
+				var temp=imgLittle.attr('src');
+				var bigPic=$('#pic').attr('src');
+				$('#pic').attr('src',temp);
+				
+			})
+		})
+	</script>
 
 	<section class="shop-wrap shop-dt-wrap">
 		<div class="container">
@@ -90,12 +109,12 @@
 				<div class="col-sm-5">
 					<div class="row dt-album">
 						<img id="pic" width="100%">
-						<div class="tumb">
-							<a href="#"><img id="pic1" width="100%"></a>
-							<a href="#"><img id="pic2" width="100%"></a>
-							<a href="#"><img id="pic3" width="100%"></a>
-							<a href="#"><img id="pic4" width="100%"></a>
-							<a href="#"><img id="pic5" width="100%"></a>
+						<div class="tumb" id="tumb">
+							<a href="javascript:;"><img id="pic1" width="100%"></a>
+							<a href="javascript:;"><img id="pic2" width="100%"></a>
+							<a href="javascript:;"><img id="pic3" width="100%"></a>
+							<a href="javascript:;"><img id="pic4" width="100%"></a>
+							<a href="javascript:;"><img id="pic5" width="100%"></a>
 						</div>
 					</div>
 				</div>

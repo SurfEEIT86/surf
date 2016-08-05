@@ -219,13 +219,13 @@
 			    <section id="about" class="about-section">
 			            <div class="row" style="background-color: #888888">
 			                <div class="col-lg-12">
-			                    <h2 style="font-weight:bold; color: white">商品描述</h2>
+			                    <h2 style="font-weight:bold; font-style:oblique; color: white">商品描述</h2>
 			                </div>
 			            </div>
 			            <div class="row" style="background-color: #888888;">
 			            	
 				             <div class="col-lg-12" style="margin-bottom:15px;">
-				                <h2 style="text-align:justify; color: white"><small style="color: white">${productdetail.description}</small></h2>
+				                <h2 style="text-align:justify; color: white"><small style="color: white; font-style:oblique; line-height:150%">${productdetail.description}</small></h2>
 				             </div>
 			               	
 				             <div class="col-lg-12">

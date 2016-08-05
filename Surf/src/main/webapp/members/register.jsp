@@ -270,14 +270,14 @@
 							<dl class="text-item dl-horizontal" >
 								<dt><label for="D">密碼：</label></dt>
 								<dd>
-									<input id="password" name="password" id="D" type="text" /> 
+									<input id="password" name="password" id="D" type="password" /> 
 									<span id="cpwd" class="error"></span>
 								</dd>
 							</dl>
 							<dl class="text-item dl-horizontal" >
 								<dt><label for="E">確認密碼：</label></dt>
 								<dd>
-									<input id="password2" name="password2" id="E" type="text" /> 
+									<input id="password2" name="password2" id="E" type="password" /> 
 									<span id="cpwd2" class="error"></span>
 								</dd>
 							</dl>
