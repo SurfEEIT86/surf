@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+<meta name="autor" content="OZCHAMP | Nini" />
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>大學問｜大學入學管道全攻略</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/owl/owl.transitions.css" >
+<link rel="stylesheet" type="text/css" href="css/owl/owl.theme.css" >
+<link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.css" >
+<link rel="stylesheet" type="text/css" href="css/slick.css" >
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css" >
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" >
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/bootstrap/tab.js"></script><!-- tab -->
+<script type="text/javascript" src="js/bootstrap/modal.js"></script><!-- popup -->
+<script type="text/javascript" src="js/owl.carousel.min.js"></script><!-- popup -->
+<script type="text/javascript" src="js/custom.js"></script>
+</head>
+
+<body>
+
+	<div class="fix-box clearfix">
+		<div class="btn-wrap">
+			<div class="fix-btn"><i class="fa fa-history"></i>瀏覽紀錄</div>
+			<a href="#" id="goTop"><i class="fa fa-arrow-circle-up"></i>TOP</a>
+		</div>
+		<div class="fix-content-wrap">
+			<ol class="slide-history">
+				<li><a href="#">台科大電機系1</a></li>
+				<li><a href="#">崇光科大電機系2</a></li>
+				<li><a href="#">崇光科大電機系3</a></li>
+				<li><a href="#">崇光科大電機系4</a></li>
+				<li><a href="#">崇光科大電機系5</a></li>
+				<li><a href="#">崇光科大電機系6</a></li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 logo-wrap"><a href="index.html"><img src="images/logo-big.png" alt="德屹大學問"></a></div>
+				<div class="col-xs-9 text-right banner-wrap">
+					<div class="banner-slide">
+						<div><img src="images/banner1.jpg" alt="德屹大學問"></div>
+						<div><img src="images/banner2.jpg" alt="德屹大學問"></div>
+						<div><img src="images/banner3.jpg" alt="德屹大學問"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center mt20"><img src="http://placehold.it/970x90" alt="google AD"></div>
+
+	<section class="main mt20">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 aside-l">
+
+					<!-- 快速查詢 -->
+					<div class="pav-fast-search pav-fast-search2 base-shadow mb20">
+
+						<!----------------------------------------------- popup area -------------------->
+						<div class="modal fade" id="searchpopA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="text-center mb10 mt10"><img src="http://placehold.it/468x60" alt="google AD"></div>
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">╳</span><span class="sr-only">Close</span></button>
+										<h4 class="modal-title" id="myModalLabel">所選項目</h4>
+									</div>
+
+									<div class="modal-body">
+
+										<!--  已選擇 -->
+										<div class="select-yes">
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>基隆市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺中市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>高雄市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>澎湖縣</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>基隆市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺中市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>高雄市</a>
+											<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>澎湖縣</a>
+											<a href="#" class="clearbtn redbtn">全部清除</a>
+										</div>
+
+										<!--  學群學系選擇 -->
+										<div class="select-no pop-group-wrap">
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">大學學群</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">資訊學群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">工程學群</a>
+														<a href="#" class="selected-btn btn-border radius2">數理化學群</a>
+														<a href="#" class="selected-btn btn-border radius2">醫藥衛生學群</a>
+														<a href="#" class="selected-btn btn-border radius2">生命科學學群</a>
+														<a href="#" class="selected-btn btn-border radius2">生物資源學群</a>
+														<a href="#" class="selected-btn btn-border radius2">地球與環境學群</a>
+														<a href="#" class="selected-btn btn-border radius2">建築與設計學群</a>
+														<a href="#" class="selected-btn btn-border radius2">藝術學群</a>
+														<a href="#" class="selected-btn btn-border radius2">社會與心理學群</a>
+														<a href="#" class="selected-btn btn-border radius2">大眾傳播學群</a>
+														<a href="#" class="selected-btn btn-border radius2">外語學群</a>
+														<a href="#" class="selected-btn btn-border radius2">文史哲學群</a>
+														<a href="#" class="selected-btn btn-border radius2">教育學群</a>
+														<a href="#" class="selected-btn btn-border radius2">法政學群</a>
+														<a href="#" class="selected-btn btn-border radius2">管理學群</a>
+														<a href="#" class="selected-btn btn-border radius2">財經學群</a>
+														<a href="#" class="selected-btn btn-border radius2">遊憩與運動學群</a>
+														<a href="#" class="selected-btn btn-border radius2">軍事學群</a>
+														<a href="#" class="selected-btn btn-border radius2">警政學群</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">技職群類</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">機械群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">動力機械群</a>
+														<a href="#" class="selected-btn btn-border radius2 active">電機與電子群電機類</a>
+														<a href="#" class="selected-btn btn-border radius2 active">電機與電子群資電類</a>
+														<a href="#" class="selected-btn btn-border radius2">化工群</a>
+														<a href="#" class="selected-btn btn-border radius2">土木與建築群</a>
+														<a href="#" class="selected-btn btn-border radius2">設計群</a>
+														<a href="#" class="selected-btn btn-border radius2">工程與管理類</a>
+														<a href="#" class="selected-btn btn-border radius2">商業與管理群</a>
+														<a href="#" class="selected-btn btn-border radius2">衛生與護理類</a>
+														<a href="#" class="selected-btn btn-border radius2">食品群</a>
+														<a href="#" class="selected-btn btn-border radius2">家政群幼保類</a>
+														<a href="#" class="selected-btn btn-border radius2">家政群生活應用類</a>
+														<a href="#" class="selected-btn btn-border radius2">農業群</a>
+														<a href="#" class="selected-btn btn-border radius2">外語群英語類</a>
+														<a href="#" class="selected-btn btn-border radius2">外語群日語類</a>
+														<a href="#" class="selected-btn btn-border radius2">餐旅群</a>
+														<a href="#" class="selected-btn btn-border radius2">海事群</a>
+														<a href="#" class="selected-btn btn-border radius2">水產群</a>
+														<a href="#" class="selected-btn btn-border radius2">藝術群影視類</a>
+													</td>
+												</tr>
+											</table>
+										</div>
+
+										<!--  地區選擇 -->
+										<div class="select-no pop-area-wrap">
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">全　　　臺</span></td>
+													<td><a href="#" class="selected-btn btn-border radius2">全　選</a></td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">北　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2 active">基隆市</a>
+														<a href="#" class="selected-btn btn-border radius2 active">臺北市</a>
+														<a href="#" class="selected-btn btn-border radius2">新北市</a>
+														<a href="#" class="selected-btn btn-border radius2">桃園市</a>
+														<a href="#" class="selected-btn btn-border radius2">新竹市</a>
+														<a href="#" class="selected-btn btn-border radius2">新竹縣</a>
+														<a href="#" class="selected-btn btn-border radius2">宜蘭縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">中　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">苗栗縣</a>
+														<a href="#" class="selected-btn btn-border radius2 active">臺中市</a>
+														<a href="#" class="selected-btn btn-border radius2">彰化縣</a>
+														<a href="#" class="selected-btn btn-border radius2">雲林縣</a>
+														<a href="#" class="selected-btn btn-border radius2">南投縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">南　　　區</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">嘉義市</a>
+														<a href="#" class="selected-btn btn-border radius2">嘉義縣</a>
+														<a href="#" class="selected-btn btn-border radius2">臺南市</a>
+														<a href="#" class="selected-btn btn-border radius2 active">高雄市</a>
+														<a href="#" class="selected-btn btn-border radius2">屏東縣</a>
+													</td>
+												</tr>
+											</table>
+											<table>
+												<tr>
+													<td class="title"><span class="pop-area-type radius2">東區及離島</span></td>
+													<td>
+														<a href="#" class="selected-btn btn-border radius2">花蓮縣</a>
+														<a href="#" class="selected-btn btn-border radius2">臺東縣</a>
+														<a href="#" class="selected-btn btn-border radius2 active">澎湖縣</a>
+														<a href="#" class="selected-btn btn-border radius2">金門縣</a>
+													</td>
+												</tr>
+											</table>
+										</div>
+
+									</div>
+									<!-- modal-body end -->
+
+									<div class="modal-footer">
+										<a href="#" class="btn-pn btn-p radius2"><i class="fa fa-arrow-left"></i> 選擇<span>學群&學類</span></a>
+										<button type="button" class="redbtn radius2">確認</button>
+										<a href="#" class="btn-pn btn-n radius2">選擇<span>註冊率</span> <i class="fa fa-arrow-right"></i></a>
+									</div>
+								</div>
+						    </div>
+						</div>
+						<!----------------------------------------------- popup area end -------------------->
+
+						<div class="fast-search-title"><div class="icon1"></div><h3>校系快速查詢</h3></div>
+						<div class="fast-search-content">
+							<div class="identity-wrap clearfix">
+								<a href="#" class="active">
+									<div class="i-custom" style="background: url(images/custom/way1-140x360A.png) bottom center; background-size: 70px auto;"></div>
+									高中生
+								</a>
+								<a href="#">
+									<div class="i-custom" style="background: url(images/custom/way1-140x360B.png) bottom center; background-size: 70px auto;"></div>
+									高職生
+								</a>
+							</div>
+
+							<div class="select-wrap select-wrapA">
+								<div class="title">學群 & 學類<a href="#" data-toggle="modal" data-target="#searchpopA" class="edit btn-border radius2"><i class="fa fa-pencil"></i>修改</a></div>
+								<div class="select-no">
+									<a href="#" data-toggle="modal" data-target="#searchpopA"><img src="images/icon/fastsearchA.png" width="60px" height="60px"><span>點擊挑選有興趣的學群吧！</span></a>
+								</div>
+								<!-- <div class="select-yes">
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>土木群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>大眾傳播群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>土木與建築群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>生物資源學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>地球與環境學群</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>資訊學群</a>
+								</div> -->
+							</div>
+
+							<div class="select-wrap select-wrapB">
+								<div class="title">地　區<a href="#" data-toggle="modal" data-target="#searchpopA" class="edit btn-border"><i class="fa fa-pencil"></i>修改</a></div>
+								<div class="select-no">
+									<a href="#" data-toggle="modal" data-target="#searchpopA"><img src="images/icon/fastsearchB.png" width="60px" height="60px"><span>點擊看看想讀哪裡的大學！</span></a>
+								</div>
+								<!-- <div class="select-yes">
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>新北市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>臺北市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>桃園市</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>新竹縣</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>嘉義縣</a>
+									<a href="#" class="selected-btn btn-border radius2"><i class="fa fa-remove"></i>苗栗縣</a>
+								</div> -->
+							</div>
+
+							<div class="select-wrap select-wrapC">
+								<div class="title">註冊率</div>
+								<div class="text-center mt10">
+								<div class="input-wrap">
+									<input id="percent-H" name="type" type="radio" value="" >
+									<label for="percent-H"><div class="inputpic inputpicA"></div><span></span>高</label>
+								</div>
+								<div class="input-wrap">
+									<input id="percent-M" name="type" type="radio" value="" >
+									<label for="percent-M"><div class="inputpic inputpicB"></div><span></span>中</label>
+								</div>
+								<div class="input-wrap">
+									<input id="percent-L" name="type" type="radio" value="" >
+									<label for="percent-L"><div class="inputpic inputpicC"></div><span></span>低</label>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="fast-search-button">
+							<button type="button" class="redbtn pav-searchbtn radius2"><i class="fa  fa-search"></i>  開始查詢</button>
+						</div>
+					</div>
+
+					<!-- 尋找大學 -->
+					<div class="base-box base-shadow pav-area-search">
+						<div class="box-head"><div class="icon1"></div><span>尋找大學</span></div>
+						<div class="box-content">
+							<ul>
+								<li><a href="03-search-keyword.html">基隆市</a></li>
+								<li><a href="03-search-keyword.html">臺北市</a></li>
+								<li><a href="03-search-keyword.html">新北市</a></li>
+								<li><a href="03-search-keyword.html">桃園市</a></li>
+								<li><a href="03-search-keyword.html">新竹縣</a></li>
+								<li><a href="03-search-keyword.html">新竹市</a></li>
+								<li><a href="03-search-keyword.html">宜蘭縣</a></li>
+								<li><a href="03-search-keyword.html">苗栗縣</a></li>
+								<li><a href="03-search-keyword.html">臺中市</a></li>
+								<li><a href="03-search-keyword.html">彰化縣</a></li>
+								<li><a href="03-search-keyword.html">雲林縣</a></li>
+								<li><a href="03-search-keyword.html">南投縣</a></li>
+								<li><a href="03-search-keyword.html">嘉義市</a></li>
+								<li><a href="03-search-keyword.html">嘉義縣</a></li>
+								<li><a href="03-search-keyword.html">台南市</a></li>
+								<li><a href="03-search-keyword.html">高雄市</a></li>
+								<li><a href="03-search-keyword.html">屏東縣</a></li>
+								<li><a href="03-search-keyword.html">花蓮縣</a></li>
+								<li><a href="03-search-keyword.html">臺東縣</a></li>
+								<li><a href="03-search-keyword.html">澎湖縣</a></li>
+								<li><a href="03-search-keyword.html">金門縣</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="text-center mt20"><img src="http://placehold.it/250x250" alt="google AD"></div>
+
+				</div><!------ aside-l end ------>
+				<div class="col-xs-9 center-content p-school-wrap">
+
+					<div class="base-shadow page-wrap mb20">
+						<div class="page-head">
+							<table class="title">
+								<tr>
+									<td width="80px" class="i-title-wrap">
+										<div class="i-title"></div>
+									</td>
+									<td><span class="big">尋找大學</span>
+									</td>
+								</tr>
+							</table>
+
+							<!-- keyword search -->
+							<div class="page-kw-search">
+								<div class="base-shadow mb20 pav-kw-search">
+									<input id="percent-M" name="type" type="input" value="" placeholder="搜尋學校、學系、文章">
+									<button type="button"><i class="fa  fa-search"></i></button>
+								</div>
+							</div>
+
+							<div class="clearfix"></div>
+
+							<div class="path mt20"><a href="index.html">首頁</a> / 尋找大學 / 國立臺灣師範大學</div>
+						</div>
+						<div class="page-content">
+							<div class="text-center mb30 mt30"> <span class="center-title">國立臺灣師範大學</span></div>
+							<div class="base-info-table-wrap">
+								<table class="base-info-table school-info-table">
+									<tr>
+										<td>創校時間</td>
+										<td>1924年</td>
+									</tr>
+									<tr>
+										<td>全校師生比</td>
+										<td>16</td>
+									</tr>
+									<tr>
+										<td>學期學費</td>
+										<td>NT$24,230 ~ 39,430</td>
+									</tr>
+									<tr>
+										<td>全校學生數</td>
+										<td>32,435人</td>
+									</tr>
+									<tr>
+										<td>宿舍</td>
+										<td class="td-item-wrap">
+											<span class="td-item"><p class="title">男生床位</p><p class="text">34</p></span>
+											<span class="td-item"><p class="title">女生床位</p><p class="text">34</p></span>
+											<span class="td-item"><p class="title">每學期住宿費用</p><p class="text">34</p></span>
+										</td>
+									</tr>
+									<tr>
+										<td>院系所及社團數</td>
+										<td class="td-item-wrap">
+											<span class="td-item"><p class="title">學院</p><p class="text">34</p></span>
+											<span class="td-item"><p class="title">科系</p><p class="text">34</p></span>
+											<span class="td-item"><p class="title">研究所</p><p class="text">34</p></span>
+											<span class="td-item"><p class="title">社團</p><p class="text">34</p></span>
+										</td>
+									</tr>
+									<tr>
+										<td>學校網址</td>
+										<td><a href="https://tw.yahoo.com" targer="_blank" class="weblink">https://tw.yahoo.com</a></td>
+									</tr>
+									<tr>
+										<td>學校電話</td>
+										<td>03-4857394</td>
+									</tr>
+									<tr>
+										<td>學校地址 1</td>
+										<td>330 桃園市介壽路288號</td>
+									</tr>
+									<tr>
+										<td>學校地址 2</td>
+										<td>330 桃園市介壽路288號</td>
+									</tr>
+									<tr>
+										<td>學校地址 3</td>
+										<td>330 桃園市介壽路288號</td>
+									</tr>
+								</table>
+							</div>
+							<div class="row album-map-wrap">
+								<div class="col-sm-6 album-slick-wrap">
+									<div class="album-slide">
+										<div><img src="http://placehold.it/800x600" alt="德屹大學問" width="100%"></div>
+										<div><img src="http://placehold.it/800x600" alt="德屹大學問" width="100%"></div>
+										<div><img src="http://placehold.it/800x600" alt="德屹大學問" width="100%"></div>
+									</div>
+								</div>
+								<div class="col-sm-6 map-wrap">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3904958011894!2d121.46687870000001!3d25.020818699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a81647c3461d%3A0xd28f073b2cfe1d45!2z5Y-L6YKB56eR5oqA!5e0!3m2!1szh-TW!2stw!4v1443193354697" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="base-shadow base-box tabs-styleA">
+
+					  <!-- Nav tabs -->
+					  <ul class="nav nav-tabs nav-pills nav-justified" role="tablist">
+					    <li role="presentation" class="active"><a href="#tabs-about" aria-controls="tabs-about" role="tab" data-toggle="tab"><i class="fa fa-university"></i> 學校介紹</a></li>
+					    <li role="presentation"><a href="#tabs-talk" aria-controls="tabs-talk" role="tab" data-toggle="tab"><i class="fa fa-comment"></i> 校長的話</a></li>
+					    <li role="presentation"><a href="#tabs-video" aria-controls="tabs-video" role="tab" data-toggle="tab"><i class="fa fa-video-camera"></i> 線上參觀</a></li>
+					    <li role="presentation"><a href="#tabs-more" aria-controls="tabs-more" role="tab" data-toggle="tab"><i class="fa fa-align-left"></i> 延伸閱讀</a></li>
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+					    <div role="tabpanel" class="tab-pane fade in active" id="tabs-about">
+							<div class="model-box-wrap">
+								<div class="this-model this-modelB">
+									<h2 class="clearfix title"><span>標題範例一右圖左文</span></h2>
+									<div  class="pic-wrap">
+										<span>
+											<img src="http://placehold.it/530x320&text=不限尺寸" alt="德屹大學問">
+											<span class="note">來源：奇摩新聞</span>
+										</span>
+									</div>
+									<p class="text-wrap">教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古</p>
+								</div>
+							</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane fade" id="tabs-talk">
+					    	<div class="model-box-wrap">
+
+								<div class="this-model this-modelA">
+									<h2 class="clearfix title"><span>標題範例一左圖右文</span></h2>
+									<div  class="pic-wrap">
+										<span>
+											<img src="http://placehold.it/530x320&text=不限尺寸" alt="德屹大學問">
+											<span class="note">來源：奇摩新聞</span>
+										</span>
+									</div>
+									<p class="text-wrap">教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前</p>
+								</div>
+
+								<div class="this-model this-modelD">
+									<h2 class="clearfix title"><span>標題範例一單文</span></h2>
+									<p class="text-wrap">教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古禮進行，餐飲科師生向至聖先師孔子獻帛、獻爵、獻果，接著由三位學生代表向師傅行拜師大禮，再由師傅帶領學生一同敲擊木鐸，象徵教化不絕、薪火相傳。教師節前夕，桃園育達高中餐飲科舉辦拜師感恩典禮，校長陳錦亮提醒學生，感恩典禮只是儀式，最重要是尊師重道，同時，學習態度要積極、品德、專業能力培養好，將來才能開創美好的前程。（李明朝報導）
+											拜師感恩典禮循古</p>
+								</div>
+
+							</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane fade" id="tabs-video">
+					    	<div class="video-slick">
+						    	<div>
+						    		<div class="video-container"><iframe src="https://www.youtube.com/embed/61BS2efQuFU" frameborder="0" allowfullscreen></iframe></div>
+						    	</div>
+						    	<div>
+						    		<div class="video-container"><iframe width="420" height="315" src="https://www.youtube.com/embed/xkM6Qx3zmXo" frameborder="0" allowfullscreen></iframe></div>
+						    	</div>
+						    	<div>
+						    		<div class="video-container"><iframe src="https://www.youtube.com/embed/61BS2efQuFU" frameborder="0" allowfullscreen></iframe></div>
+						    	</div>
+						    	<div>
+						    		<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/_B5PqpQuVtg" frameborder="0" allowfullscreen></iframe></div>
+						    	</div>
+					    	</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane fade" id="tabs-more">
+					    	<table class="mix-bg-c tab-content hover-bg">
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學系育學系教育教育學系教育學系學系</a></td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學系教育學育學系教育系教育學系學系</a></td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學育學系教育育學系教育系教育學系教育學系學系</a></td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學系教育學系教育學系學系</a></td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學系教育育學系教育學系教育學系學系</a></td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-content"><a href="#">教育教育學系教育學系教育學系教育學系學系</a></td>
+								</tr>
+							</table>
+					    </div>
+					  </div>
+
+					</div>
+
+					<div class="base-shadow base-box">
+						<div class="box-head"><div class="icon1"></div><span>學院與學系</span></div>
+						<div class="box-content">
+							<table class="mix-bg-c">
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-title">文學院</td>
+									<td class="col-content">
+										<a href="02-search-fast.html">國文系</a>
+										<a href="02-search-fast.html">英文系</a>
+										<a href="02-search-fast.html">歷史系</a>
+										<a href="02-search-fast.html">地理系</a>
+										<a href="02-search-fast.html">臺灣語文系</a>
+										<a href="02-search-fast.html">翻譯研究所</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-title">理學院</td>
+									<td class="col-content">
+										<a href="02-search-fast.html">數學系</a>
+										<a href="02-search-fast.html">物理學系</a>
+										<a href="02-search-fast.html">化學系</a>
+										<a href="02-search-fast.html">生命科學系</a>
+										<a href="02-search-fast.html">臺灣語文系</a>
+										<a href="02-search-fast.html">翻譯研究所</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+									<td class="col-title">科技與工程學院</td>
+									<td class="col-content">
+										<a href="02-search-fast.html">國文系</a>
+										<a href="02-search-fast.html">英文系</a>
+										<a href="02-search-fast.html">圖文傳播系</a>
+										<a href="02-search-fast.html">機電工程系</a>
+										<a href="02-search-fast.html">臺灣語文系</a>
+										<a href="02-search-fast.html">科技應用與人力資源發展系</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="row col3">
+						<div class="col-xs-4">
+							<div class="base-shadow base-box">
+								<div class="box-head"><div class="icon1"></div><span>本校熱門學系</span></div>
+								<div class="box-content">
+									<table class="mix-bg-c tab-content">
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-dep" colspan="2"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-dep" colspan="2"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-dep" colspan="2"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-dep" colspan="2"><a href="#">教育學系</a></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="base-shadow base-box">
+								<div class="box-head"><div class="icon1"></div><span>本地區熱門他校</span></div>
+								<div class="box-content">
+									<table class="mix-bg-c tab-content">
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="base-shadow base-box">
+								<div class="box-head"><div class="icon1"></div><span>其他人也看了</span></div>
+								<div class="box-content">
+									<table class="mix-bg-c tab-content">
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+										<tr>
+											<td class="dot" align="center"><i class="fa fa-circle"></i></td>
+											<td class="col-school"><a href="#">臺師大</a></td>
+											<td class="col-dep"><a href="#">教育學系</a></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+
+				</div><!------ center-content end ------>
+
+			</div>
+		</div>
+	</section>
+
+	<div class="text-center mt20"><img src="http://placehold.it/970x90" alt="google AD"></div>
+
+	<div class="footer mt20">
+		<div class="ft-menu">
+			<div class="container">
+				<a href="10-about.html">關於我們</a>
+				<a href="11-law.html">服務條款</a>
+				<a href="12-ad.html">合作與廣告</a>
+				<a href="13-contact.html">聯絡我們</a>
+				<a href="14-sitemap.html">網站地圖</a>
+				<a href="#" class="fb"></a>
+			</div>
+		</div>
+		<div class="ft-bottom text-center">
+			<div class="container">
+				Copyright © 2015  大學問     All rights reserved.<br> <a href="http://www.ozchamp.net" target="_blank" class="oz">Designed by OZCHAMP</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

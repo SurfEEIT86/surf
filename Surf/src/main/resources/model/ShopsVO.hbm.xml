@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012/3/7 ?W?? 09:15:15 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.surf.information.shops.model.ShopsVO" table="shops">
+        <id name="shopno" type="integer">
+            <column name="shopno" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="cityNo" type="integer">
+            <column name="cityNo" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+                <property name="kind" type="integer">
+            <column name="kind" />
+        </property>
+                <property name="description" type="string">
+            <column name="description" />
+        </property>
+                <property name="tel" type="string">
+            <column name="tel" />
+        </property>
+                <property name="link" type="string">
+            <column name="link" />
+        </property>
+                <property name="pic1" type="string">
+            <column name="pic1" />
+        </property>
+                        <property name="pic2" type="string">
+            <column name="pic2" />
+        </property>
+                        <property name="pic3" type="string">
+            <column name="pic3" />
+        </property>
+
+       
+    </class>
+</hibernate-mapping>

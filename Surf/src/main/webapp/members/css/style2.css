@@ -1,0 +1,542 @@
+.da-slider{
+	width: 100%;
+	min-height:664px;
+	position: relative;
+	overflow: hidden;
+	background:url(../images/slider-bg.jpg);
+	background-size: 100% 100%;
+	-webkit-transition: background-position 1s ease-out 0.3s;
+	-moz-transition: background-position 1s ease-out 0.3s;
+	-o-transition: background-position 1s ease-out 0.3s;
+	-ms-transition: background-position 1s ease-out 0.3s;
+	transition: background-position 1s ease-out 0.3s;
+	text-align:center;
+}
+.da-slide label span{
+	width: 192px;
+	height: 192px;
+	background: url(../images/slide-logo.png) no-repeat 0px 0px;
+	display: block;
+	margin: 6em auto 1em;
+}
+.da-slide i a{
+	width:25px;
+	height:39px;
+	display:inline-block;
+	background: url(../images/slide-icon.png) no-repeat 0px 0px;
+}
+.da-slide small a{
+	color: #B6B0B0;
+	font-family: 'rochesterregular';
+	font-size: 1.3em;
+	margin-top: 0.3em;
+	display: block;
+	font-style: italic;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+}
+.da-slide small a:hover{
+	color:#40A6CF;
+}
+.da-slide{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	font-family: 'Open Sans', sans-serif;
+	text-align: left;
+}
+.da-slide-current{
+	z-index: 1000;
+}
+.da-slider-fb .da-slide{
+	left: 100%;
+}
+.da-slider-fb  .da-slide.da-slide-current{
+	left: 0px;
+}
+.da-slider-fb .da-slide h2,
+.da-slider-fb .da-slide p,
+.da-slider-fb .da-slide .da-link{
+	opacity: 1;
+}
+.da-slider-fb .da-slide .da-img{
+	left: 60%;
+	opacity: 1;
+}
+.da-slide h2{
+	color: #FFFFFF;
+	width: 100%;
+	top: 50%;
+	white-space: nowrap;
+	z-index: 10;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	font: 300 2em/48px 'nexa_boldregular';
+	text-align: center;
+	letter-spacing: 0.1em;
+	margin: 1.5em 0 0.2em;
+}
+.da-slide i,.da-slide small{
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+}
+.da-slide p{
+	top: 60%;
+	color: #FFFFFF;
+	font-size: 2em;
+	height: 80px;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+	line-height: 29px;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+}
+.da-slide .da-img{
+	text-align: center;
+	width: 30%;
+	top: 51px;
+	height: 256px;
+	line-height: 320px;
+	left: 110%; /*60%*/
+}
+.da-slide .da-link{
+	top: 300px; /*depends on p height*/
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+	font-family: 'Open Sans', sans-serif;
+	-moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #71b5d5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #71b5d5 100% );
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:9px;
+	-moz-border-radius-topleft:9px;
+	border-top-left-radius:9px;
+	-webkit-border-top-right-radius:9px;
+	-moz-border-radius-topright:9px;
+	border-top-right-radius:9px;
+	-webkit-border-bottom-right-radius:9px;
+	-moz-border-radius-bottomright:9px;
+	border-bottom-right-radius:9px;
+	-webkit-border-bottom-left-radius:9px;
+	-moz-border-radius-bottomleft:9px;
+	border-bottom-left-radius:9px;
+	text-indent:0px;
+	border:1px solid #71b5d5;
+	display:inline-block;
+	color:#ffffff;
+	font-size:1em;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-style:normal;
+	height:45px;
+	line-height:49px;
+	width:152px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 0px 0px #7bb7d1;
+	margin-left: 32%;
+}
+.da-slider:hover .da-arrows span{
+	opacity: 1;
+}
+.da-slide-current h2,
+.da-slide-current p,
+.da-slide-current .da-link{
+	left: 10%;
+	opacity: 1;
+}
+.da-slide-current .da-img{
+	left: 60%;
+	opacity: 1;
+}
+/* Animation classes and animations */
+
+/* Slide in from the right*/
+.da-slide-fromright h2{
+	-webkit-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+}
+.da-slide-fromright p{
+	-webkit-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+}
+.da-slide-fromright .da-link{
+	-webkit-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-moz-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-o-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-ms-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+}
+.da-slide-fromright .da-img{
+	-webkit-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+}
+.da-slide-fromleft h2{
+	-webkit-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+}
+.da-slide-fromleft p{
+	-webkit-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+}
+.da-slide-fromleft .da-link{
+	-webkit-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-moz-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-o-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-ms-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+}
+.da-slide-fromleft .da-img{
+	-webkit-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+}
+/* Slide out to the right */
+.da-slide-toright h2{
+	-webkit-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-moz-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-o-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-ms-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+}
+.da-slide-toright p{
+	-webkit-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-moz-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-o-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-ms-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+}
+.da-slide-toright .da-link{
+	-webkit-animation: toRightAnim3 0.4s ease-in-out both;
+	-moz-animation: toRightAnim3 0.4s ease-in-out both;
+	-o-animation: toRightAnim3 0.4s ease-in-out both;
+	-ms-animation: toRightAnim3 0.4s ease-in-out both;
+	animation: toRightAnim3 0.4s ease-in-out both;
+}
+.da-slide-toright .da-img{
+	-webkit-animation: toRightAnim4 0.6s ease-in-out both;
+	-moz-animation: toRightAnim4 0.6s ease-in-out both;
+	-o-animation: toRightAnim4 0.6s ease-in-out both;
+	-ms-animation: toRightAnim4 0.6s ease-in-out both;
+	animation: toRightAnim4 0.6s ease-in-out both;
+}
+/* Slide out to the left*/
+.da-slide-toleft h2{
+	-webkit-animation: toLeftAnim1 0.6s ease-in-out both;
+	-moz-animation: toLeftAnim1 0.6s ease-in-out both;
+	-o-animation: toLeftAnim1 0.6s ease-in-out both;
+	-ms-animation: toLeftAnim1 0.6s ease-in-out both;
+	animation: toLeftAnim1 0.6s ease-in-out both;
+}
+.da-slide-toleft p{
+	-webkit-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-moz-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-o-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-ms-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+}
+.da-slide-toleft .da-link{
+	-webkit-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-moz-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-o-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-ms-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+}
+.da-slide-toleft .da-img{
+	-webkit-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-moz-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-o-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-ms-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+}
+	.da-slider {
+		min-height: 300px;
+	}
+	.da-slide label span {
+		width:90px;
+		height:90px;
+		background-size: 100% 100%;
+		margin: 1.5em auto 0em;
+	}
+	.da-slide h2 {
+		margin: 0.7em 0 0.2em;
+		font: 300 1.2em/14px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 1.2em;
+		height:30px;
+	}
+	.da-slide small a {
+		margin-top: 0em;
+	}
+@media only screen and (max-width: 320px) and (min-width:240px) {
+	.da-slider {
+		min-height: 270px;
+	}
+	.da-slide label span {
+		width:80px;
+		height:80px;
+		background-size: 100% 100%;
+		margin: 1em auto 0em;
+	}
+	.da-slide h2 {
+		margin: 0.7em 0 0.2em;
+		font: 300 1em/14px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 0.875em;
+		height:30px;
+	}
+	.da-slide small a {
+		margin-top: 0em;
+		font-size: 1em;
+	}
+}
+
+
+
+.da-arrows-prev{
+	background: url(aerial1/css/images/ac4.png) no-repeat 0px 0px;
+}
+.da-arrows-next{
+	background: url(aerial1/css/images/ac4.png) no-repeat -20px 0px;
+}
+.da-arrows span.da-arrows-prev{
+	left: 20%;
+}
+.da-arrows span.da-arrows-next{
+	right:20%;
+}
+	.da-arrows span.da-arrows-prev {
+		left: 15%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 15%;
+	}
+    	.da-arrows span.da-arrows-prev {
+		left: 10%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 10%;
+	}
+    	.da-arrows span.da-arrows-prev {
+		left: 10%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 10%;
+	}
+@media only screen and (max-width: 1024px) and (min-width:768px) {
+	.da-dots {
+		bottom: 55px;
+	}
+	.da-arrows span {
+		top: 43%;
+	}
+	.da-slider {
+		min-height: 526px;
+	}
+	.da-slide label span {
+		width: 150px;
+		height: 150px;
+		background-size: 100% 100%;
+		margin: 3em auto 1em;
+	}
+	.da-slide h2 {
+		margin: 1em 0 0.2em;
+	}
+	.head {
+		margin: 2em 0 2em 0;
+	}
+	.da-arrows span.da-arrows-prev {
+		left: 15%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 15%;
+	}
+}
+@media only screen and (max-width: 768px) and (min-width:640px) {
+	.da-dots {
+		bottom: 55px;
+	}
+	.da-arrows span {
+		top: 43%;
+	}
+	.da-slider {
+		min-height: 526px;
+	}
+	.da-slide label span {
+		width: 150px;
+		height: 150px;
+		background-size: 100% 100%;
+		margin: 3em auto 1em;
+	}
+	.da-slide h2 {
+		margin: 1em 0 0.2em;
+		font: 300 1.8em/48px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 1.5em;
+	}
+	.head {
+		margin: 2em 0 2em 0;
+	}
+	.da-arrows span.da-arrows-prev {
+		left: 10%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 10%;
+	}
+}
+@media only screen and (max-width: 640px) and (min-width:480px) {
+	.da-dots {
+		bottom: 55px;
+	}
+	.da-arrows span {
+		top: 43%;
+	}
+	.da-slider {
+		min-height: 400px;
+	}
+	.da-slide label span {
+		width: 120px;
+		height: 120px;
+		background-size: 100% 100%;
+		margin: 1.5em auto 0em;
+	}
+	.da-slide h2 {
+		margin: 1em 0 0.2em;
+		font: 300 1.5em/40px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 1.5em;
+		height:30px;
+	}
+	.head {
+		margin: 2em 0 2em 0;
+	}
+	.da-arrows span.da-arrows-prev {
+		left: 10%;
+	}
+	.da-arrows span.da-arrows-next {
+		right: 10%;
+	}
+	.da-slide small a {
+		margin-top: 0em;
+	}
+	.head h3 {
+		font-size: 1.5em;
+	}
+}
+@media only screen and (max-width: 480px) and (min-width:320px) {
+	.da-dots {
+		bottom: 25px;
+	}
+	.da-arrows span {
+		top: 43%;
+	}
+	.da-slider {
+		min-height: 300px;
+	}
+	.da-slide label span {
+		width:90px;
+		height:90px;
+		background-size: 100% 100%;
+		margin: 1.5em auto 0em;
+	}
+	.da-slide h2 {
+		margin: 0.7em 0 0.2em;
+		font: 300 1.2em/14px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 1.2em;
+		height:30px;
+	}
+	.head {
+		margin: 1em 0 1em 0;
+	}
+	.da-arrows span.da-arrows-prev {
+		display: none;
+	}
+	.da-arrows span.da-arrows-next {
+		display: none;
+	}
+	.da-slide small a {
+		margin-top: 0em;
+	}
+	.head h3 {
+		font-size: 1.5em;
+	}
+	.about-grid h3 {
+		font-size: 1.5em;
+	}
+}
+@media only screen and (max-width: 320px) and (min-width:240px) {
+	.da-dots {
+		bottom: 25px;
+	}
+	.da-arrows span {
+		top: 43%;
+	}
+	.da-slider {
+		min-height: 270px;
+	}
+	.da-slide label span {
+		width:80px;
+		height:80px;
+		background-size: 100% 100%;
+		margin: 1em auto 0em;
+	}
+	.da-slide h2 {
+		margin: 0.7em 0 0.2em;
+		font: 300 1em/14px 'nexa_boldregular';
+	}
+	.da-slide p {
+		font-size: 0.875em;
+		height:30px;
+	}
+	.head {
+		margin: 1em 0 0em 0;
+	}
+	.da-arrows span.da-arrows-prev {
+		display: none;
+	}
+	.da-arrows span.da-arrows-next {
+		display: none;
+	}
+	.da-slide small a {
+		margin-top: 0em;
+		font-size: 1em;
+	}
+	.head h3 {
+		font-size: 1.2em;
+		padding: 0.5em 0 0 0;
+	}
+	.about-grid h3 {
+		font-size: 1.5em;
+	}
+}

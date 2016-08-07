@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/7/25 ?U?? 04:24:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.customorders.model.CustomOrdersVO" table="CUSTOMORDERS">
+        <id name="orderno" type="java.lang.Integer">
+            <column name="ORDERNO" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="memberno" type="java.lang.Integer">
+            <column name="MEMBERNO" />
+        </property>
+             
+        <many-to-one name="modelsvo" class="com.surf.models.model.ModelsVO" access="field" lazy="false" >
+            <column name="modelno" />
+        </many-to-one>
+        
+        <property name="dimension" type="java.lang.String">
+            <column name="DIMENSION" />
+        </property>
+        
+        <property name="finsys" type="java.lang.String">
+            <column name="FINSYS" />
+        </property>
+        <property name="material" type="java.lang.String">
+            <column name="MATERIAL" />
+        </property>
+        
+        <property name="boardpic" type="java.lang.String">
+            <column name="boardpic" />
+        </property>
+        <property name="date" type="java.sql.Timestamp">
+            <column name="DATE" />
+        </property>
+        <property name="customlogo1" type="java.lang.String">
+        	<column name="customlogo1"/>
+        </property>
+        <property name="customlogo2" type="java.lang.String">
+        	<column name="customlogo2"/>
+        </property>
+        <property name="creditcard" type="java.lang.String">
+        	<column name="creditcard"/>
+        </property>
+        <property name="price" type="java.lang.Double">
+        	<column name="price"/>
+        </property>
+        <property name="address" type="java.lang.String">
+        	<column name="address"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+        	<column name="remark"/>
+        </property>
+        <property name="boardcolor" type="java.lang.String">
+            <column name="BOARDCOLOR" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>
