@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!--    
+		<property name="hibernate.current_session_context_class">thread</property>
+-->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <property name="hibernate.show_sql">true</property>
+             
+                
+        <mapping resource="model/ArticleVO.hbm.xml" />
+        <mapping resource="model/ForumVO.hbm.xml" />
+        <mapping resource="model/ReplyVO.hbm.xml" />
+        <mapping resource="model/ReportVO.hbm.xml" />
+        <mapping resource="model/MemberVO.hbm.xml" />
+        <mapping resource="model/TrackVO.hbm.xml" />
+        
+        <mapping resource="model/ProductsVO.hbm.xml"/>
+        <mapping resource="model/BrandsVO.hbm.xml"/>
+        <mapping resource="model/ProducttypesVO.hbm.xml"/>
+        <mapping resource="model/OrdersVO.hbm.xml"/>
+        <mapping resource="model/OrderDetailsVO.hbm.xml"/>
+        <mapping resource="model/ModelsVO.hbm.xml"/>
+        <mapping resource="model/CustomOrdersVO.hbm.xml"/>
+        
+        <mapping resource="model/EventTypeVO.hbm.xml"/>
+        <mapping resource="model/EventVO.hbm.xml"/>
+        
+        
+        <mapping resource="model/ShopsVO.hbm.xml" />
+		<mapping resource="model/CitiesVO.hbm.xml" />
+		<mapping resource="model/ShopKindsVO.hbm.xml" />
+		<mapping resource="model/SitesVO.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
