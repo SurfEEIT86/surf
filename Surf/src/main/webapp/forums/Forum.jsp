@@ -32,6 +32,7 @@
 		</form>
 			<div class="sort pull-left">
 				<a href="DisplayPageArticles?pageNo=1" class="btn active">最新</a> <a href="SortArticlesbyHot?pageNo=1" class="btn">熱門</a>
+
 				
 			</div>
 

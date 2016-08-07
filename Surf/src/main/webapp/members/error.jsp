@@ -40,6 +40,5 @@ body{
 			</td>
 		</tr>
 	</table>
-	
 </body>
 </html>

@@ -34,7 +34,6 @@
 		<div class="container">
 			<div class="td">
 				<h1>尋找浪點</h1>
-				
 				<form action="SearchSitesOrCity" method="get">
 				<input type="search" name="sitesearch">
 				<button type="submit"><i class="fa fa-search" ></i></button>

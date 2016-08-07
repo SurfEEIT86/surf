@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/6/29 ?U?? 05:45:53 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.surf.products.model.ProductsVO" table="PRODUCTS">
+        <id name="productno" type="java.lang.Integer">
+            <column name="PRODUCTNO" />    
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="size" type="java.lang.String">
+            <column name="SIZE" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="stock" type="java.lang.Integer">
+            <column name="STOCK" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="PRICE" />
+        </property>
+        <property name="pic1" type="java.lang.String">
+            <column name="PIC1" />
+        </property>
+        <property name="pic2" type="java.lang.String">
+            <column name="PIC2" />
+        </property>
+        <property name="pic3" type="java.lang.String">
+            <column name="PIC3" />
+        </property>
+        <property name="link" type="java.lang.String">
+        	<column name="link"/>
+        </property>
+        <many-to-one name="brandvo" class="com.surf.brands.model.BrandsVO" lazy="false">
+            <column name="brandno" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
