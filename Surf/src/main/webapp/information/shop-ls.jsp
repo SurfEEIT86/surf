@@ -30,7 +30,7 @@
 		</div>
 	</header>
 	<div class="gmap">
-		<div id="map" style="width:1400px;height:350px;"></div>
+		<div id="map" style="width:100%;height:370px;"></div>
 	</div>
 	<div class="info-center">
 				
