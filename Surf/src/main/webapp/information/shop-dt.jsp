@@ -67,14 +67,14 @@
 		      		if(i==0){
 			      		var imgSrc=place.photos[i].getUrl({
 	
-				      		maxWidth: 320,
+				      		maxWidth: 640,
 				      	});
 			      		img.src=imgSrc;
 		      		}
 
 			      var img2=document.getElementById("pic"+(i+1));
 			      img2.src=place.photos[i].getUrl({
-				      maxWidth: 320,
+				      maxWidth: 640,
 				  });
 		      	
 		      	}
