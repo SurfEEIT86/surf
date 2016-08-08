@@ -33,7 +33,6 @@ public class showStoreList extends HttpServlet {
 		request.setAttribute("site", site);
 		request.setAttribute("la",a);
 		request.setAttribute("ln",n);
-		System.out.println(a);
 		request.setAttribute("type",type);
 		request.setAttribute("typeName",typeName);
 		RequestDispatcher rd = request.getRequestDispatcher("shop-ls.jsp");

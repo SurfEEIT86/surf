@@ -44,7 +44,6 @@ public class ShopImg extends HttpServlet {
 		System.out.println("shopno   "+shopno);
 		int ShopNo = Integer.parseInt(shopno);
 		ShopsVO shop = informationService.findByShopNo(ShopNo);
-		System.out.println(shop.getName());
 		String fileName = shop.getPic1();
 		String filePath = pathFile+fileName;
 		File img = new File(filePath);

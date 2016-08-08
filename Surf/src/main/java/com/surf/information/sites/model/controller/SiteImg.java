@@ -44,7 +44,6 @@ public class SiteImg extends HttpServlet {
 		String no = request.getParameter("SiteNo");
 		int siteNo = Integer.parseInt(no);
 		SitesVO site = informationService.findSiteByPK(siteNo);
-		System.out.println(site.getName());
 		String fileName = site.getPic1();
 		String filePath = pathFile + fileName;
 		File img = new File(filePath);
