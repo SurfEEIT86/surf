@@ -207,18 +207,18 @@
 
         <div class="filter clearfix">
             <div class="search pull-right">
-                <select id="forums">
+                <select id="forums" style="width:100px">
                     <option value="-1">未選擇</option>
                 </select>
             </div>
             <div class="search pull-left">
-                <select id="year">
+                <select id="year" style="width:100px">
                     <option selected="selected" value="-1">未選擇</option>
                 </select>
-                <select id="month">
+                <select id="month" style="width:100px">
                     <option value="-1">未選擇</option>
                 </select> 
-                <select id="day">
+                <select id="day" style="width:100px">
                     <option value="-1">未選擇</option>
                 </select>
             </div>

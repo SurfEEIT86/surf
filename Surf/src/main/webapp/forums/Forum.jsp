@@ -18,7 +18,7 @@
 		<div class="filter clearfix">
 		<form action="SearchArticles">
 			<div class="search pull-right">
-				<select name="searchArea" id="searchArea">
+				<select name="searchArea" id="searchArea" style="width:100px">
 					<option value="1" >作者</option>
 					<option value="2" selected="selected">標題</option>
 				</select>
